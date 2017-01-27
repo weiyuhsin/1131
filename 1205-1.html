@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+
+        .container{
+            width: 100%                
+            background-color:#999;
+            
+            display:flex; 
+            
+            flex-direction:row ; /*row→橫 column→直 coulmn-reverse→直反向  row-reverse→橫反向*/
+            
+            justify-content:space-between;
+            /*flex-start平移靠左 flex-end→平移靠右  flex-center →置中  space-between 平均在中間 space-around分開  */
+            
+            align-items:flex-end; /*flex-end→內容貼底 flex-start→內容在最上面  center→置中 stretch→延伸  baseline→依每區域第一排文字為主*/
+            
+        }
+        .box1{
+            width: 300px;
+            background-color: #fa00ba;
+            /*float:left*/  /*浮動*/ 
+        }
+        .box2{
+            width: 300px;
+            background-color: #0a66fa;
+            
+        }
+        
+         .box3{
+            width: 300px;
+            background-color: #89ff00;
+            
+        }
+        
+    </style>
+</head>
+
+<body>
+<div>
+    <div class="container">
+        <div class="box1">
+            <h1>abcde222222</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque non ut eaque impedit natus quasi rem adipisci. Dicta dolorem, maxime asperiores doloremque rem corporis nam blanditiis adipisci? Officia corporis, fugit!111111111111
+       
+            </p>
+        </div>
+        
+        <div class="box2">
+            <h2>abcde222222</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque non ut eaque impedit natus quasi rem adipisci. Dicta dolorem, maxime asperiores doloremque rem corporis nam blanditiis adipisci? Officia corporis, fugit!222222222222
+       
+            </p>
+        </div>
+         <div class="box3">
+            <h3>abcde333333</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque non ut eaque impedit natus quasi rem adipisci. Dicta dolorem, maxime asperiores doloremque rem corporis nam blanditiis adipisci? Officia corporis, fugit!3333333333333
+       
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

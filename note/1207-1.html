@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <style>                          /*區塊之間會有一個小間隙解決方法 先設 display:inline-block; */
+        /*body{
+            font-size:0;
+            }*/                    /*方法3 要加一個body {font-size:0}*/
+    
+        .box{
+           
+            width: 100px;
+            height:100px;
+            background-color: #50c755;
+            display:inline-block;      /*設成有區塊與行內的(設成行內元素)*/ 
+            /* margin-left:-4px;*/     /*方法1 用-4來把間隙消除*/
+            /*float:left; */           /*方法2 用浮動來消除間隙*/
+            /*font-size:16px;  */          /*方法3 要加兩個font-size & body font-size:0來消除間隙*/
+                                       /* 方法4 div 後面加入一個註解<!-- -->就可以解決間隙，不過很醜*/
+
+        }
+        
+    </style>
+</head>
+<body>
+   
+   <div class="box">
+        
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+           
+            
+        </div>
+    </div>
+    
+</body>
+</html>

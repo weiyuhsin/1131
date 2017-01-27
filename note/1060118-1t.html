@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>本周天氣</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto');
+        @import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);
+        * {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+            font-family: "Anton", "Noto Sans TC", helvetica, sans-serif;
+            font-size: 100%;
+        }
+        
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-image: url(https://taipeiphotography.files.wordpress.com/2013/11/green-101.jpg);
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-color: #eee;
+        }
+                    h1 {
+                color: #eee;
+                text-align: center;
+                padding: 30px 0;
+                font-size: 36px;
+                font-weight: 400;
+            }
+        @media screen and (min-width:600px) {
+            .container {
+                width: 600px;
+                margin: auto;
+            }
+            .box {
+                width: 100%;
+                background-color: rgba(0, 0, 0, .6);
+                margin-bottom: 15px;
+                color: #fff;
+                padding: 15px;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+            }
+            .box .date {
+                width: 200px;
+            }
+            .box .temp {
+                width: 100px;
+            }
+            .box .temp img {
+                width: 15px;
+            }
+            .box .max {
+                width: 80px;
+            }
+            .box .min {
+                width: 80px;
+                color: #3fa7ff;
+            }
+            .box .description {
+                width: 200px;
+            }
+            .box .pic {
+                width: 64px;
+            }
+        }
+        
+        @media screen and (max-width:599px) {
+            .container {
+                width: 90%;
+                margin: auto;
+            }
+
+            .box {
+                width: 100%;
+                background-color: rgba(0, 0, 0, .6);
+                margin-bottom: 15px;
+                color: #fff;
+                padding: 15px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                
+            }
+            .box .date {
+                width: 100%;
+            }
+            .box .max {
+                width: 100%;
+            }
+            .box .min {
+                width: 100%;
+                color: #3fa7ff;
+            }
+            .box .description {
+                width: 100%;
+            }
+            .box .pic {
+                width: 64px;
+            }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://use.fontawesome.com/39fd5f6753.js"></script>
+    <script>
+        $(function () {
+            $.ajax({
+                url: "http://api.openweathermap.org/data/2.5/forecast/daily?q=taipei,tw&units=metric&cnt=7&lang=zh_TW&appid=b1ecbccd638b763d489602917ba47cc3",
+                dataType: "json",
+                success: function (e) {
+                    $(e.list).each(function () {
+                        var myDate = new Date(this.dt * 1000);
+                        var Y = myDate.getFullYear();
+                        var M = myDate.getMonth() + 1;
+                        var D = myDate.getDate();
+                        var Day = myDate.getDay();
+                        if (Day == 0) {
+                            Day = "日";
+                        }
+
+                      
+                        var img_path = "http://openweathermap.org/img/w/";
+                        
+                        var c = "<div class='box'>"
+                        c += "<div class='date'>" + Y + "/" + M + "/" + D + " 星期" + Day + "</div>"
+                        c += "<div class='temp'><img src='temp.png'></div>"
+                        c += "<div class='max'>" + parseInt(this.temp.max) + "&#8451;</div>"
+                        c += "<div class='min'>" + parseInt(this.temp.min) + "&#8451;</div>"
+                        c += "<div class='description'>" + this.weather[0].description + "</div>"
+                        c += "<img src='" + img_path + "" + this.weather[0].icon + ".png'class='pic'>"
+                        c += "</div>"
+                        $(".container").append(c);
+                    })
+                },
+                error: function () {
+                    console.log("error");
+                }
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>本周天氣<span class='fa fa-thermometer'></span></h1>
+        <!--        <div class="section"></div>-->
+    </div>
+</body>
+
+</html>
+
+
+
+
+
+
+<!--天氣串聯至網頁
+
+老師天氣作品→ http://lcclcclcc.lionfree.net/weather/
+
+
+搜openweathermap →https://openweathermap.org/
+→有很多的串聯(天氣或fb直接註冊) weiyuhsin tinxwex1xx w755→登入→API Keys →我的key 631a0dd6689323dff82c5644b721c085
+
+
+-->

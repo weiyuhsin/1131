@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>            <!--/*滑動至某一區塊  方法二*/-->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> <!--jquery語法-->
+          
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">  <!--animate css語法--><!--搜Animate.css 多種效果→https://daneden.github.io/animate.css/→多效果滑入滑出等效果-->
+
+    <script>
+        $(function(){
+            $("nav a").click(function(){    /*當nav的a 正在做click點擊的時候做下面的效果*//*click點擊 scroll捲動 滑過*/
+                var _link = $(this).data("link");
+//                console.log(_link);
+                var _offset = $("#"+_link).offset().top;
+//                console.log(_offset);
+                $("html,body").animate({
+                    scrollTop:_offset
+                });
+                return false; /*方法一：做完上面的語法之後，讓a失效→就不會有到頁首的閃跳*/
+            });
+            $("#gotop").hide(); /*先將gotop隱藏*/
+            $(window).scroll(function(){        /*當在使用windows捲動時*/
+                if($(this).scrollTop()>200){    /*當this(當下)離最上面超過200時執行下面*/
+                  $("#gotop").fadeIn();       /*方法一：同樣時執行滑入*//*fadeIn() 滑入  show() 跳出*/
+                }else{
+        //            $("#gotop"),fadeOut();      /*方法一：不然就滑出*//*fadeOut() 滑出 hide() 消失*/
+                    $("#gotop").addClass("animated infinite bounce");
+                }
+            });
+            
+        //    $("#gotop").click(function(){     /*當gotop選項 正在做click點擊的時候做下面的效果*/   
+        //        $("html,body").animate({     /*將html,body 去做動畫*/
+        //            scrollTop:0              /*回到最上層*/   
+        //        });
+        //       return false;               /*方法一：做完上面的語法之後，讓a失效→就不會有到頁首的閃跳*/
+        //    });
+        //    console.log(scrollTop);
+        })
+        
+        
+        
+    </script>
+    <style>
+        #about,
+        #works,
+        #service,
+        #contact {
+            height: 1000px;
+        }
+        
+        #about {
+            background-color: #ff0093;
+        }
+        
+        #works {
+            background-color: #00ffe2;
+        }
+        
+        #service {
+            background-color: #ffb100;
+        }
+        
+        #contact {
+            background-color: #76ff00;
+        }
+        nav{
+            position:fixed;            /*將menu固定在同一個地方*/
+        }
+        
+        #gotop{
+            display:block;             /*行內轉區塊*/  /*如是display:none; →gotop的行內一開始消失   */
+            width: 60px;               /*區塊的寬*/
+            height: 60px;              /*區塊的高*/
+            background-color: #222;    /*區塊的顏色*/
+            color:#eee;                /*字體顏色*/
+            text-align:center;         /*文字左右置中*/
+            line-height: 60px;         /*文字上下60px*/
+            position:fixed;            /*top固定在同一個地方*/
+            right:20px;                /*右邊數來20px*/
+            bottom:20px;               /*下面數來20px*/
+           /* visibility:hidden;        /*一開始行內top會消失*/
+            
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="javascript:;" data-link="about">MENU A</a>    <!--方法二：如果用#會閃一下到頁首再到指定地方→用javascript:;來取消到頁首-->
+        <a href="#" data-link="works">Works</a>
+        <a href="#" data-link="service">Service</a>
+        <a href="#" data-link="contact">Contact</a>
+    </nav>
+    <div id="about"></div>
+    <div id="works"></div>
+    <div id="service"></div>
+    <div id="contact"></div>
+    <a href="#" id="gotop" >top</a> <!--a是行內 所以css id要用#gotop--> <!--先命名class="animated"以後設css就可以不用再一直打-->
+</body>
+
+</html>

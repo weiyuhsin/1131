@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>            <!--/*滑動至某一區塊 方法一*/-->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> <!--jquery語法-->
+    
+    <script>
+            $(function(){
+               /* var h = $("about").offset().top;    /*抓about offset(偏移) top(最上面) 多少？* 按F12→看concole會跑出來*
+                concole.log(h);                     /*按F12→看concole  →about= works=1024 service= contact=*/
+                var about = $("#about").offset().top;           /*抓about   與offset(偏移) 到top(最上面) 距離多少？*/
+                var works = $("#works").offset().top;           /*抓works   與offset(偏移) 到top(最上面) 距離多少？*/
+                var service = $("#service").offset().top;       /*抓service 與offset(偏移) 到top(最上面) 距離多少？*/
+                var contact = $("#contact").offset().top;       /*抓contact 與offset(偏移) 到top(最上面) 距離多少？*/
+                
+                $("nav a:nth-of-type(1)").click(function(){
+                    $("html,body").animate({                    /*做滑動*/
+                        scrollTop:about                         /*捲軸移動的距離:移到about*/
+                    });
+                });
+                $("nav a:nth-of-type(2)").click(function(){
+                    $("html,body").animate({                    /*做滑動*/
+                        scrollTop:works                         /*捲軸移動的距離:移到works*/
+                    });
+                });
+                $("nav a:nth-of-type(3)").click(function(){
+                    $("html,body").animate({                    /*做滑動*/
+                        scrollTop:service                         /*捲軸移動的距離:移到service*/
+                    });
+                });
+                $("nav a:nth-of-type(4)").click(function(){
+                    $("html,body").animate({                    /*做滑動*/
+                        scrollTop:contact                       /*捲軸移動的距離:移到contact*/
+                    });
+                });
+            })
+    </script>
+    <style>
+        #about,#works,#service,#contact {
+            height:1000px;
+        }
+        #about{
+            background-color:aqua;
+            
+        }
+        #works{
+            background-color:coral;
+            
+        }
+        #service{
+            background-color:darkseagreen;
+            
+        }
+        #contact{
+            background-color:#edf704;
+            
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">MENU A</a>
+        <a href="#">MENU B</a>
+        <a href="#">MENU C</a>
+        <a href="#">MENU C</a>
+        
+    </nav>
+    <div id="about"></div>
+    <div id="works"></div>
+    <div id="service"></div>
+    <div id="contact"></div>
+    
+</body>
+</html>

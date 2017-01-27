@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        nav{                  /*頂層導覽列*/
+            width: 960px;
+            background-color: pink;   /*要加margin: auto;*/
+            margin: auto;
+            /*  height: 45px;*/  /*方法1 顯示粉紅導覽列*/
+            /* overflow: auto;*/  /*方法2 顯示粉紅導覽列*/
+        }
+        .clearfix::after {/*方法3 顯示粉紅導覽列*/
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .logo{
+            float:left; /*浮動左*/
+            width: 45px;
+            height: 45px;
+            background-color: #01eeff; 
+            
+        }
+        .menu{
+            float:right;   /*浮動右*/  
+        }
+        
+        .menu ul{
+            margin:0;   /*外距*/
+            padding:0;  /*內距*/
+        }
+        
+        .menu ul li{
+            list-style-type:none; /*不要項目*/
+            float:left;        /*浮動左*/   
+            margin-left: 5px; /*各分開5px*//*放a不優 要放在li才不會有誤差*/
+            
+        }
+        
+        .menu ul li a {
+            display:block;         /*行內轉區塊才能改東西*/
+            color=#ffae00;         /*顏色*/
+            width:150px;           /*寬*/
+            height:45px;           /*高*/
+            font-family:tahoma;    /*字體*/
+            text-decoration:none;  /*不要底線*/
+            text-align:center;     /*置中*/
+            background-color:#999; /*背景色*/
+            line-height:45px;      /*垂直*/
+   
+ 
+        }
+        
+  
+        /*nav=導覽列*/
+        /*"menu"=類別*/
+        /*<li><a href="#">MENU4</a></li>→ #錨點*/        
+        
+    </style>
+</head>
+
+<body>
+   <nav class="clearfix">  
+       <div class="logo"></div>   
+       <div class="menu"> 
+         <ul>
+             <li><a href="#">about</a></li>   
+             <li><a href="#">blog</a></li>
+             <li><a href="#">service</a></li>
+             <li><a href="#">contect</a></li>
+         </ul>
+       </div>  
+   </nav>
+    
+</body>
+</html>

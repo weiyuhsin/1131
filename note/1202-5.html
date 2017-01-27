@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    
+    <style>
+            .clearfix::after{                                  
+                             /*方法3  :設立一個虛擬元素<style>clearfix::after語法之後如需要直接在所有的語法名稱後面ex: div class="XXXX加上clearfix" 就會套用clearfix語法解決浮動與固定問題*/
+            content:"ssssFGHIJ";     /*放字串*/
+            display; block; /*block  table */
+            clear:both;     /*加clear:both解決浮動與固定位置*/
+    </style>
+</head>
+<body>
+    <div class="abcde clearfix">ABCDE</div>
+    <div class="abcde clearfix">一二三四五</div>
+    <div class="abcde clearfix">123456</div>
+</body>
+</html>

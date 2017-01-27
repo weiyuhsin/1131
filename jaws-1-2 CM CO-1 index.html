@@ -1,0 +1,1568 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <base href="http://www.wireharness.com.tw/style/frame/m6/"><meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>Jawscable 線組加工/線材加工/配線加工</title>
+<meta name="robots" content="all" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta name="keywords" content="線材加工,線束,電纜組件,扁平電纜 ,8號線線束 , POG線束 ,電源線,線配件, 機電纜, 帶狀電纜" />
+	<meta name="description" content="線材加工，彰明電子有限公司是一家具有20餘年經驗的配線組裝加工廠，公司已於2008年底通過ISO9001:2008認證，線材加工過程也已通過UL認証" />
+	<meta property="og:description" content="線材加工，彰明電子有限公司是一家具有20餘年經驗的配線組裝加工廠，公司已於2008年底通過ISO9001:2008認證，線材加工過程也已通過UL認証" />
+	<meta name="author" content="www.wireharness.com.tw" />
+	<!--頁面讀取 page loading -->
+<link href="css/loading.css" rel="stylesheet" type="text/css">
+<!--頁面主要CSS-->
+<link href="color_6/css/style.css" rel="stylesheet" type="text/css">
+<!-- MAPs全球母語同步系統 -->
+<link href="color_6/css/worldwide.css" rel="stylesheet" type="text/css">
+<!-- 動畫CSS -->
+<link href="css/animate.css"rel="stylesheet" >
+<!-- 頁面上方選單 -->
+<link rel="stylesheet" href="color_6/css/scroll_t.css">
+<!-- 圖案CSS -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- 首頁大圖 CSS -->
+<link rel="stylesheet" href="color_6/css/nivo-slider.css" type="text/css" />
+<!--內頁選單-->
+<link href="color_6/css/sub_nav.css" rel="stylesheet" type="text/css">
+<!--產品內頁-->
+<link href="color_6/css/magiczoomplus.css" rel="stylesheet" type="text/css">
+<!--輪播圖片 Owl Stylesheets-->
+<link rel="stylesheet" href="css/owl.carousel.css">
+<!--首頁自動彈跳廣告 -->
+<link href="css/newsletterpopup.css" rel="stylesheet" type="text/css">
+<!-- 響應式CSS -->
+<link href="color_6/css/jquery.mmenu.all.css" type="text/css" rel="stylesheet"/>
+
+<link href="color_6/css/responsive.css" rel="stylesheet" type="text/css">
+
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="color_6/css/ie7style.css" />
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="color_6/css/ie8style.css" />
+<![endif]--><!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<script src="js/IE9.js"></script>
+<![endif]-->
+
+
+<link rel="canonical" href="http://www.wireharness.com.tw">
+
+<script type="text/javascript" src="/v_comm/global/scripts/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="/v_comm/global/scripts/utils.js"></script>
+<script type="text/javascript" src="/v_comm/javascripts/jquery.navScroll.js"></script>
+
+
+<!--動畫外掛開始-->
+<script type="text/javascript" src="js/wow.js"></script>
+<script type="text/javascript">
+new WOW().init();
+</script>
+
+
+		<script type="text/javascript">
+			function checkIfEnterKey(event,varAction,adjForm){
+				var keycode = (event.keyCode ? event.keyCode : event.which);
+				if(keycode == '13'){	//Process after checking the "enter button" clicked
+					proceed(varAction,adjForm);
+				}
+			}
+			function proceed(varAction,adjForm){
+				if(varAction=="add"){
+					$.ajax({
+						type: "POST",
+						url: "add_cart.asp?customer_id=2459&lang=1&content_set=color_6",
+						data: {
+							varAction : varAction,
+							styles    : adjForm.styles.value,
+							Quatity   : adjForm.Quatity.value,
+							shoppingid: adjForm.shoppingid.value
+						},
+						error: function (jqXHR, exception, error) {
+							alert (jqXHR.responseText);
+						},
+						success: function(msg){
+							$("div[id=Cart]").html(msg);
+							//show fixed cart image
+							if($('#shoppingCart').length < 1){
+								$('body').append('<a href="shopping_cart.asp?lang=1&customer_id=2459&content_set=color_6&name_id=" style="cursor:pointer"><div id="shoppingCart"></div></a>');
+							}
+						},
+						beforeSend:function(){
+							$('body').append('<div id="resultAlarm" style="display:none"><div><div>已加入購物車 !!</div></div><div class="bg"></div></div>');
+							$('body').append('<div id="resultLoading" style="display:none"><div><img src="images/ajax-loader.gif"><div>數據加載中...請稍候... !!</div></div><div class="bg"></div></div>');
+							$('#resultLoading, #resultAlarm').css({
+								'width':'100%',
+								'height':'100%',
+								'position':'fixed',
+								'z-index':'10000000',
+								'top':'0',
+								'left':'0',
+								'right':'0',
+								'bottom':'0',
+								'margin':'auto'
+							});	
+							
+							$('#resultLoading .bg, #resultAlarm .bg').css({
+								'background':'#000000',
+								'opacity':'0.7',
+								'width':'100%',
+								'height':'100%',
+								'position':'absolute',
+								'top':'0'
+							});
+							
+							$('#resultLoading>div:first, #resultAlarm>div:first').css({
+								'width': '250px',
+								'height':'75px',
+								'text-align': 'center',
+								'position': 'fixed',
+								'top':'0',
+								'left':'0',
+								'right':'0',
+								'bottom':'0',
+								'margin':'auto',
+								'font-size':'16px',
+								'z-index':'10',
+								'color':'#ffffff'
+								
+							});
+							$('#resultLoading .bg').height('100%');
+							$('#resultLoading').fadeIn(300);
+							$('body').css('cursor', 'wait');
+						},
+						complete:function(){
+							$('#resultLoading .bg').height('100%');
+							$('#resultLoading').fadeOut(300);
+							$('body').css('cursor', 'default');
+							$('#resultAlarm').fadeIn(300).delay(1000).fadeOut();
+						}
+					});
+				}else if(varAction=="update" || varAction=="clean"){
+					$.ajax({
+						type: "POST",
+						url: "add_cart.asp?customer_id=2459&lang=1&content_set=color_6",
+						data: "varAction="+varAction+"&"+$(adjForm).serialize(),
+						error: function (jqXHR, exception, error) {
+							alert (jqXHR.responseText);
+						},
+						success: function(msg){
+							location.reload();
+						},
+						beforeSend:function(){
+							$('body').append('<div id="resultLoading" style="display:none"><div><img src="images/ajax-loader.gif"><div>更新數據，請稍候... !!</div></div><div class="bg"></div></div>');
+							$('#resultLoading').css({
+								'width':'100%',
+								'height':'100%',
+								'position':'fixed',
+								'z-index':'10000000',
+								'top':'0',
+								'left':'0',
+								'right':'0',
+								'bottom':'0',
+								'margin':'auto'
+							});	
+							
+							$('#resultLoading .bg').css({
+								'background':'#000000',
+								'opacity':'0.7',
+								'width':'100%',
+								'height':'100%',
+								'position':'absolute',
+								'top':'0'
+							});
+							
+							$('#resultLoading>div:first').css({
+								'width': '250px',
+								'height':'75px',
+								'text-align': 'center',
+								'position': 'fixed',
+								'top':'0',
+								'left':'0',
+								'right':'0',
+								'bottom':'0',
+								'margin':'auto',
+								'font-size':'16px',
+								'z-index':'10',
+								'color':'#ffffff'
+								
+							});
+							$(":button[name=Submit5]").attr("disabled", "true");
+							$('#resultLoading .bg').height('100%');
+							$('#resultLoading').fadeIn(300);
+							$('body').css('cursor', 'wait');
+						}
+					});
+				}else{	//go_order.asp
+					window.location.href="go_order.asp?"+$(adjForm).serialize();
+				}
+			}
+			function minus(id,sendForm){
+				var value = parseInt($('#'+ id ).val());
+				if (value > 1){
+					$('#'+id).val(value - 1);
+					proceed('update',$('#'+sendForm));
+				}
+			}
+			
+			function plus(id,sendForm){
+				var value = parseInt($('#'+ id ).val());
+				if (value < 9999){
+					$('#'+id).val(value + 1);
+					proceed('update',$('#'+sendForm));
+				}
+			}
+			
+		</script>
+	
+<script type="text/javascript">
+<!--
+	function ForceToBeNumberIn4Digits(odjInput){
+		var keychar = odjInput.value;
+		if(!/^[1-9]{1}\d{0,3}$/g.test(keychar)){
+			odjInput.value = 1;
+			odjInput.focus();
+		}
+	}
+	function addcheck(){
+		window.open("","checkcar","width=1200,height=450,resizable=yes,scrollbars=yes,status=yes,left=50,top=50");
+	}
+//-->
+</script>
+
+
+<!-- 外掛JS開始 -->
+<script src="js/script_top.js"></script><meta http-equiv='imagetoolbar' content='no'>
+<script language='JavaScript'>
+<!--
+document.oncontextmenu = new Function("return false")
+//-->
+</script>
+
+<style type="text/css">
+.top_navigation_right_box { width: 66%;}
+.navigation_box {width: 85%;}
+#footer { clear: both; display: block; margin: 0px; padding: 0px; width: 100%; float: left; background-repeat: repeat-x; }
+</style>
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59575234-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</head>
+<body class="page_home">
+    
+
+<!--手機選單開始-->
+<div class="header"><a href="#mobile_menu"></a></div>
+<nav id="mobile_menu">
+    <ul>
+        <div class="mobile_search_page">
+            <section class="mobile_search_box">
+                <form name="form" method="get" action="index_search.asp">
+    <input type="hidden" name="customer_id" value="2459">
+    <input type="hidden" name="lang" value="1">
+    <input type="hidden" name="content_set" value="color_6">
+    <input type="hidden" name="name_id" value="">
+    
+    
+        <div class="mobile_search_bg">
+            <i class="fa fa-search"></i>
+            <input class="search_txt" type="text" name="search"
+                   onfocus="if (value == '--請輸入關鍵字--') {value = ''}"
+                   onblur="if (value == '') {value = '--請輸入關鍵字--'}"
+                   value="--請輸入關鍵字--" />
+        </div>
+        <input class="search_btn1" type="submit" id="button" value="搜尋" />
+    
+    
+</form>
+
+            </section>
+        </div>
+        
+<li><a href="../../../?lang=1" title="首頁" target="_top">HOME</a></li>
+
+    <li>
+        
+        <a href="http://www.wireharness.com.tw/index.asp?lang=1" title="首頁">首頁</a>
+        
+    </li>
+
+    <li>
+        
+        <a href="/s/1/about.html" title="公司簡介">公司簡介</a>
+        
+            <ul>
+                
+    <li>
+        <a href="/s/1/about-7868/各項認證與專利.html">各項認證與專利</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/about-7869/歡迎光臨我們的工廠.html">歡迎光臨我們的工廠</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/about-7870/管理理念.html">管理理念</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/about-7871/OEM服務.html">OEM服務</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/about-7872/品質管理.html">品質管理</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/about-7873/研究開發.html">研究開發</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/about-7874/服務與支援.html">服務與支援</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/about-7875/貿易服務.html">貿易服務</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/about-7876/參展資訊.html">參展資訊</a>
+        
+    </li>
+
+            </ul>
+        
+    </li>
+
+    <li>
+        
+        <a href="/s/1/product.html" title="產品介紹">產品介紹</a>
+        
+            <ul>
+                
+    <li>
+        <a href="/s/1/product-c95337/消費性電子-電腦通訊配線.html">消費性電子 / 電腦通訊配線</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63589/工業設備配線.html">工業設備配線</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63597/汽機車配線.html">汽機車配線</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63595/運動器材配線.html">運動器材配線</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63596/安全器材-影音設備配線.html">安全器材 / 影音設備配線</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63598/醫療器材配線.html">醫療器材配線</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63591/電子遊戲機配線.html">電子遊戲機配線</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63593/各國AC線-電源線.html">各國AC線 / 電源線</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63594/配線零件類.html">配線零件類</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63592/連接器.html">連接器</a>
+        
+            <ul>
+                
+    <li>
+        <a href="/s/1/product-c63600/線材至IC板類.html">線材至IC板類</a>
+        
+            <ul>
+                
+    <li>
+        <a href="/s/1/product-c63614/Pitch-1-0-mm-~-Pitch-1-99-mm.html">Pitch 1.0 mm ~ Pitch 1.99 mm</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63615/Pitch-2-0-mm-~-Pitch-2-99-mm.html">Pitch 2.0 mm ~ Pitch 2.99 mm</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63616/Pitch-3-0-mm-~-Pitch-3-99-mm.html">Pitch 3.0 mm ~ Pitch 3.99 mm</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63617/Pitch-4-0-mm.html">Pitch 4.0 mm</a>
+        
+    </li>
+
+            </ul>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63599/線材至線材.html">線材至線材</a>
+        
+            <ul>
+                
+    <li>
+        <a href="/s/1/product-c63607/Pitch-1-0-mm-~-Pitch-2-99-mm.html">Pitch 1.0 mm ~ Pitch 2.99 mm</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63608/Pitch-3-0-mm-~-Pitch-3-99-mm.html">Pitch 3.0 mm ~ Pitch 3.99 mm</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63609/Pitch-4-0-mm-~-Pitch-4-99-mm.html">Pitch 4.0 mm ~ Pitch 4.99 mm</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63611/Pitch-5-0-mm-~-Pitch-5-99-mm.html">Pitch 5.0 mm ~ Pitch 5.99 mm</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63612/Pitch-6-0-mm-~.html">Pitch 6.0 mm ~</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63613/其他.html">其他</a>
+        
+    </li>
+
+            </ul>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63754/線材至零件端子類.html">線材至零件端子類</a>
+        
+            <ul>
+                
+    <li>
+        <a href="/s/1/product-c63755/圓盤型.html">圓盤型</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63756/Ｙ-型.html">Ｙ 型</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63757/FASTON-型.html">FASTON 型</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63758/旗型.html">旗型</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63759/壓著端子.html">壓著端子</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63760/其它.html">其它</a>
+        
+    </li>
+
+            </ul>
+        
+    </li>
+
+            </ul>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c82402/新產品.html">新產品</a>
+        
+    </li>
+
+            </ul>
+        
+    </li>
+
+    <li>
+        
+        <a href="/s/1/news.html" title="最新消息">最新消息</a>
+        
+    </li>
+
+    <li class="contact_us">
+        
+        <a href="contact.asp?lang=1&customer_id=2459&content_set=color_6&name_id=109494" title="與我聯絡">與我聯絡</a>
+        
+    </li>
+
+    </ul>
+</nav>
+<!--手機選單結束-->
+    <div class="page">
+        <div class="page2"></div>
+        <!--頁面上方開始-->
+        <header class="top_header_page">
+            <div class="top_header_box">
+                
+<div class="top_icon_page">
+    <div class="top_icon_box">
+        
+                <div id="language">
+                    <form method="Get" action="../../../index.asp">
+	<select id="fixed_lang_picker" class="language" name="lang" onchange="this.form.submit()">
+		<option value="0" selected>--Language--</option>
+		
+			<option value="1">--繁體中文--</option>
+		
+			<option value="2">--English--</option>
+		
+			<option value="4">--日本語--</option>
+		
+	</select>
+</form>
+                </div>
+        
+        <!--搜尋-->
+        <div class="search_page">
+            <section class="search_box">
+                <form name="form" method="get" action="index_search.asp">
+    <input type="hidden" name="customer_id" value="2459">
+    <input type="hidden" name="lang" value="1">
+    <input type="hidden" name="content_set" value="color_6">
+    <input type="hidden" name="name_id" value="">
+    
+    
+        <div class="search_bg">
+            <i class="fa fa-search"></i>
+            <input class="search_txt" type="text" name="search" size="20"
+                   onfocus="if (value == '--請輸入關鍵字--') {value = ''}"
+                   onblur="if (value == '') {value = '--請輸入關鍵字--'}"
+                   value="--請輸入關鍵字--" />
+        </div>
+        <input class="search_btn1" type="submit" id="button" value="搜尋" />
+    
+    
+</form>
+
+            </section>
+        </div>
+        
+        <div id="topmenuicon">
+            <ul>
+                <li><a href="../../../?lang=1" target="_top">首頁</a></li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="top_navigation_page">
+    <div class="top_navigation_box">
+        <!-- 主選單導航開始 -->
+        <div id="navigation_page">
+            <div id="navigation_box">
+                <div id="navigation">
+                    <div class="top_navigation_left_box">
+                        <!--公司LOGO和名稱開始-->
+                        <div class="company_page">
+                            <div class="company_box">
+                                <!-- LOGO圖 -->
+                                <h1 class="logopic">
+                                    
+                                            <a href="http://www.wireharness.com.tw/index.asp?lang=1" target="_parent" title="logo">
+                                        <img src="../../../comm/upimage/w_160713_01200.png" alt="" border="0" vspace="0" hspace="0" />
+                                            </a>
+                                        
+                                </h1>
+                                <!-- 公司名稱 -->
+                                <h2><font size="3"><start></start></font></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top_navigation_right_box">
+                        <div class="navigation_box">
+                            <div id="divBg">
+    <div id="divMenu">
+        <div id="tabs_1">
+            <ul>
+                
+                    <li >
+                        <a href="http://www.wireharness.com.tw/index.asp?lang=1" onmouseover="CloseAll_Icon(&#039;2&#039;)">
+                            <strong>
+                                    <font size="2">首頁</font>
+                                </strong>
+                        </a>
+                    </li>
+                
+                    <li >
+                        <a href="/s/1/about.html" onmouseover="ShowMenu(this, &#039;&#039;, &#039;topmu1&#039;);" onfocus="ShowMenu(this,&#039;&#039;,&#039;topmu1&#039;);" onmouseout="MM_startTimeout();" onblur="MM_startTimeout();">
+                            <strong>
+                                    <font size="2">公司簡介</font>
+                                </strong>
+                        </a>
+                    </li>
+                
+                    <li >
+                        <a href="/s/1/product.html" onmouseover="ShowMenu(this, &#039;&#039;, &#039;topmu2&#039;);" onfocus="ShowMenu(this,&#039;&#039;,&#039;topmu2&#039;);" onmouseout="MM_startTimeout();" onblur="MM_startTimeout();">
+                            <strong>
+                                    <font size="2">產品介紹</font>
+                                </strong>
+                        </a>
+                    </li>
+                
+                    <li >
+                        <a href="/s/1/news.html" onmouseover="CloseAll_Icon(&#039;2&#039;)">
+                            <strong>
+                                    <font size="2">最新消息</font>
+                                </strong>
+                        </a>
+                    </li>
+                
+                    <li >
+                        <a href="contact.asp?lang=1&customer_id=2459&content_set=color_6&name_id=109494" onmouseover="CloseAll_Icon(&#039;2&#039;)">
+                            <strong>
+                                    <font size="2">與我聯絡</font>
+                                </strong>
+                        </a>
+                    </li>
+                
+                    <li class="line_box"></li>
+                
+            </ul>
+        </div>
+    </div>
+    <div id="divArrowLeft">
+    <a href="javascript:;">
+        
+    </a>
+</div><div id="divArrowRight">
+    <a href="javascript:;">
+        
+    </a>
+</div>
+</div>
+            <script type="text/javascript">
+                jQuery(function ($) {
+                    $('#divBg').navScroll({
+                        leftOffset : -20,
+                        rightOffset: 0
+                    });
+                });
+            </script>
+            
+                        </div>
+                        
+	<div id="submenu">
+		
+		<!-- submenu start -->
+		
+			<div id="topmu1" onMouseOver="ShowMenu(this,'topmu1','')" onfocus="ShowMenu(this,'topmu1','')" onMouseOut="MM_startTimeout()" onblur="MM_startTimeout()" style="display:none; z-index: 1000;">
+				<div class="group_t"> 
+				<!-- div tabs_2 start -->
+					<div class="tabs_2">
+                        <ul class="tabs_2_ul">
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/about-7868/各項認證與專利.html" class="navigation_title"><font size="2">各項認證與專利</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/about-7869/歡迎光臨我們的工廠.html" class="navigation_title"><font size="2">歡迎光臨我們的工廠</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/about-7870/管理理念.html" class="navigation_title"><font size="2">管理理念</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/about-7871/OEM服務.html" class="navigation_title"><font size="2">OEM服務</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            </ul><ul class="tabs_2_ul">
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/about-7872/品質管理.html" class="navigation_title"><font size="2">品質管理</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/about-7873/研究開發.html" class="navigation_title"><font size="2">研究開發</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/about-7874/服務與支援.html" class="navigation_title"><font size="2">服務與支援</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/about-7875/貿易服務.html" class="navigation_title"><font size="2">貿易服務</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            </ul><ul class="tabs_2_ul">
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/about-7876/參展資訊.html" class="navigation_title"><font size="2">參展資訊</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            </ul>
+					</div>
+				<!-- div tabs_2 end -->
+				<div class="tabs_2_d"></div>
+				</div>
+			</div>
+		
+			<div id="topmu2" onMouseOver="ShowMenu(this,'topmu2','')" onfocus="ShowMenu(this,'topmu2','')" onMouseOut="MM_startTimeout()" onblur="MM_startTimeout()" style="display:none; z-index: 1000;">
+				<div class="group_t"> 
+				<!-- div tabs_2 start -->
+					<div class="tabs_2">
+                        <ul class="tabs_2_ul">
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/product-c95337/消費性電子-電腦通訊配線.html" class="navigation_title"><font size="2">消費性電子 / 電腦通訊配線</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/product-c63589/工業設備配線.html" class="navigation_title"><font size="2">工業設備配線</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/product-c63597/汽機車配線.html" class="navigation_title"><font size="2">汽機車配線</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/product-c63595/運動器材配線.html" class="navigation_title"><font size="2">運動器材配線</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            </ul><ul class="tabs_2_ul">
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/product-c63596/安全器材-影音設備配線.html" class="navigation_title"><font size="2">安全器材 / 影音設備配線</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/product-c63598/醫療器材配線.html" class="navigation_title"><font size="2">醫療器材配線</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/product-c63591/電子遊戲機配線.html" class="navigation_title"><font size="2">電子遊戲機配線</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/product-c63593/各國AC線-電源線.html" class="navigation_title"><font size="2">各國AC線 / 電源線</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            </ul><ul class="tabs_2_ul">
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/product-c63594/配線零件類.html" class="navigation_title"><font size="2">配線零件類</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/product-c63592/連接器.html" class="navigation_title"><font size="2">連接器</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                                <li class="navigation_link"><a href="/s/1/product-c63600/線材至IC板類.html" title="">線材至IC板類</a></li>
+                                            
+                                                <li class="navigation_link"><a href="/s/1/product-c63599/線材至線材.html" title="">線材至線材</a></li>
+                                            
+                                                <li class="navigation_link"><a href="/s/1/product-c63754/線材至零件端子類.html" title="">線材至零件端子類</a></li>
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/product-c82402/新產品.html" class="navigation_title"><font size="2">新產品</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            </ul>
+					</div>
+				<!-- div tabs_2 end -->
+				<div class="tabs_2_d"></div>
+				</div>
+			</div>
+		
+	</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            </div>
+        </header>
+        <!--頁面上方結束-->
+        <!--首頁大圖開始-->
+        
+    <section class="advertising_main_page">
+        <section class="advertising_main_box">
+            <div id="slider" class="nivoSlider">
+                <img src="../../../comm/upimage/w_160913_05551.jpg" alt="#ae_01" title="#ae_01"  border="0" vspace="0" hspace="0" class=""><img src="../../../comm/upimage/w_160912_04741.jpg" alt="#ae_02" title="#ae_02"  border="0" vspace="0" hspace="0" class=""><img src="../../../comm/upimage/w_160912_04742.jpg" alt="#ae_03" title="#ae_03"  border="0" vspace="0" hspace="0" class=""><img src="../../../comm/upimage/w_160912_04743.jpg" alt="#ae_04" title="#ae_04"  border="0" vspace="0" hspace="0" class="">
+            </div>
+            
+                <div id="ae_01" class="nivo-html-caption">
+                    <div class="advertising_txt_page ae_01">
+                        <div class="advertising_txt_box">
+                            <h2 class="title _textshadow wow fadeInRight" data-wow-duration="2s"></h2>
+                            <p class="txt _textshadow wow fadeInLeft" data-wow-duration="2s"></p>
+                            
+                        </div>
+                    </div>
+                </div>
+            
+                <div id="ae_02" class="nivo-html-caption">
+                    <div class="advertising_txt_page ae_02">
+                        <div class="advertising_txt_box">
+                            <h2 class="title _textshadow wow fadeInRight" data-wow-duration="2s"></h2>
+                            <p class="txt _textshadow wow fadeInLeft" data-wow-duration="2s"></p>
+                            
+                        </div>
+                    </div>
+                </div>
+            
+                <div id="ae_03" class="nivo-html-caption">
+                    <div class="advertising_txt_page ae_03">
+                        <div class="advertising_txt_box">
+                            <h2 class="title _textshadow wow fadeInRight" data-wow-duration="2s"></h2>
+                            <p class="txt _textshadow wow fadeInLeft" data-wow-duration="2s"></p>
+                            
+                        </div>
+                    </div>
+                </div>
+            
+                <div id="ae_04" class="nivo-html-caption">
+                    <div class="advertising_txt_page ae_04">
+                        <div class="advertising_txt_box">
+                            <h2 class="title _textshadow wow fadeInRight" data-wow-duration="2s"></h2>
+                            <p class="txt _textshadow wow fadeInLeft" data-wow-duration="2s"></p>
+                            
+                        </div>
+                    </div>
+                </div>
+            
+        </section>
+    </section>
+
+        <!--首頁大圖結束-->
+        <div class="home_content_page">
+            <div class="home_content_box">
+                <!--產品區開始-->
+                
+                    <div class="home_product_page">
+                        <div class="home_product_box">
+                            <div class="title_box">
+                                <strong class="wow slideIn" data-wow-duration="3s">
+                                    推薦產品<span>Products</span>
+                                </strong>
+                                <div class="title_more_page">
+                                    <div class="title_more_box">
+                                        <a href="/s/1/product.html" class="btn">更多...</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <section class="home_productpic_page">
+                                <ul class="owl-carousel-product" style="display: none;">
+                                    
+                                        <li class="item wow fadeInUp" data-wow-duration="2s">
+                                            
+                                                <div class="home_productpic_box">
+                                                    <div class="_layer"></div>
+                                                    <div class="_layer_more_box">
+                                                        <div class="_layer_more">
+                                                            <a href="/s/1/product-352320/壓接式排線.html" title="" class="fa fa-search fa-3x"></a>
+                                                        </div>
+                                                    </div>
+                                                    <figure>
+                                                        
+                                                        <a href="/s/1/product-352320/壓接式排線.html" title="" class="thumb">
+                                                            <img src="../../../comm/upimage/p_160912_04773.jpg" alt="" border="0" vspace="0" hspace="0" />
+                                                        </a>
+                                                    </figure>
+                                                </div>
+                                            
+                                            <div class="productpic_info_box">
+                                                <h2>
+                                                    <a href="/s/1/product-352320/壓接式排線.html" title="壓接式排線">
+                                                        壓接式排線
+                                                    </a>
+                                                </h2>
+                                                <h3>
+                                                    <a href="/s/1/product-352320/壓接式排線.html" title="">
+                                                        
+                                                    </a>
+                                                </h3>
+                                                
+                                            </div>
+                                        </li>
+                                    
+                                        <li class="item wow fadeInUp" data-wow-duration="2s">
+                                            
+                                                <div class="home_productpic_box">
+                                                    <div class="_layer"></div>
+                                                    <div class="_layer_more_box">
+                                                        <div class="_layer_more">
+                                                            <a href="/s/1/product-352687/車用電源訊號配線.html" title="" class="fa fa-search fa-3x"></a>
+                                                        </div>
+                                                    </div>
+                                                    <figure>
+                                                        
+                                                        <a href="/s/1/product-352687/車用電源訊號配線.html" title="" class="thumb">
+                                                            <img src="../../../comm/upimage/p_160912_04836.jpg" alt="" border="0" vspace="0" hspace="0" />
+                                                        </a>
+                                                    </figure>
+                                                </div>
+                                            
+                                            <div class="productpic_info_box">
+                                                <h2>
+                                                    <a href="/s/1/product-352687/車用電源訊號配線.html" title="車用電源訊號配線">
+                                                        車用電源訊號配線
+                                                    </a>
+                                                </h2>
+                                                <h3>
+                                                    <a href="/s/1/product-352687/車用電源訊號配線.html" title="">
+                                                        
+                                                    </a>
+                                                </h3>
+                                                
+                                            </div>
+                                        </li>
+                                    
+                                        <li class="item wow fadeInUp" data-wow-duration="2s">
+                                            
+                                                <div class="home_productpic_box">
+                                                    <div class="_layer"></div>
+                                                    <div class="_layer_more_box">
+                                                        <div class="_layer_more">
+                                                            <a href="/s/1/product-352698/監視器設備配線.html" title="" class="fa fa-search fa-3x"></a>
+                                                        </div>
+                                                    </div>
+                                                    <figure>
+                                                        
+                                                        <a href="/s/1/product-352698/監視器設備配線.html" title="" class="thumb">
+                                                            <img src="../../../comm/upimage/p_160913_04883.jpg" alt="" border="0" vspace="0" hspace="0" />
+                                                        </a>
+                                                    </figure>
+                                                </div>
+                                            
+                                            <div class="productpic_info_box">
+                                                <h2>
+                                                    <a href="/s/1/product-352698/監視器設備配線.html" title="監視器設備配線">
+                                                        監視器設備配線
+                                                    </a>
+                                                </h2>
+                                                <h3>
+                                                    <a href="/s/1/product-352698/監視器設備配線.html" title="">
+                                                        
+                                                    </a>
+                                                </h3>
+                                                
+                                            </div>
+                                        </li>
+                                    
+                                        <li class="item wow fadeInUp" data-wow-duration="2s">
+                                            
+                                                <div class="home_productpic_box">
+                                                    <div class="_layer"></div>
+                                                    <div class="_layer_more_box">
+                                                        <div class="_layer_more">
+                                                            <a href="/s/1/product-352436/T-A-SLH-LW-Connectors.html" title="" class="fa fa-search fa-3x"></a>
+                                                        </div>
+                                                    </div>
+                                                    <figure>
+                                                        
+                                                        <a href="/s/1/product-352436/T-A-SLH-LW-Connectors.html" title="" class="thumb">
+                                                            <img src="../../../comm/upimage/p_160913_05036.jpg" alt="" border="0" vspace="0" hspace="0" />
+                                                        </a>
+                                                    </figure>
+                                                </div>
+                                            
+                                            <div class="productpic_info_box">
+                                                <h2>
+                                                    <a href="/s/1/product-352436/T-A-SLH-LW-Connectors.html" title="T&amp;A SLH LW Connectors">
+                                                        T&A SLH LW Connectors
+                                                    </a>
+                                                </h2>
+                                                <h3>
+                                                    <a href="/s/1/product-352436/T-A-SLH-LW-Connectors.html" title="">
+                                                        
+                                                    </a>
+                                                </h3>
+                                                
+                                            </div>
+                                        </li>
+                                    
+                                        <li class="item wow fadeInUp" data-wow-duration="2s">
+                                            
+                                                <div class="home_productpic_box">
+                                                    <div class="_layer"></div>
+                                                    <div class="_layer_more_box">
+                                                        <div class="_layer_more">
+                                                            <a href="/s/1/product-352435/美式電源線加工.html" title="" class="fa fa-search fa-3x"></a>
+                                                        </div>
+                                                    </div>
+                                                    <figure>
+                                                        
+                                                        <a href="/s/1/product-352435/美式電源線加工.html" title="" class="thumb">
+                                                            <img src="../../../comm/upimage/p_160913_05031.jpg" alt="" border="0" vspace="0" hspace="0" />
+                                                        </a>
+                                                    </figure>
+                                                </div>
+                                            
+                                            <div class="productpic_info_box">
+                                                <h2>
+                                                    <a href="/s/1/product-352435/美式電源線加工.html" title="美式電源線加工">
+                                                        美式電源線加工
+                                                    </a>
+                                                </h2>
+                                                <h3>
+                                                    <a href="/s/1/product-352435/美式電源線加工.html" title="">
+                                                        
+                                                    </a>
+                                                </h3>
+                                                
+                                            </div>
+                                        </li>
+                                    
+                                        <li class="item wow fadeInUp" data-wow-duration="2s">
+                                            
+                                                <div class="home_productpic_box">
+                                                    <div class="_layer"></div>
+                                                    <div class="_layer_more_box">
+                                                        <div class="_layer_more">
+                                                            <a href="/s/1/product-352431/微動開關.html" title="" class="fa fa-search fa-3x"></a>
+                                                        </div>
+                                                    </div>
+                                                    <figure>
+                                                        
+                                                        <a href="/s/1/product-352431/微動開關.html" title="" class="thumb">
+                                                            <img src="../../../comm/upimage/p_160913_05017.jpg" alt="" border="0" vspace="0" hspace="0" />
+                                                        </a>
+                                                    </figure>
+                                                </div>
+                                            
+                                            <div class="productpic_info_box">
+                                                <h2>
+                                                    <a href="/s/1/product-352431/微動開關.html" title="微動開關">
+                                                        微動開關
+                                                    </a>
+                                                </h2>
+                                                <h3>
+                                                    <a href="/s/1/product-352431/微動開關.html" title="">
+                                                        
+                                                    </a>
+                                                </h3>
+                                                
+                                            </div>
+                                        </li>
+                                    
+                                        <li class="item wow fadeInUp" data-wow-duration="2s">
+                                            
+                                                <div class="home_productpic_box">
+                                                    <div class="_layer"></div>
+                                                    <div class="_layer_more_box">
+                                                        <div class="_layer_more">
+                                                            <a href="/s/1/product-352341/POG線材.html" title="" class="fa fa-search fa-3x"></a>
+                                                        </div>
+                                                    </div>
+                                                    <figure>
+                                                        
+                                                        <a href="/s/1/product-352341/POG線材.html" title="" class="thumb">
+                                                            <img src="../../../comm/upimage/p_160913_04907.jpg" alt="" border="0" vspace="0" hspace="0" />
+                                                        </a>
+                                                    </figure>
+                                                </div>
+                                            
+                                            <div class="productpic_info_box">
+                                                <h2>
+                                                    <a href="/s/1/product-352341/POG線材.html" title="POG線材">
+                                                        POG線材
+                                                    </a>
+                                                </h2>
+                                                <h3>
+                                                    <a href="/s/1/product-352341/POG線材.html" title="">
+                                                        
+                                                    </a>
+                                                </h3>
+                                                
+                                            </div>
+                                        </li>
+                                    
+                                        <li class="item wow fadeInUp" data-wow-duration="2s">
+                                            
+                                                <div class="home_productpic_box">
+                                                    <div class="_layer"></div>
+                                                    <div class="_layer_more_box">
+                                                        <div class="_layer_more">
+                                                            <a href="/s/1/product-352339/8-Line-線材.html" title="" class="fa fa-search fa-3x"></a>
+                                                        </div>
+                                                    </div>
+                                                    <figure>
+                                                        
+                                                        <a href="/s/1/product-352339/8-Line-線材.html" title="" class="thumb">
+                                                            <img src="../../../comm/upimage/p_160913_04894.jpg" alt="" border="0" vspace="0" hspace="0" />
+                                                        </a>
+                                                    </figure>
+                                                </div>
+                                            
+                                            <div class="productpic_info_box">
+                                                <h2>
+                                                    <a href="/s/1/product-352339/8-Line-線材.html" title="8 Line 線材">
+                                                        8 Line 線材
+                                                    </a>
+                                                </h2>
+                                                <h3>
+                                                    <a href="/s/1/product-352339/8-Line-線材.html" title="">
+                                                        
+                                                    </a>
+                                                </h3>
+                                                
+                                            </div>
+                                        </li>
+                                    
+                                </ul>
+                            </section>
+                        </div>
+                    </div>
+                
+                <!--產品區結束-->
+                <!--公司簡介開始-->
+                
+                    <div class="home_left_box">
+                        <div class="home_about_page">
+                            <div class="home_about_box">
+                                <div class="content_box">
+                                    <div class="title_box">
+                                        <strong class="">公司簡介<span>About Us</span></strong>
+                                        
+                                    </div>
+                                    
+                                    <div class="about_photo_box">
+                                        <figure>
+                                                <img src="../../../comm/upimage/w_160711_00309.jpg" alt="" border="0" vspace="0" hspace="0" class="prof_pic" />
+                                        </figure>
+                                    </div>
+                                    
+                                    <div class="about_txt_box">
+                                        <font size="3">
+                                            彰明電子有限公司為一家具有20餘年經驗之配線組裝加工廠；公司成立初期，以生產電子遊戲機配線為主；隨著市場趨勢，公司逐漸跨足眾多行業別，使公司經營呈現多元多角化；並將所有線組以圖面方式呈現，透過圖面和客戶進行雙向溝通，以服務客戶為宗旨，迅速並準確達成客戶需求。<br>
+為提升產品品質，教育所有同仁品質第一的觀念，公司已於2008年底通過ISO9001：2008認證；線材加工過程也已通過UL認証(E318480)；透過上述相關認證，並在公司幹部嚴格要求下落實執行，藉以提升品質並持續改善，以達到永續經營的目標。<br>
+<!--<br>
+Skype 'Skype Me™!' button<br>
+http://www.skype.com/go/skypebuttons<br>
+--><br>
+<script type="text/javascript" src="http://download.skype.com/share/skypebuttons/js/skypeCheck.js"></script><br>
+<a href="skype:cm-line-029?call"><img src="http://webbuilder3.asiannet.com/ftp/2459/call_blue_white_124x52.png" style="border: none;" width="124" height="52" alt="Skype Me™!" /><br>skype:cm-line-029</a><br>
+<br>
+                                        </font>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                <!--公司簡介結束-->
+                <!--最新消息開始-->
+                
+                    <div class="home_right_box">
+                        <div class="home_news_page">
+                            <div class="home_news_box">
+                                <div class="title_box">
+                                    <strong class="">最新消息<span>Latest News</span></strong>
+                                    <div class="title_more_page">
+                                        <div class="title_more_box">
+                                            <a href="/s/1/news.html" class="btn">更多最新消息</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="owl-carousel-news">
+                                    
+                                        <li class="item">
+                                            <div class="home_news_one_box">
+                                                
+                                                    <div class="photo_box">
+                                                        <a href="/s/1/news-34201/G2E-Asia-亞洲國際博彩娛樂展會.html" class="thumb">
+                                                            <img src="../../../comm/upimage/n_160711_00326.jpg" alt="" border="0" vspace="0" hspace="0" />
+                                                        </a>
+                                                    </div>
+                                                
+                                                <div class="txt_box">
+                                                    <h3 class="title">
+                                                        <a href="/s/1/news-34201/G2E-Asia-亞洲國際博彩娛樂展會.html" title="">
+                                                            G2E Asia 亞洲國際博彩娛樂展會
+                                                        </a>
+                                                    </h3>
+                                                    
+                                                    <div class="date">2016/3/23</div>
+                                                    <div class="txt_more_box">
+                                                        <a href="/s/1/news-34201/G2E-Asia-亞洲國際博彩娛樂展會.html">
+                                                            更多...
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    
+                                        <li class="item">
+                                            <div class="home_news_one_box">
+                                                
+                                                    <div class="photo_box">
+                                                        <a href="/s/1/news-34188/GTI-Asia-Taipei-Expo-2016-台灣電子遊戲機國際產業展.html" class="thumb">
+                                                            <img src="../../../comm/upimage/n_160711_00327.jpg" alt="" border="0" vspace="0" hspace="0" />
+                                                        </a>
+                                                    </div>
+                                                
+                                                <div class="txt_box">
+                                                    <h3 class="title">
+                                                        <a href="/s/1/news-34188/GTI-Asia-Taipei-Expo-2016-台灣電子遊戲機國際產業展.html" title="">
+                                                            GTI Asia Taipei Expo 2016 台灣電子遊戲機國際產業展
+                                                        </a>
+                                                    </h3>
+                                                    
+                                                    <div class="date">2016/3/21</div>
+                                                    <div class="txt_more_box">
+                                                        <a href="/s/1/news-34188/GTI-Asia-Taipei-Expo-2016-台灣電子遊戲機國際產業展.html">
+                                                            更多...
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    
+                                        <li class="item">
+                                            <div class="home_news_one_box">
+                                                
+                                                    <div class="photo_box">
+                                                        <a href="/s/1/news-33507/2016年台灣國際工具機展.html" class="thumb">
+                                                            <img src="../../../comm/upimage/n_161121_00934.png" alt="" border="0" vspace="0" hspace="0" />
+                                                        </a>
+                                                    </div>
+                                                
+                                                <div class="txt_box">
+                                                    <h3 class="title">
+                                                        <a href="/s/1/news-33507/2016年台灣國際工具機展.html" title="">
+                                                            2016年台灣國際工具機展
+                                                        </a>
+                                                    </h3>
+                                                    
+                                                    <div class="date">2015/11/6</div>
+                                                    <div class="txt_more_box">
+                                                        <a href="/s/1/news-33507/2016年台灣國際工具機展.html">
+                                                            更多...
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                
+                <!--最新消息結束-->
+                
+        <div class="home_banner_page">
+            <div class="home_banner_box">
+                <div class="parallax-window1" data-parallax="scroll" data-position="top"  data-image-src="color_6/images/home_banner_bg_2.jpg" data-natural-width="1400" data-natural-height="900">
+                    <ul class="owl-carousel-banner">
+                        
+                            <li class="item">
+                                <div class="home_banner_one_box">
+                                    
+                                    <div class="photo_box">
+                                    <img src="../../../comm/upimage/w_160712_00700.jpg"  border="0" vspace="0" hspace="0" class="">
+                                    </div>
+                                    
+                                </div>
+                            </li>
+                        
+                            <li class="item">
+                                <div class="home_banner_one_box">
+                                    
+                                    <div class="photo_box">
+                                    <img src="../../../comm/upimage/w_160711_00316.jpg"  border="0" vspace="0" hspace="0" class="">
+                                    </div>
+                                    
+                                </div>
+                            </li>
+                        
+                            <li class="item">
+                                <div class="home_banner_one_box">
+                                    
+                                    <div class="photo_box">
+                                    <img src="../../../comm/upimage/w_160712_00701.jpg"  border="0" vspace="0" hspace="0" class="">
+                                    </div>
+                                    
+                                </div>
+                            </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    
+            </div>
+        </div>
+        <!--底部區開始-->
+<footer id="footer"> 
+	<!-- 頁尾 -->
+	<div class="footer_nav_page">
+		<div class="footer_nav_box">
+			<div class="footer_icon_page">
+				
+			</div>
+			<div class="address_page">
+				<ul class="address">
+					
+						<li>
+							
+								<strong class="address_title">地址</strong>
+							
+							<div class="address_txt_box">542 南投縣草屯鎮新豐里稻香路20之21號<BR>
+<script type="text/javascript" src="http://download.skype.com/share/skypebuttons/js/skypeCheck.js"></script>
+<a href="skype:cm-line-029?call"><img src="http://webbuilder3.asiannet.com/ftp/2459/i_skype.png" style="border: 23;" width="16" height="16" alt="My status" /> skype:cm-line-029</a></div>
+						</li>
+					
+						<li>
+							
+									<strong class="address_tel_title">電話</strong>
+								
+								<div class="address_tel_box">+886-49-2319102</div>
+							
+						</li>
+					
+						<li>
+							
+									<strong class="address_fax_title">傳真</strong>
+								
+								<div class="address_fax_box">+886-49-2319826</div>
+							
+						</li>
+					
+						<li>
+							
+								<strong class="address_email_title">E-Mail</strong>
+							
+							<a class="address_email_box" href="mailto:cm@wireharness.com.tw">cm@wireharness.com.tw</a>
+						</li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+	<section class="footer_page">
+		<section class="footer_box"> 
+			
+                <div id="powered"><font class="wb"> Powered by <a class="wb" href="http://webbuilder.asiannet.com/" target="_blank">Web Builder</a> & associated with <a class="wb" href="http://www.etradeasia.com/" target="_blank">Trade Asia</a>  </font></div>
+            
+		</section>
+	</section>
+</footer>
+<!--底部區開始-->
+    </div>
+    
+    <script src="js/script_below.js"></script>
+    
+        <script type="text/javascript">
+            $(function () {
+                $('.addcart.adding').on('click', function () {
+                    $(this).closest('#'+$(this).data("productid"))
+                           .find('input.carting_chkbox')
+                           .attr('checked', true)
+                           .trigger('change');
+                });
+                $('input.carting_chkbox').on('change', function () {
+                    var productId = $(this).val();
+                    var container = $(this).closest('#'+productId);
+                    $.ajax({
+                        url : 'add.asp',
+                        data: { pid: productId, chk: this.checked ? 'yes' : 'no' }
+                    });
+                    container.find('.addcart.adding').toggle(!this.checked);
+                    container.find('.addcart.added').toggle(this.checked);
+                });
+            });
+        </script>
+        
+<script type="text/javascript">
+
+</script>
+
+
+</body>
+</html>

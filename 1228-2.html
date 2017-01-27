@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">                                    
+    <title>Document</title>             <!--自動出現下拉式選單可以直接選擇要台北市桃園市等-->
+</head>
+<body>
+    <form action="" id = "myForm">
+        <select name="" id="city">
+            <option value="tp">台北</option>      <!--第零個陣列：文字是台北;值是tp-->  
+            <option value="ty">桃園</option>      <!--第一個陣列：文字是桃園;值是ty-->
+        </select>
+    </form>
+    <script>
+    var a = myForm.city.options[0].textContent;     <!--要的是抓出option們裡的→文字-->
+    var b = myForm.city.options[0].value;           <!--要的是抓出option們裡的→值-->
+    myForm.city.options[5] = new Option("高雄","kh")    <!--要的是在第5個陣列後出現文字高雄  (先"文字"再"值")-->
+    console.log(b);
+ </script>
+</body>
+</html>

@@ -1,0 +1,1449 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>線材加工, 配線加工組裝加工廠 - 彰明電子有限公司</title>
+<meta name="robots" content="all" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<meta name="keywords" content="線材加工,線束,電纜組件,扁平電纜 ,8號線線束 , POG線束 ,電源線,線配件, 機電纜, 帶狀電纜" />
+	<meta name="description" content="線材加工，彰明電子有限公司是一家具有20餘年經驗的配線組裝加工廠，公司已於2008年底通過ISO9001:2008認證，線材加工過程也已通過UL認証" />
+	<meta property="og:description" content="線材加工，彰明電子有限公司是一家具有20餘年經驗的配線組裝加工廠，公司已於2008年底通過ISO9001:2008認證，線材加工過程也已通過UL認証" />
+	<meta name="author" content="www.wireharness.com.tw" />
+	<!--頁面讀取 page loading -->
+<link href="css/loading.css" rel="stylesheet" type="text/css">
+<!--頁面主要CSS-->
+<link href="color_6/css/style.css" rel="stylesheet" type="text/css">
+<!-- MAPs全球母語同步系統 -->
+<link href="color_6/css/worldwide.css" rel="stylesheet" type="text/css">
+<!-- 動畫CSS -->
+<link href="css/animate.css"rel="stylesheet" >
+<!-- 頁面上方選單 -->
+<link rel="stylesheet" href="color_6/css/scroll_t.css">
+<!-- 圖案CSS -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- 首頁大圖 CSS -->
+<link rel="stylesheet" href="color_6/css/nivo-slider.css" type="text/css" />
+<!--內頁選單-->
+<link href="color_6/css/sub_nav.css" rel="stylesheet" type="text/css">
+<!--產品內頁-->
+<link href="color_6/css/magiczoomplus.css" rel="stylesheet" type="text/css">
+<!--輪播圖片 Owl Stylesheets-->
+<link rel="stylesheet" href="css/owl.carousel.css">
+<!--首頁自動彈跳廣告 -->
+<link href="css/newsletterpopup.css" rel="stylesheet" type="text/css">
+<!-- 響應式CSS -->
+<link href="color_6/css/jquery.mmenu.all.css" type="text/css" rel="stylesheet"/>
+
+<link href="color_6/css/responsive.css" rel="stylesheet" type="text/css">
+
+<!--[if IE 7]>
+<link rel="stylesheet" type="text/css" href="color_6/css/ie7style.css" />
+<![endif]-->
+<!--[if IE 8]>
+<link rel="stylesheet" type="text/css" href="color_6/css/ie8style.css" />
+<![endif]--><!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="js/html5shiv.js"></script>
+<script src="js/respond.min.js"></script>
+<script src="js/IE9.js"></script>
+<![endif]-->
+
+
+<!--hreflang_links_placeholder-->
+<link rel="stylesheet" type="text/css" href="/v_comm/csses/jquery-ui.min.css" />
+<script type="text/javascript" src="/v_comm/global/scripts/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="/v_comm/global/scripts/utils.js"></script>
+<script type="text/javascript" src="/v_comm/javascripts/jquery.navScroll.js"></script>
+<script type="text/javascript" src="/v_comm/javascripts/jquery-ui.min.js"></script>
+<script type="text/javascript" src="/v_comm/javascripts/datepicker_init.js"></script>
+<script type="text/javascript" src="/v_comm/javascripts/member_email_syncer.js"></script>
+<script type="text/javascript" src="/v_comm/javascripts/member_account_validator.js"></script>
+
+
+<!--動畫外掛開始-->
+<script type="text/javascript" src="js/wow.js"></script>
+<script type="text/javascript">
+new WOW().init();
+</script>
+
+
+		<script type="text/javascript">
+			function checkIfEnterKey(event,varAction,adjForm){
+				var keycode = (event.keyCode ? event.keyCode : event.which);
+				if(keycode == '13'){	//Process after checking the "enter button" clicked
+					proceed(varAction,adjForm);
+				}
+			}
+			function proceed(varAction,adjForm){
+				if(varAction=="add"){
+					$.ajax({
+						type: "POST",
+						url: "add_cart.asp?customer_id=2459&lang=1&content_set=color_6",
+						data: {
+							varAction : varAction,
+							styles    : adjForm.styles.value,
+							Quatity   : adjForm.Quatity.value,
+							shoppingid: adjForm.shoppingid.value
+						},
+						error: function (jqXHR, exception, error) {
+							alert (jqXHR.responseText);
+						},
+						success: function(msg){
+							$("div[id=Cart]").html(msg);
+							//show fixed cart image
+							if($('#shoppingCart').length < 1){
+								$('body').append('<a href="shopping_cart.asp?lang=1&customer_id=2459&content_set=color_6&name_id=109494" style="cursor:pointer"><div id="shoppingCart"></div></a>');
+							}
+						},
+						beforeSend:function(){
+							$('body').append('<div id="resultAlarm" style="display:none"><div><div>已加入購物車 !!</div></div><div class="bg"></div></div>');
+							$('body').append('<div id="resultLoading" style="display:none"><div><img src="images/ajax-loader.gif"><div>數據加載中...請稍候... !!</div></div><div class="bg"></div></div>');
+							$('#resultLoading, #resultAlarm').css({
+								'width':'100%',
+								'height':'100%',
+								'position':'fixed',
+								'z-index':'10000000',
+								'top':'0',
+								'left':'0',
+								'right':'0',
+								'bottom':'0',
+								'margin':'auto'
+							});	
+							
+							$('#resultLoading .bg, #resultAlarm .bg').css({
+								'background':'#000000',
+								'opacity':'0.7',
+								'width':'100%',
+								'height':'100%',
+								'position':'absolute',
+								'top':'0'
+							});
+							
+							$('#resultLoading>div:first, #resultAlarm>div:first').css({
+								'width': '250px',
+								'height':'75px',
+								'text-align': 'center',
+								'position': 'fixed',
+								'top':'0',
+								'left':'0',
+								'right':'0',
+								'bottom':'0',
+								'margin':'auto',
+								'font-size':'16px',
+								'z-index':'10',
+								'color':'#ffffff'
+								
+							});
+							$('#resultLoading .bg').height('100%');
+							$('#resultLoading').fadeIn(300);
+							$('body').css('cursor', 'wait');
+						},
+						complete:function(){
+							$('#resultLoading .bg').height('100%');
+							$('#resultLoading').fadeOut(300);
+							$('body').css('cursor', 'default');
+							$('#resultAlarm').fadeIn(300).delay(1000).fadeOut();
+						}
+					});
+				}else if(varAction=="update" || varAction=="clean"){
+					$.ajax({
+						type: "POST",
+						url: "add_cart.asp?customer_id=2459&lang=1&content_set=color_6",
+						data: "varAction="+varAction+"&"+$(adjForm).serialize(),
+						error: function (jqXHR, exception, error) {
+							alert (jqXHR.responseText);
+						},
+						success: function(msg){
+							location.reload();
+						},
+						beforeSend:function(){
+							$('body').append('<div id="resultLoading" style="display:none"><div><img src="images/ajax-loader.gif"><div>更新數據，請稍候... !!</div></div><div class="bg"></div></div>');
+							$('#resultLoading').css({
+								'width':'100%',
+								'height':'100%',
+								'position':'fixed',
+								'z-index':'10000000',
+								'top':'0',
+								'left':'0',
+								'right':'0',
+								'bottom':'0',
+								'margin':'auto'
+							});	
+							
+							$('#resultLoading .bg').css({
+								'background':'#000000',
+								'opacity':'0.7',
+								'width':'100%',
+								'height':'100%',
+								'position':'absolute',
+								'top':'0'
+							});
+							
+							$('#resultLoading>div:first').css({
+								'width': '250px',
+								'height':'75px',
+								'text-align': 'center',
+								'position': 'fixed',
+								'top':'0',
+								'left':'0',
+								'right':'0',
+								'bottom':'0',
+								'margin':'auto',
+								'font-size':'16px',
+								'z-index':'10',
+								'color':'#ffffff'
+								
+							});
+							$(":button[name=Submit5]").attr("disabled", "true");
+							$('#resultLoading .bg').height('100%');
+							$('#resultLoading').fadeIn(300);
+							$('body').css('cursor', 'wait');
+						}
+					});
+				}else{	//go_order.asp
+					window.location.href="go_order.asp?"+$(adjForm).serialize();
+				}
+			}
+			function minus(id,sendForm){
+				var value = parseInt($('#'+ id ).val());
+				if (value > 1){
+					$('#'+id).val(value - 1);
+					proceed('update',$('#'+sendForm));
+				}
+			}
+			
+			function plus(id,sendForm){
+				var value = parseInt($('#'+ id ).val());
+				if (value < 9999){
+					$('#'+id).val(value + 1);
+					proceed('update',$('#'+sendForm));
+				}
+			}
+			
+		</script>
+	
+<script type="text/javascript">
+<!--
+	function ForceToBeNumberIn4Digits(odjInput){
+		var keychar = odjInput.value;
+		if(!/^[1-9]{1}\d{0,3}$/g.test(keychar)){
+			odjInput.value = 1;
+			odjInput.focus();
+		}
+	}
+	function addcheck(){
+		window.open("","checkcar","width=1200,height=450,resizable=yes,scrollbars=yes,status=yes,left=50,top=50");
+	}
+//-->
+</script>
+
+
+<!-- 外掛JS開始 -->
+<script src="js/script_top.js"></script><meta http-equiv='imagetoolbar' content='no'>
+<script language='JavaScript'>
+<!--
+document.oncontextmenu = new Function("return false")
+//-->
+</script>
+<script type="text/javascript">
+	function ForceToBeNumberIn4Digits(odjInput){
+		var keychar = odjInput.value;
+		if(!/^[1-9]{1}\d{0,3}$/g.test(keychar)){
+			odjInput.value = 1;
+			odjInput.focus();
+		}
+	}
+    function NumberAndChar(odjInput) {
+		var keychar = odjInput.value;
+		if(/\W+/g.test(keychar)){
+			odjInput.value = "";
+			odjInput.focus();
+		}
+    }
+    
+    function OnlyNumber(e) {
+        chars = "0123456789";
+        e     = window.event;
+        if (chars.indexOf(String.fromCharCode(e.keyCode)) == -1) {
+            window.event.keyCode = 0;
+        }
+    }
+    
+    function ckmail(e) {
+        e = window.event;
+        if (form.person6.value != "") {
+            if (!utils.isEmail(form.person6.value)) {
+                alert("您的E-Mail格式不對!!");
+                form.person6.focus();
+                return false;
+            }
+        }
+    }
+    
+    function LTrim(str) {
+        return str.replace(/^[ \t\n\r]+/g, "");
+    }
+    
+    function RTrim(str) {
+        return str.replace(/[ \t\n\r]+$/g, "");
+    }
+    
+    function Trim(str) {
+        return RTrim(LTrim(str));
+    }
+    
+    var FormFinish = true;    //用來判斷帳號是否重覆的變數 2014_11_17
+    
+    function IsReady(form) {
+        /*購物車*/
+        
+        /*帳號密碼*/
+        
+            /*聯絡人資料*/
+            
+                                        if (Trim(form.person1.value) == '') {
+                                            alert("請填寫 姓名");
+                                            
+                                            form.person1.focus();
+                                            return false;
+                                        }
+                                
+                                        if (form.person6.value == 0) {
+                                            alert("請填寫 E-Mail");
+                                            
+                                            form.person6.focus();
+                                            return false;
+                                        }
+                                    
+            /*公司資料*/
+            
+                                        if (Trim(form.company1.value) == '') {
+                                            alert("請填寫 公司");
+                                            
+                                            form.company1.focus();
+                                            return false;
+                                        }
+                                
+                                        if (Trim(form.company2.value) == '') {
+                                            alert("請填寫 網址");
+                                            
+                                            form.company2.focus();
+                                            return false;
+                                        }
+                                
+                                        if (Trim(form.company10.value) == '') {
+                                            alert("請填寫 電話");
+                                            
+                                            form.company10.focus();
+                                            return false;
+                                        }
+                                
+        /*其它*/
+        
+        /*討論區*/
+        
+        /*驗證碼*/
+        if (form.vcode.value == '' || form.vcode.value.length < 4) {
+            alert("請填寫正確的驗證碼 !");
+            
+            form.vcode.focus();
+            return false;
+        }
+        $(":submit").prop("disabled", true);
+    }
+</script>
+	<script language="JavaScript" type="text/JavaScript">
+    <!--
+        function RefreshImage(valImageId) {
+            var objImage = document.images[valImageId];
+            if (objImage == undefined) {
+                return;
+            }
+            var now = new Date();
+            objImage.src = objImage.src.split('?')[0] + '?x=' + now.toUTCString();
+        }
+    //-->
+    </script>
+    
+<style type="text/css">
+.top_navigation_right_box { width: 66%;}
+.navigation_box {width: 85%;}
+#footer { clear: both; display: block; margin: 0px; padding: 0px; width: 100%; float: left; background-repeat: repeat-x; }
+</style>
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-59575234-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+</head>
+<body onload="RefreshImage('imgCaptcha');" >
+	
+
+<!--手機選單開始-->
+<div class="header"><a href="#mobile_menu"></a></div>
+<nav id="mobile_menu">
+    <ul>
+        <div class="mobile_search_page">
+            <section class="mobile_search_box">
+                
+            </section>
+        </div>
+        
+<li><a href="../../../?lang=1" title="首頁" target="_top">HOME</a></li>
+
+    <li>
+        
+        <a href="http://www.wireharness.com.tw/index.asp?lang=1" title="首頁">首頁</a>
+        
+    </li>
+
+    <li>
+        
+        <a href="/s/1/about.html" title="公司簡介">公司簡介</a>
+        
+            <ul>
+                
+    <li>
+        <a href="/s/1/about-7868/各項認證與專利.html">各項認證與專利</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/about-7869/歡迎光臨我們的工廠.html">歡迎光臨我們的工廠</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/about-7870/管理理念.html">管理理念</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/about-7871/OEM服務.html">OEM服務</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/about-7872/品質管理.html">品質管理</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/about-7873/研究開發.html">研究開發</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/about-7874/服務與支援.html">服務與支援</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/about-7875/貿易服務.html">貿易服務</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/about-7876/參展資訊.html">參展資訊</a>
+        
+    </li>
+
+            </ul>
+        
+    </li>
+
+    <li>
+        
+        <a href="/s/1/product.html" title="產品介紹">產品介紹</a>
+        
+            <ul>
+                
+    <li>
+        <a href="/s/1/product-c95337/消費性電子-電腦通訊配線.html">消費性電子 / 電腦通訊配線</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63589/工業設備配線.html">工業設備配線</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63597/汽機車配線.html">汽機車配線</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63595/運動器材配線.html">運動器材配線</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63596/安全器材-影音設備配線.html">安全器材 / 影音設備配線</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63598/醫療器材配線.html">醫療器材配線</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63591/電子遊戲機配線.html">電子遊戲機配線</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63593/各國AC線-電源線.html">各國AC線 / 電源線</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63594/配線零件類.html">配線零件類</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63592/連接器.html">連接器</a>
+        
+            <ul>
+                
+    <li>
+        <a href="/s/1/product-c63600/線材至IC板類.html">線材至IC板類</a>
+        
+            <ul>
+                
+    <li>
+        <a href="/s/1/product-c63614/Pitch-1-0-mm-~-Pitch-1-99-mm.html">Pitch 1.0 mm ~ Pitch 1.99 mm</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63615/Pitch-2-0-mm-~-Pitch-2-99-mm.html">Pitch 2.0 mm ~ Pitch 2.99 mm</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63616/Pitch-3-0-mm-~-Pitch-3-99-mm.html">Pitch 3.0 mm ~ Pitch 3.99 mm</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63617/Pitch-4-0-mm.html">Pitch 4.0 mm</a>
+        
+    </li>
+
+            </ul>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63599/線材至線材.html">線材至線材</a>
+        
+            <ul>
+                
+    <li>
+        <a href="/s/1/product-c63607/Pitch-1-0-mm-~-Pitch-2-99-mm.html">Pitch 1.0 mm ~ Pitch 2.99 mm</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63608/Pitch-3-0-mm-~-Pitch-3-99-mm.html">Pitch 3.0 mm ~ Pitch 3.99 mm</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63609/Pitch-4-0-mm-~-Pitch-4-99-mm.html">Pitch 4.0 mm ~ Pitch 4.99 mm</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63611/Pitch-5-0-mm-~-Pitch-5-99-mm.html">Pitch 5.0 mm ~ Pitch 5.99 mm</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63612/Pitch-6-0-mm-~.html">Pitch 6.0 mm ~</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63613/其他.html">其他</a>
+        
+    </li>
+
+            </ul>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63754/線材至零件端子類.html">線材至零件端子類</a>
+        
+            <ul>
+                
+    <li>
+        <a href="/s/1/product-c63755/圓盤型.html">圓盤型</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63756/Ｙ-型.html">Ｙ 型</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63757/FASTON-型.html">FASTON 型</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63758/旗型.html">旗型</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63759/壓著端子.html">壓著端子</a>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c63760/其它.html">其它</a>
+        
+    </li>
+
+            </ul>
+        
+    </li>
+
+            </ul>
+        
+    </li>
+
+    <li>
+        <a href="/s/1/product-c82402/新產品.html">新產品</a>
+        
+    </li>
+
+            </ul>
+        
+    </li>
+
+    <li>
+        
+        <a href="/s/1/news.html" title="最新消息">最新消息</a>
+        
+    </li>
+
+    <li class="open contact_us">
+        
+        <a href="contact.asp?lang=1&customer_id=2459&content_set=color_6&name_id=109494" title="與我聯絡">與我聯絡</a>
+        
+    </li>
+
+    </ul>
+</nav>
+<!--手機選單結束-->
+	<div id="popupcalendar" class="text"></div>
+	<div class="page">
+		<div class="page2"></div>
+		<header class="top_header_page">
+			<div class="top_header_box">
+				
+<div class="top_icon_page">
+    <div class="top_icon_box">
+        
+                <div id="language">
+                    <form method="Get" action="../../../index.asp">
+	<select id="fixed_lang_picker" class="language" name="lang" onchange="this.form.submit()">
+		<option value="0" selected>--Language--</option>
+		
+			<option value="1">--繁體中文--</option>
+		
+			<option value="2">--English--</option>
+		
+			<option value="4">--日本語--</option>
+		
+	</select>
+</form>
+                </div>
+        
+        <!--搜尋-->
+        <div class="search_page">
+            <section class="search_box">
+                
+            </section>
+        </div>
+        
+        <div id="topmenuicon">
+            <ul>
+                <li><a href="../../../?lang=1" target="_top">首頁</a></li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="top_navigation_page">
+    <div class="top_navigation_box">
+        <!-- 主選單導航開始 -->
+        <div id="navigation_page">
+            <div id="navigation_box">
+                <div id="navigation">
+                    <div class="top_navigation_left_box">
+                        <!--公司LOGO和名稱開始-->
+                        <div class="company_page">
+                            <div class="company_box">
+                                <!-- LOGO圖 -->
+                                <h1 class="logopic">
+                                    
+                                            <a href="http://www.wireharness.com.tw/index.asp?lang=1" target="_parent" title="logo">
+                                        <img src="../../../comm/upimage/w_160713_01200.png" alt="" border="0" vspace="0" hspace="0" />
+                                            </a>
+                                        
+                                </h1>
+                                <!-- 公司名稱 -->
+                                <h2><font size="3"><start></start></font></h2>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="top_navigation_right_box">
+                        <div class="navigation_box">
+                            <div id="divBg">
+    <div id="divMenu">
+        <div id="tabs_1">
+            <ul>
+                
+                    <li >
+                        <a href="http://www.wireharness.com.tw/index.asp?lang=1" onmouseover="CloseAll_Icon(&#039;2&#039;)">
+                            <strong>
+                                    <font size="2">首頁</font>
+                                </strong>
+                        </a>
+                    </li>
+                
+                    <li >
+                        <a href="/s/1/about.html" onmouseover="ShowMenu(this, &#039;&#039;, &#039;topmu1&#039;);" onfocus="ShowMenu(this,&#039;&#039;,&#039;topmu1&#039;);" onmouseout="MM_startTimeout();" onblur="MM_startTimeout();">
+                            <strong>
+                                    <font size="2">公司簡介</font>
+                                </strong>
+                        </a>
+                    </li>
+                
+                    <li >
+                        <a href="/s/1/product.html" onmouseover="ShowMenu(this, &#039;&#039;, &#039;topmu2&#039;);" onfocus="ShowMenu(this,&#039;&#039;,&#039;topmu2&#039;);" onmouseout="MM_startTimeout();" onblur="MM_startTimeout();">
+                            <strong>
+                                    <font size="2">產品介紹</font>
+                                </strong>
+                        </a>
+                    </li>
+                
+                    <li >
+                        <a href="/s/1/news.html" onmouseover="CloseAll_Icon(&#039;2&#039;)">
+                            <strong>
+                                    <font size="2">最新消息</font>
+                                </strong>
+                        </a>
+                    </li>
+                
+                    <li >
+                        <a href="contact.asp?lang=1&customer_id=2459&content_set=color_6&name_id=109494" onmouseover="CloseAll_Icon(&#039;2&#039;)">
+                            <strong>
+                                    <font size="2">與我聯絡</font>
+                                </strong>
+                        </a>
+                    </li>
+                
+                    <li class="line_box"></li>
+                
+            </ul>
+        </div>
+    </div>
+    <div id="divArrowLeft">
+    <a href="javascript:;">
+        
+    </a>
+</div><div id="divArrowRight">
+    <a href="javascript:;">
+        
+    </a>
+</div>
+</div>
+            <script type="text/javascript">
+                jQuery(function ($) {
+                    $('#divBg').navScroll({
+                        leftOffset : -20,
+                        rightOffset: 0
+                    });
+                });
+            </script>
+            
+                        </div>
+                        
+	<div id="submenu">
+		
+		<!-- submenu start -->
+		
+			<div id="topmu1" onMouseOver="ShowMenu(this,'topmu1','')" onfocus="ShowMenu(this,'topmu1','')" onMouseOut="MM_startTimeout()" onblur="MM_startTimeout()" style="display:none; z-index: 1000;">
+				<div class="group_t"> 
+				<!-- div tabs_2 start -->
+					<div class="tabs_2">
+                        <ul class="tabs_2_ul">
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/about-7868/各項認證與專利.html" class="navigation_title"><font size="2">各項認證與專利</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/about-7869/歡迎光臨我們的工廠.html" class="navigation_title"><font size="2">歡迎光臨我們的工廠</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/about-7870/管理理念.html" class="navigation_title"><font size="2">管理理念</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/about-7871/OEM服務.html" class="navigation_title"><font size="2">OEM服務</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            </ul><ul class="tabs_2_ul">
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/about-7872/品質管理.html" class="navigation_title"><font size="2">品質管理</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/about-7873/研究開發.html" class="navigation_title"><font size="2">研究開發</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/about-7874/服務與支援.html" class="navigation_title"><font size="2">服務與支援</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/about-7875/貿易服務.html" class="navigation_title"><font size="2">貿易服務</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            </ul><ul class="tabs_2_ul">
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/about-7876/參展資訊.html" class="navigation_title"><font size="2">參展資訊</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            </ul>
+					</div>
+				<!-- div tabs_2 end -->
+				<div class="tabs_2_d"></div>
+				</div>
+			</div>
+		
+			<div id="topmu2" onMouseOver="ShowMenu(this,'topmu2','')" onfocus="ShowMenu(this,'topmu2','')" onMouseOut="MM_startTimeout()" onblur="MM_startTimeout()" style="display:none; z-index: 1000;">
+				<div class="group_t"> 
+				<!-- div tabs_2 start -->
+					<div class="tabs_2">
+                        <ul class="tabs_2_ul">
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/product-c95337/消費性電子-電腦通訊配線.html" class="navigation_title"><font size="2">消費性電子 / 電腦通訊配線</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/product-c63589/工業設備配線.html" class="navigation_title"><font size="2">工業設備配線</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/product-c63597/汽機車配線.html" class="navigation_title"><font size="2">汽機車配線</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/product-c63595/運動器材配線.html" class="navigation_title"><font size="2">運動器材配線</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            </ul><ul class="tabs_2_ul">
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/product-c63596/安全器材-影音設備配線.html" class="navigation_title"><font size="2">安全器材 / 影音設備配線</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/product-c63598/醫療器材配線.html" class="navigation_title"><font size="2">醫療器材配線</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/product-c63591/電子遊戲機配線.html" class="navigation_title"><font size="2">電子遊戲機配線</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/product-c63593/各國AC線-電源線.html" class="navigation_title"><font size="2">各國AC線 / 電源線</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            </ul><ul class="tabs_2_ul">
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/product-c63594/配線零件類.html" class="navigation_title"><font size="2">配線零件類</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/product-c63592/連接器.html" class="navigation_title"><font size="2">連接器</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                                <li class="navigation_link"><a href="/s/1/product-c63600/線材至IC板類.html" title="">線材至IC板類</a></li>
+                                            
+                                                <li class="navigation_link"><a href="/s/1/product-c63599/線材至線材.html" title="">線材至線材</a></li>
+                                            
+                                                <li class="navigation_link"><a href="/s/1/product-c63754/線材至零件端子類.html" title="">線材至零件端子類</a></li>
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            
+                                <li class="tabs_2_li">
+                                    <div class="sub_navigation_box">
+                                        
+                                        <a href="/s/1/product-c82402/新產品.html" class="navigation_title"><font size="2">新產品</font></a>
+                                        <ul class="navigation_list">
+                                            
+                                        </ul>
+                                        
+                                    </div>
+                                </li>
+                            </ul>
+					</div>
+				<!-- div tabs_2 end -->
+				<div class="tabs_2_d"></div>
+				</div>
+			</div>
+		
+	</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+			</div>
+		</header>
+		
+		<section id="sub_content_page">
+			<section id="sub_content_box">
+				<section id="sub_content_one_box">
+					<header id="path_link">
+						<h2><i class="fa fa-h-square"></i> <a href="../../../index.asp?lang="1>首頁</a> > <a href="contact.asp?lang=1&customer_id=2459&name_id=109494&content_set=color_6">與我聯絡</a></h2>
+					</header>
+					<section class="contact_page_box">
+						<h2 class="sub_page_category">與我聯絡</h2>
+						<article class="group_box">
+							<div class="sub_page_title">請填寫以下資料，以便為您服務。</div>
+							
+						</article>
+						
+						<div class="content_box">
+							<form name="form" action="member_save.asp?lang=1&customer_id=2459&name_id=109494&content_set=color_6" method="post" onSubmit='return IsReady(this)'>
+							<section class="form_page">
+	<h5 class="form_head"><span>聯絡人資料 :</span></h5>
+	<fieldset class="form_box">
+		
+			<div class="form_tr">
+				<div class="label_box"><label class="label_th"><span class="mandatory">*</span>姓名&nbsp;:</label></div>
+				<div class="input_box">
+					<input type="text" id="lname" name="person1" class="input_200" value=""  />
+					<p class="ps">
+					
+					</p>
+				</div>
+			</div>
+		
+			<div class="form_tr">
+				<div class="label_box">
+					<label class="label_th">
+					
+					<span class="mandatory">*</span>
+					E-Mail&nbsp;:</label>
+				</div>
+				<div class="input_box">
+					<input type="text" name="person6" class="input_200" value="" onBlur="ckmail(event)"  />
+					<p class="ps">
+						
+					</p>
+				</div>
+			</div>
+		
+			<div class="form_tr">
+				<div class="label_box">
+					<label class="label_th">
+					職稱&nbsp;:</label>
+				</div>
+				<div class="input_box">
+					<input type="text" name="person17" class="input_200" value=""  />
+					<p class="ps">
+					
+					</p>
+				</div>
+			</div>
+		
+	</fieldset>
+</section><section class="form_page">
+	<h5 class="form_head"><span>公司資料 :</span></h5>
+	<fieldset class="form_box">
+		
+			<div class="form_tr">
+				<div class="label_box">
+					<label class="label_th">
+					
+					<span class="mandatory">*</span>
+					公司&nbsp;:</label>
+				</div>
+				<div class="input_box">
+					<input type="text" name="company1" class="input_200" value=""  />
+					<p class="ps">
+					
+					</p>
+				</div>
+			</div>
+		
+			<div class="form_tr">
+				<div class="label_box">
+					<label class="label_th">
+					
+					<span class="mandatory">*</span>
+					網址&nbsp;:</label>
+				</div>
+				<div class="input_box">
+					<input type="text" name="company2" class="input_200" value="http://"  />
+					<p class="ps">
+					( 包含http:// )
+					</p>
+				</div>
+			</div>
+		
+		<div class="form_tr">
+		<div class="label_box"><label class="label_th">
+		產業別&nbsp;:</label>
+		</div>
+		<div class="input_box">
+		
+		<select name="company3" class="input_200" style="height:auto" size="1" >
+		<option value="">--請選擇--</option>
+		<option value="1" >&#25104;&#34915;&#21450;&#26178;&#35037;</option>
+		<option value="2" >&#36786;&#26989;&#27700;&#29986;&#21450;&#21205;&#26893;&#29289;</option>
+		<option value="3" >&#35222;&#32893;&#38899;&#38911;</option>
+		<option value="4" >&#27773;&#27231;&#36554;&#21450;&#38646;&#37197;&#20214;</option>
+		<option value="5" >&#33139;&#36367;&#36554;&#19977;&#36650;&#36554;&#21450;&#38646;&#37197;&#20214;</option>
+		<option value="6" >&#24314;&#31689;&#26448;&#26009;</option>
+		<option value="7" >&#21270;&#24037;&#26989;</option>
+		<option value="8" >&#36890;&#35338;&#32178;&#36335;&#26989;</option>
+		<option value="9" >&#24314;&#31689;&#26989;</option>
+		<option value="10" >&#38651;&#33126;&#30828;&#36575;&#39636;&#21450;&#38646;&#37197;&#20214;</option>
+		<option value="11" >&#21270;&#22941;&#21697;&#21450;&#20445;&#39178;&#21697;</option>
+		<option value="12" >&#38651;&#27231;&#21450;&#26448;&#26009;</option>
+		<option value="13" >&#23478;&#38651;&#26989;</option>
+		<option value="14" >&#38651;&#23376;&#21450;&#38646;&#37197;&#20214;</option>
+		<option value="15" >&#29872;&#20445;&#26989;</option>
+		<option value="16" >&#39135;&#21697;&#39154;&#26009;&#21450;&#39184;&#39154;&#26989;</option>
+		<option value="17" >&#38795;&#39006;&#21450;&#26448;&#26009;</option>
+		<option value="18" >&#23478;&#20855;&#21450;&#23478;&#39166;&#26989;</option>
+		<option value="19" >&#36938;&#27138;&#22120;&#26448;&#26989;</option>
+		<option value="20" >&#31150;&#21697;&#21450;&#39166;&#21697;&#26989;</option>
+		<option value="21" >&#20116;&#37329;&#26989;</option>
+		<option value="22" >&#37291;&#38498;&#21450;&#37291;&#30274;&#22120;&#26448;</option>
+		<option value="23" >&#23478;&#24237;&#29992;&#21697;</option>
+		<option value="24" >&#29664;&#23542;&#25163;&#39166;&#21450;&#37197;&#20214;</option>
+		<option value="25" >&#30382;&#21253;&#21450;&#34892;&#26446;</option>
+		<option value="26" >&#27231;&#26800;&#26989;&#21450;&#24037;&#26989;&#35373;&#20633;</option>
+		<option value="27" >&#20736;&#22120;&#21450;&#28204;&#37327;&#24037;&#20855;</option>
+		<option value="28" >&#37329;&#23660;&#20116;&#37329;&#26989;</option>
+		<option value="29" >&#20809;&#23416;&#21450;&#37197;&#20214;</option>
+		<option value="30" >&#21253;&#35037;&#26448;&#26009;&#21450;&#35373;&#20633;</option>
+		<option value="31" >&#37291;&#34277;&#21450;&#20445;&#39178;&#29992;&#21697;</option>
+		<option value="32" >&#22609;&#33184;&#26989;</option>
+		<option value="33" >&#34907;&#29983;&#22120;&#26448;&#35373;&#20633;</option>
+		<option value="34" >&#23433;&#20840;&#21450;&#35686;&#22577;&#31995;&#32113;</option>
+		<option value="35" >&#26381;&#21209;&#26989;</option>
+		<option value="36" >&#36939;&#21205;&#21450;&#20241;&#38290;&#22120;&#26448;</option>
+		<option value="37" >&#25991;&#20855;&#21450;&#36774;&#20844;&#29992;&#21697;</option>
+		<option value="38" >&#32033;&#32340;&#21697;&#25104;&#34915;&#21450;&#38646;&#37197;&#20214;</option>
+		<option value="39" >&#37912;&#34920;&#21450;&#38646;&#37197;&#20214;</option>
+		<option value="40" >&#24037;&#20855;&#26989;</option>
+		<option value="41" >&#29609;&#20855;&#21450;&#20818;&#31461;&#29992;&#21697;</option>
+		<option value="42" >&#27700;&#34389;&#29702;&#21450;&#29872;&#20445;&#29992;&#21697;</option>
+		<option value="43" >&#20854;&#20182;</option>
+		</select>
+		
+		<p class="ps">
+		
+		</p>
+		</div>
+		</div>
+		
+		<div class="form_tr">
+		<div class="label_box"><label class="label_th">
+		縣市&nbsp;:</label>
+		</div>
+		<div class="input_box">
+		
+		<input type="text" name="company5" class="input_200" size="40" value=""  />
+		
+		<p class="ps">
+		
+		</p>
+		</div>
+		</div>
+		
+		<div class="form_tr">
+		<div class="label_box"><label class="label_th">
+		郵遞區號&nbsp;:</label>
+		</div>
+		<div class="input_box">
+		<input type="text" name="company7" class="input_200" value=""  />
+		<p class="ps">
+		
+		</p>
+		</div>
+		</div>
+		
+		<div class="form_tr">
+		<div class="label_box"><label class="label_th">
+		住址&nbsp;:</label>
+		</div>
+		<div class="input_box">
+		
+		<input type="text" name="company8" class="input_200" size="40" value=""  />
+		
+		<p class="ps">
+		
+		</p>
+		</div>
+		</div>
+		
+		<div class="form_tr">
+		<div class="label_box"><label class="label_th">
+		
+		<span class="mandatory">*</span>
+		電話&nbsp;:</label>
+		</div>
+		<div class="input_box">
+		<input type="text" name="company10" class="input_200" value=""  />
+		<p class="ps">
+		( 請輸入完整號碼，含國碼、地區碼，例 xxx-x-xxxxxxx )
+		</p>
+		</div>
+		</div>
+		
+		<div class="form_tr">
+		<div class="label_box"><label class="label_th">
+		傳真&nbsp;:</label>
+		</div>
+		<div class="input_box">
+		<input type="text" name="company12" class="input_200" value=""  />
+		<p class="ps">
+		( 請輸入完整號碼，含國碼、地區碼，例 xxx-x-xxxxxxx )
+		</p>
+		</div>
+		</div>
+		
+		<div class="form_tr">
+		<div class="label_box"
+		><label class="label_th">
+		主要產品&nbsp;:</label>
+		</div>
+		<div class="input_box">
+		<input type="text" name="company13" class="input_200" size="40" value=""  />
+		<p class="ps">
+		
+		</p>
+		</div>
+		</div>
+		
+		<div class="form_tr">
+		<div class="label_box">
+		<label class="label_th">
+		業務型態&nbsp;:</label></div>
+		<div class="input_box">
+		<input type="checkbox" name="company14" value="1" >
+		進口商
+		<input type="checkbox" name="company14" value="7" >
+		出口商
+		<input type="checkbox" name="company14" value="2" >
+		貿易商
+		<input type="checkbox" name="company14" value="3" >
+		批發商<br />
+		<input type="checkbox" name="company14" value="4" >
+		協銷商
+		<input type="checkbox" name="company14" value="5" >
+		經銷商
+		<input type="checkbox" name="company14" value="6" >
+		分銷商
+		<input type="checkbox" name="company14" value="8" >
+		製造商<br />
+		
+		<input type="checkbox" name="company14" value="9" >
+		其它
+		<input type="text" name="business_it" class="input_180" value="" >
+		<p class="ps">
+		
+		</p>
+		</div>
+		</div>
+		
+	</fieldset>
+</section>
+<section class="form_page">
+	<h5 class="form_head"><span>其它 :</span></h5>
+	<fieldset class="form_box">
+		
+			<div class="form_tr">
+				<div class="label_box">
+					<label class="label_th">
+						索取資料&nbsp;:</label>
+				</div>
+				<div class="input_box">
+					
+					<input type="checkbox" name="inquiry2" value="1" />
+					請將貴公司的簡介及產品資料 E-mail 給我<br />
+					<input type="checkbox" name="inquiry2" value="2" />
+					請提供貴公司的最新產品型錄<br />
+					<input type="checkbox" name="inquiry2" value="3" />
+					請提供最優惠的產品報價單<br />
+					<input type="checkbox" name="inquiry2" value="4" />
+					其它
+					<input type="text" name="Re_Response" class="inp2" />
+					
+					<p class="ps">
+					
+					</p>
+				</div>
+			</div>
+		
+			<div class="form_tr">
+				<div class="label_box">
+					<label class="label_th">
+					特別說明&nbsp;:</label>
+				</div>
+				<div class="input_box">
+					<textarea name="inquiry3" class="textarea1"></textarea>
+					<p class="ps">
+						
+					</p>
+				</div>
+			</div>
+		
+	</fieldset>
+</section><section class="form_page">
+	<fieldset class="form_box">
+		<div class="form_tr">
+			<div class="label_box"><label class="vcode">驗證碼 :</label></div>
+			<div class="input_box"><input name="vcode" type="text" size="8" maxlength="4" class="input_200"/></div>
+			<div class="img_box"><img id="imgCaptcha" src="../../comm/inc/captcha.asp" onclick="RefreshImage('imgCaptcha')" /><a class="push_button _border_5" href="javascript:void(0)" onclick="RefreshImage('imgCaptcha')"><i class="fa fa-refresh"></i>變更圖片</a></div>
+		</div>
+	</fieldset>
+	<div class="push_button_page">
+		<div class="push_button_box">
+			<input type="submit" name="Submit" value="  確認  " class="push_button_xl _border_5" />
+			<input type="button" name="Previous" value="上一頁" class="push_button_xl _border_5" onclick="window.history.back();" />
+			<input type="reset" name="reset" value="  重新輸入  " class="push_button_xl _border_5" />
+		</div>
+	</div>
+</section>
+							<input type="hidden" name="types" value="A">
+							</form>
+						</div>
+					</section>
+				</section>
+			</section>
+		</section>
+		<!--底部區開始-->
+<footer id="footer"> 
+	<!-- 頁尾 -->
+	<div class="footer_nav_page">
+		<div class="footer_nav_box">
+			<div class="footer_icon_page">
+				
+			</div>
+			<div class="address_page">
+				<ul class="address">
+					
+						<li>
+							
+								<strong class="address_title">地址</strong>
+							
+							<div class="address_txt_box">542 南投縣草屯鎮新豐里稻香路20之21號<BR>
+<script type="text/javascript" src="http://download.skype.com/share/skypebuttons/js/skypeCheck.js"></script>
+<a href="skype:cm-line-029?call"><img src="http://webbuilder3.asiannet.com/ftp/2459/i_skype.png" style="border: 23;" width="16" height="16" alt="My status" /> skype:cm-line-029</a></div>
+						</li>
+					
+						<li>
+							
+									<strong class="address_tel_title">電話</strong>
+								
+								<div class="address_tel_box">+886-49-2319102</div>
+							
+						</li>
+					
+						<li>
+							
+									<strong class="address_fax_title">傳真</strong>
+								
+								<div class="address_fax_box">+886-49-2319826</div>
+							
+						</li>
+					
+						<li>
+							
+								<strong class="address_email_title">E-Mail</strong>
+							
+							<a class="address_email_box" href="mailto:cm@wireharness.com.tw">cm@wireharness.com.tw</a>
+						</li>
+					
+				</ul>
+			</div>
+		</div>
+	</div>
+	<section class="footer_page">
+		<section class="footer_box"> 
+			
+                <div id="powered"><font class="wb"> Powered by <a class="wb" href="http://webbuilder.asiannet.com/" target="_blank">Web Builder</a> & associated with <a class="wb" href="http://www.etradeasia.com/" target="_blank">Trade Asia</a>  </font></div>
+            
+		</section>
+	</section>
+</footer>
+<!--底部區開始-->
+	</div>
+    <script src="js/script_below.js"></script>
+	
+<script type="text/javascript">
+
+</script>
+
+
+</body>
+</html>

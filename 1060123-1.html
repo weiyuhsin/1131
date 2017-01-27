@@ -1,0 +1,1326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script><!--jquery語法-->
+</head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"> </script>  <!--jQUERY語法的連結--> 
+<script src="jquery.bxslider.min.js"></script>            <!--輪播js語法2 要加jQuery2.2.4語法 & 輪播css語法-->  
+
+<script>
+    $(function(){
+        var url = "https://api.instagram.com/v1/users/self/media/recent/?access_token=18207645.522924d.a0308dd87201401ba3d9f828def12ea2";      /*老師的url變數*/
+        $.ajax({
+            url:url,                          /*抓一個url變數叫url*/          
+            dataType:"jsonp",                   /*json的*/
+            success:function(e){                /*設一個叫e的function*/
+            //    alert("success");         
+                $(e.data).each(function(){      /*抓e裡面的data→每個*/
+            //    console.log(this.caption.text);     /*f12檢查 this裡的caption裡習text*/
+                    var c = "<div class ='pic'><img src='"+this.images.thumbnail.url+"'></div>"   /*設一個變數抓圖片*/
+                    c += "<div class = 'title'>"+this.caption.text+"</div>"             /*設一個變數抓文字*/
+                    $(".container").append(c);
+                });
+            },
+            error:function(){
+                alert("error");
+            }
+        });
+    })
+    </script>
+    
+    <script>
+              /*輪播語法2*/
+        $(document).ready(function(){
+        $('.slider2').bxSlider({
+            minSlides: 3,
+            maxSlides: 9,
+            slideWidth: 170,
+            slideMargin: 10,
+            
+            auto:true,
+            pause:6000,
+            speed:300,
+
+        });    
+        })
+    </script>
+    <style>
+        header {                    /*輪播語法*/
+            width: 100%;
+            margin: auto;
+        }
+        header ul {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+    
+<body>
+  
+  <div class ="container"></div>
+  
+  
+   <ul class="slider2">   <!--輪播2 *8-->
+  <li><img src="images/01.jpg" width="200" height="200"/>1</li>
+  <li><img src="images/02.jpg" width="200" height="200"/>2</li>
+  <li><img src="images/03.jpg" width="200" height="200"/>3</li>
+  <li><img src="images/04.jpg" width="200" height="200"/>4</li>
+  <li><img src="images/05.jpg" width="200" height="200"/>5</li>
+  <li><img src="images/06.jpg" width="200" height="200"/>6</li>
+  <li><img src="images/07.jpg" width="200" height="200"/>7</li>
+  <li><img src="images/08.jpg" width="200" height="200"/>8</li>
+  <li><img src="images/09.jpg" width="200" height="200"/>9</li>
+  <li><img src="images/10.jpg" width="200" height="200"/>10</li>
+  <li><img src="images/11.jpg" width="200" height="200"/>11</li>
+  <li><img src="images/01.jpg" width="200" height="200"/>12</li>
+  <li><img src="images/02.jpg" width="200" height="200"/>13</li>
+  <li><img src="images/03.jpg" width="200" height="200"/>14</li>
+  <li><img src="images/04.jpg" width="200" height="200"/>15</li>
+  <li><img src="images/05.jpg" width="200" height="200"/>16</li>
+  <li><img src="images/06.jpg" width="200" height="200"/>17</li>
+  <li><img src="images/07.jpg" width="200" height="200"/>18</li>
+  <li><img src="images/08.jpg" width="200" height="200"/>19</li>
+  <li><img src="images/09.jpg" width="200" height="200"/>20</li>
+  <li><img src="images/10.jpg" width="200" height="200"/>21</li>
+  <li><img src="images/11.jpg" width="200" height="200"/>22</li>
+</ul>
+  
+  
+  
+  
+  
+   
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+老師的網頁：https://api.instagram.com/v1/users/self/media/recent/?access_token=18207645.522924d.a0308dd87201401ba3d9f828def12ea2
+
+
+// 20170123193535
+// https://api.instagram.com/v1/users/self/media/recent/?access_token=18207645.522924d.a0308dd87201401ba3d9f828def12ea2
+
+{
+  "meta": {
+    "code": 200
+  },
+  "pagination": {
+    
+  },
+  "data": [
+    {
+      "type": "image",
+      "images": {
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/16122571_1170694346379417_1815889821738991616_n.jpg?ig_cache_key=MTQzMzk0Njk0NDkwODE2ODE1MA%3D%3D.2"
+        },
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/16122571_1170694346379417_1815889821738991616_n.jpg?ig_cache_key=MTQzMzk0Njk0NDkwODE2ODE1MA%3D%3D.2"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/16122571_1170694346379417_1815889821738991616_n.jpg?ig_cache_key=MTQzMzk0Njk0NDkwODE2ODE1MA%3D%3D.2"
+        }
+      },
+      "filter": "Clarendon",
+      "comments": {
+        "count": 3
+      },
+      "user_has_liked": false,
+      "caption": {
+        "text": "好久不見My friend!",
+        "from": {
+          "username": "a19860101",
+          "full_name": "Zac",
+          "id": "18207645",
+          "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+        },
+        "created_time": "1485159818",
+        "id": "17859456892098867"
+      },
+      "users_in_photo": [
+        
+      ],
+      "user": {
+        "username": "a19860101",
+        "full_name": "Zac",
+        "id": "18207645",
+        "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+      },
+      "id": "1433946944908168150_18207645",
+      "tags": [
+        
+      ],
+      "attribution": null,
+      "link": "https://www.instagram.com/p/BPmZyYmAgvW/",
+      "created_time": "1485159818",
+      "likes": {
+        "count": 10
+      },
+      "location": {
+        "name": "台灣高鐵台中站 THSR Taichung Station",
+        "longitude": 120.61590461322,
+        "id": 212951069,
+        "latitude": 24.111828485912
+      }
+    },
+    {
+      "type": "image",
+      "images": {
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/16122903_1820605644870885_7540541942623371264_n.jpg?ig_cache_key=MTQzMzkwMDAwMjcxOTIwNjMzMQ%3D%3D.2"
+        },
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/16122903_1820605644870885_7540541942623371264_n.jpg?ig_cache_key=MTQzMzkwMDAwMjcxOTIwNjMzMQ%3D%3D.2"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/16122903_1820605644870885_7540541942623371264_n.jpg?ig_cache_key=MTQzMzkwMDAwMjcxOTIwNjMzMQ%3D%3D.2"
+        }
+      },
+      "filter": "Gingham",
+      "comments": {
+        "count": 0
+      },
+      "user_has_liked": false,
+      "caption": {
+        "text": "跟神出差！",
+        "from": {
+          "username": "a19860101",
+          "full_name": "Zac",
+          "id": "18207645",
+          "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+        },
+        "created_time": "1485154222",
+        "id": "17847669091157909"
+      },
+      "users_in_photo": [
+        {
+          "position": {
+            "y": 0.4453333333333334,
+            "x": 0.748
+          },
+          "user": {
+            "username": "hammer0213",
+            "full_name": "Wang Hammer",
+            "id": "3029390905",
+            "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/s150x150/12783474_1213396698688439_60122246_a.jpg"
+          }
+        }
+      ],
+      "user": {
+        "username": "a19860101",
+        "full_name": "Zac",
+        "id": "18207645",
+        "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+      },
+      "id": "1433900002719206331_18207645",
+      "tags": [
+        
+      ],
+      "attribution": null,
+      "link": "https://www.instagram.com/p/BPmPHSRgou7/",
+      "created_time": "1485154222",
+      "likes": {
+        "count": 5
+      },
+      "location": {
+        "name": "Chienkuo Technology University",
+        "longitude": 120.55,
+        "id": 259466194204701,
+        "latitude": 24.0665
+      }
+    },
+    {
+      "type": "image",
+      "images": {
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c0.8.1080.1080/14583469_371252786558348_923305642360307712_n.jpg?ig_cache_key=MTQyMDgwOTkyODE2MzE2NjE0NA%3D%3D.2.c"
+        },
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/c0.8.1080.1080/14583469_371252786558348_923305642360307712_n.jpg?ig_cache_key=MTQyMDgwOTkyODE2MzE2NjE0NA%3D%3D.2.c"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/c0.8.1080.1080/14583469_371252786558348_923305642360307712_n.jpg?ig_cache_key=MTQyMDgwOTkyODE2MzE2NjE0NA%3D%3D.2.c"
+        }
+      },
+      "filter": "Gingham",
+      "comments": {
+        "count": 1
+      },
+      "user_has_liked": false,
+      "caption": {
+        "text": "除草完成！",
+        "from": {
+          "username": "a19860101",
+          "full_name": "Zac",
+          "id": "18207645",
+          "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+        },
+        "created_time": "1483593763",
+        "id": "17847743875142697"
+      },
+      "users_in_photo": [
+        
+      ],
+      "user": {
+        "username": "a19860101",
+        "full_name": "Zac",
+        "id": "18207645",
+        "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+      },
+      "id": "1420809928163166144_18207645",
+      "tags": [
+        
+      ],
+      "attribution": null,
+      "link": "https://www.instagram.com/p/BO3uxoVg4fA/",
+      "created_time": "1483593763",
+      "likes": {
+        "count": 20
+      },
+      "location": {
+        "name": "S-two 髮醫",
+        "longitude": 121.30298,
+        "id": 580226627,
+        "latitude": 24.99041
+      }
+    },
+    {
+      "type": "image",
+      "images": {
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/15535416_1322736811109728_315571579612299264_n.jpg?ig_cache_key=MTQwNDQ4MjcyMDgyNjEyMTYyNA%3D%3D.2"
+        },
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/15535416_1322736811109728_315571579612299264_n.jpg?ig_cache_key=MTQwNDQ4MjcyMDgyNjEyMTYyNA%3D%3D.2"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/15535416_1322736811109728_315571579612299264_n.jpg?ig_cache_key=MTQwNDQ4MjcyMDgyNjEyMTYyNA%3D%3D.2"
+        }
+      },
+      "filter": "Sierra",
+      "comments": {
+        "count": 1
+      },
+      "user_has_liked": false,
+      "caption": {
+        "text": "從第七季開播到現在，終於有勇氣看第一集了.......太虐心了嗚嗚嗚......",
+        "from": {
+          "username": "a19860101",
+          "full_name": "Zac",
+          "id": "18207645",
+          "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+        },
+        "created_time": "1481647409",
+        "id": "17865915298007255"
+      },
+      "users_in_photo": [
+        
+      ],
+      "user": {
+        "username": "a19860101",
+        "full_name": "Zac",
+        "id": "18207645",
+        "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+      },
+      "id": "1404482720826121624_18207645",
+      "tags": [
+        
+      ],
+      "attribution": null,
+      "link": "https://www.instagram.com/p/BN9uZfkA92Y/",
+      "created_time": "1481647409",
+      "likes": {
+        "count": 14
+      },
+      "location": null
+    },
+    {
+      "type": "image",
+      "images": {
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/15306694_719987224824094_3181502590789615616_n.jpg?ig_cache_key=MTM5NDY1OTI0MjQ0MjYwNTA4Mw%3D%3D.2"
+        },
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/15306694_719987224824094_3181502590789615616_n.jpg?ig_cache_key=MTM5NDY1OTI0MjQ0MjYwNTA4Mw%3D%3D.2"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/15306694_719987224824094_3181502590789615616_n.jpg?ig_cache_key=MTM5NDY1OTI0MjQ0MjYwNTA4Mw%3D%3D.2"
+        }
+      },
+      "filter": "Reyes",
+      "comments": {
+        "count": 4
+      },
+      "user_has_liked": false,
+      "caption": {
+        "text": "這個父愛怪怪der",
+        "from": {
+          "username": "a19860101",
+          "full_name": "Zac",
+          "id": "18207645",
+          "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+        },
+        "created_time": "1480476359",
+        "id": "17861480353067938"
+      },
+      "users_in_photo": [
+        
+      ],
+      "user": {
+        "username": "a19860101",
+        "full_name": "Zac",
+        "id": "18207645",
+        "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+      },
+      "id": "1394659242442605083_18207645",
+      "tags": [
+        
+      ],
+      "attribution": null,
+      "link": "https://www.instagram.com/p/BNa0zEYgcIb/",
+      "created_time": "1480476359",
+      "likes": {
+        "count": 22
+      },
+      "location": null
+    },
+    {
+      "type": "image",
+      "images": {
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/15253249_1819829394939635_4912973172468350976_n.jpg?ig_cache_key=MTM5Mjc3Mjg4NTg2MDUwNjI4OA%3D%3D.2"
+        },
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/15253249_1819829394939635_4912973172468350976_n.jpg?ig_cache_key=MTM5Mjc3Mjg4NTg2MDUwNjI4OA%3D%3D.2"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/15253249_1819829394939635_4912973172468350976_n.jpg?ig_cache_key=MTM5Mjc3Mjg4NTg2MDUwNjI4OA%3D%3D.2"
+        }
+      },
+      "filter": "Gingham",
+      "comments": {
+        "count": 0
+      },
+      "user_has_liked": false,
+      "caption": {
+        "text": "啊啊啊啊",
+        "from": {
+          "username": "a19860101",
+          "full_name": "Zac",
+          "id": "18207645",
+          "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+        },
+        "created_time": "1480251487",
+        "id": "17856031429113516"
+      },
+      "users_in_photo": [
+        
+      ],
+      "user": {
+        "username": "a19860101",
+        "full_name": "Zac",
+        "id": "18207645",
+        "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+      },
+      "id": "1392772885860506288_18207645",
+      "tags": [
+        
+      ],
+      "attribution": null,
+      "link": "https://www.instagram.com/p/BNUH496gtqw/",
+      "created_time": "1480251487",
+      "likes": {
+        "count": 14
+      },
+      "location": {
+        "name": "S-two 髮醫",
+        "longitude": 121.30298,
+        "id": 580226627,
+        "latitude": 24.99041
+      }
+    },
+    {
+      "type": "image",
+      "images": {
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/14716508_569510883244460_8187375682532147200_n.jpg?ig_cache_key=MTM3NTI1MjYwMjE2NTYxNTUyMw%3D%3D.2"
+        },
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/14716508_569510883244460_8187375682532147200_n.jpg?ig_cache_key=MTM3NTI1MjYwMjE2NTYxNTUyMw%3D%3D.2"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/14716508_569510883244460_8187375682532147200_n.jpg?ig_cache_key=MTM3NTI1MjYwMjE2NTYxNTUyMw%3D%3D.2"
+        }
+      },
+      "filter": "Sierra",
+      "comments": {
+        "count": 1
+      },
+      "user_has_liked": false,
+      "caption": {
+        "text": "第一次算塔羅！幹好準！",
+        "from": {
+          "username": "a19860101",
+          "full_name": "Zac",
+          "id": "18207645",
+          "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+        },
+        "created_time": "1478162907",
+        "id": "17854759363107268"
+      },
+      "users_in_photo": [
+        
+      ],
+      "user": {
+        "username": "a19860101",
+        "full_name": "Zac",
+        "id": "18207645",
+        "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+      },
+      "id": "1375252602165615523_18207645",
+      "tags": [
+        
+      ],
+      "attribution": null,
+      "link": "https://www.instagram.com/p/BMV4PSMg1uj/",
+      "created_time": "1478162907",
+      "likes": {
+        "count": 15
+      },
+      "location": null
+    },
+    {
+      "type": "image",
+      "images": {
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/14504762_1154578804632136_24466646273884160_n.jpg?ig_cache_key=MTM3NDQzMzQzODY4MTM2NDU4Mw%3D%3D.2"
+        },
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/14504762_1154578804632136_24466646273884160_n.jpg?ig_cache_key=MTM3NDQzMzQzODY4MTM2NDU4Mw%3D%3D.2"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/14504762_1154578804632136_24466646273884160_n.jpg?ig_cache_key=MTM3NDQzMzQzODY4MTM2NDU4Mw%3D%3D.2"
+        }
+      },
+      "filter": "Normal",
+      "comments": {
+        "count": 1
+      },
+      "user_has_liked": false,
+      "caption": {
+        "text": "WOW!",
+        "from": {
+          "username": "a19860101",
+          "full_name": "Zac",
+          "id": "18207645",
+          "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+        },
+        "created_time": "1478065255",
+        "id": "17843960257139674"
+      },
+      "users_in_photo": [
+        {
+          "position": {
+            "y": 0.6546666666666666,
+            "x": 0.684
+          },
+          "user": {
+            "username": "michelless1234",
+            "full_name": "米雪兒",
+            "id": "35478671",
+            "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/s150x150/12826030_1695762467349387_832662636_a.jpg"
+          }
+        }
+      ],
+      "user": {
+        "username": "a19860101",
+        "full_name": "Zac",
+        "id": "18207645",
+        "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+      },
+      "id": "1374433438681364583_18207645",
+      "tags": [
+        
+      ],
+      "attribution": null,
+      "link": "https://www.instagram.com/p/BMS9-4wBXhn/",
+      "created_time": "1478065255",
+      "likes": {
+        "count": 27
+      },
+      "location": {
+        "name": "Pablo Cheesetart Taiwan",
+        "longitude": 121.51706,
+        "id": 1023184059,
+        "latitude": 25.04605
+      }
+    },
+    {
+      "type": "image",
+      "images": {
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/14726339_360701927611658_8498110381644840960_n.jpg?ig_cache_key=MTM2ODkxMjgwMTUzNTQ0ODgyNg%3D%3D.2"
+        },
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/14726339_360701927611658_8498110381644840960_n.jpg?ig_cache_key=MTM2ODkxMjgwMTUzNTQ0ODgyNg%3D%3D.2"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/14726339_360701927611658_8498110381644840960_n.jpg?ig_cache_key=MTM2ODkxMjgwMTUzNTQ0ODgyNg%3D%3D.2"
+        }
+      },
+      "filter": "Rise",
+      "comments": {
+        "count": 2
+      },
+      "user_has_liked": false,
+      "caption": {
+        "text": "喔齁齁",
+        "from": {
+          "username": "a19860101",
+          "full_name": "Zac",
+          "id": "18207645",
+          "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+        },
+        "created_time": "1477407144",
+        "id": "17864123965020578"
+      },
+      "users_in_photo": [
+        
+      ],
+      "user": {
+        "username": "a19860101",
+        "full_name": "Zac",
+        "id": "18207645",
+        "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+      },
+      "id": "1368912801535448826_18207645",
+      "tags": [
+        
+      ],
+      "attribution": null,
+      "link": "https://www.instagram.com/p/BL_WvCwAVb6/",
+      "created_time": "1477407144",
+      "likes": {
+        "count": 13
+      },
+      "location": null
+    },
+    {
+      "type": "image",
+      "images": {
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/14677475_1835752979981462_8543741016140677120_n.jpg?ig_cache_key=MTM2NzkzMTQ4MDgyMjcwMzYwNQ%3D%3D.2"
+        },
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/14677475_1835752979981462_8543741016140677120_n.jpg?ig_cache_key=MTM2NzkzMTQ4MDgyMjcwMzYwNQ%3D%3D.2"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/14677475_1835752979981462_8543741016140677120_n.jpg?ig_cache_key=MTM2NzkzMTQ4MDgyMjcwMzYwNQ%3D%3D.2"
+        }
+      },
+      "filter": "Clarendon",
+      "comments": {
+        "count": 1
+      },
+      "user_has_liked": false,
+      "caption": {
+        "text": "明明買了票，進站時卻不知不覺的刷悠遊卡......",
+        "from": {
+          "username": "a19860101",
+          "full_name": "Zac",
+          "id": "18207645",
+          "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+        },
+        "created_time": "1477290161",
+        "id": "17866618177008972"
+      },
+      "users_in_photo": [
+        
+      ],
+      "user": {
+        "username": "a19860101",
+        "full_name": "Zac",
+        "id": "18207645",
+        "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+      },
+      "id": "1367931480822703605_18207645",
+      "tags": [
+        
+      ],
+      "attribution": null,
+      "link": "https://www.instagram.com/p/BL73m8nguX1/",
+      "created_time": "1477290161",
+      "likes": {
+        "count": 9
+      },
+      "location": null
+    },
+    {
+      "type": "image",
+      "images": {
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/14583468_374311242911454_4686478029164118016_n.jpg?ig_cache_key=MTM2NDgxNTc3NTUwODAyMDk3Ng%3D%3D.2"
+        },
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/14583468_374311242911454_4686478029164118016_n.jpg?ig_cache_key=MTM2NDgxNTc3NTUwODAyMDk3Ng%3D%3D.2"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/14583468_374311242911454_4686478029164118016_n.jpg?ig_cache_key=MTM2NDgxNTc3NTUwODAyMDk3Ng%3D%3D.2"
+        }
+      },
+      "filter": "Amaro",
+      "comments": {
+        "count": 2
+      },
+      "user_has_liked": false,
+      "caption": {
+        "text": "又要飛來飛去惹！",
+        "from": {
+          "username": "a19860101",
+          "full_name": "Zac",
+          "id": "18207645",
+          "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+        },
+        "created_time": "1476918740",
+        "id": "17857934953071592"
+      },
+      "users_in_photo": [
+        
+      ],
+      "user": {
+        "username": "a19860101",
+        "full_name": "Zac",
+        "id": "18207645",
+        "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+      },
+      "id": "1364815775508020976_18207645",
+      "tags": [
+        
+      ],
+      "attribution": null,
+      "link": "https://www.instagram.com/p/BLwzLd7AT7w/",
+      "created_time": "1476918740",
+      "likes": {
+        "count": 11
+      },
+      "location": {
+        "name": "台灣高鐵桃園站 THSR Taoyuan Station",
+        "longitude": 121.21507563366,
+        "id": 474901,
+        "latitude": 25.013098034
+      }
+    },
+    {
+      "type": "image",
+      "images": {
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c0.134.1080.1080/14540656_1133785046704834_1937651667839221760_n.jpg?ig_cache_key=MTM2MzY2MzE4NDI5MjA4MzMwMg%3D%3D.2.c"
+        },
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/c0.134.1080.1080/14540656_1133785046704834_1937651667839221760_n.jpg?ig_cache_key=MTM2MzY2MzE4NDI5MjA4MzMwMg%3D%3D.2.c"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/c0.134.1080.1080/14540656_1133785046704834_1937651667839221760_n.jpg?ig_cache_key=MTM2MzY2MzE4NDI5MjA4MzMwMg%3D%3D.2.c"
+        }
+      },
+      "filter": "Amaro",
+      "comments": {
+        "count": 0
+      },
+      "user_has_liked": false,
+      "caption": {
+        "text": "好久沒有這樣飛來飛去惹！",
+        "from": {
+          "username": "a19860101",
+          "full_name": "Zac",
+          "id": "18207645",
+          "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+        },
+        "created_time": "1476781341",
+        "id": "17864005291012998"
+      },
+      "users_in_photo": [
+        
+      ],
+      "user": {
+        "username": "a19860101",
+        "full_name": "Zac",
+        "id": "18207645",
+        "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+      },
+      "id": "1363663184292083302_18207645",
+      "tags": [
+        
+      ],
+      "attribution": null,
+      "link": "https://www.instagram.com/p/BLstHDtAfZm/",
+      "created_time": "1476781341",
+      "likes": {
+        "count": 8
+      },
+      "location": {
+        "name": "台灣高鐵台中站 THSR Taichung Station",
+        "longitude": 120.61590461322,
+        "id": 212951069,
+        "latitude": 24.111828485912
+      }
+    },
+    {
+      "type": "image",
+      "images": {
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c0.134.1080.1080/14574251_533239203545124_830063590286295040_n.jpg?ig_cache_key=MTM2MDk5NTQwMTEzMzUxMzc2OA%3D%3D.2.c"
+        },
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/c0.134.1080.1080/14574251_533239203545124_830063590286295040_n.jpg?ig_cache_key=MTM2MDk5NTQwMTEzMzUxMzc2OA%3D%3D.2.c"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/c0.134.1080.1080/14574251_533239203545124_830063590286295040_n.jpg?ig_cache_key=MTM2MDk5NTQwMTEzMzUxMzc2OA%3D%3D.2.c"
+        }
+      },
+      "filter": "Amaro",
+      "comments": {
+        "count": 0
+      },
+      "user_has_liked": false,
+      "caption": {
+        "text": "這明明就是我的殼嘛（翹小指",
+        "from": {
+          "username": "a19860101",
+          "full_name": "Zac",
+          "id": "18207645",
+          "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+        },
+        "created_time": "1476463316",
+        "id": "17863726330012633"
+      },
+      "users_in_photo": [
+        
+      ],
+      "user": {
+        "username": "a19860101",
+        "full_name": "Zac",
+        "id": "18207645",
+        "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+      },
+      "id": "1360995401133513768_18207645",
+      "tags": [
+        
+      ],
+      "attribution": null,
+      "link": "https://www.instagram.com/p/BLjOhtBgNwo/",
+      "created_time": "1476463316",
+      "likes": {
+        "count": 18
+      },
+      "location": null
+    },
+    {
+      "type": "image",
+      "images": {
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/14574144_1150328665046292_3577483233857634304_n.jpg?ig_cache_key=MTM1MTkyNDU5MDgwNDM2MzkzNw%3D%3D.2"
+        },
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/14574144_1150328665046292_3577483233857634304_n.jpg?ig_cache_key=MTM1MTkyNDU5MDgwNDM2MzkzNw%3D%3D.2"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/14574144_1150328665046292_3577483233857634304_n.jpg?ig_cache_key=MTM1MTkyNDU5MDgwNDM2MzkzNw%3D%3D.2"
+        }
+      },
+      "filter": "Normal",
+      "comments": {
+        "count": 1
+      },
+      "user_has_liked": false,
+      "caption": {
+        "text": "明明就淡江大學畢業，但我來這不到10次!!",
+        "from": {
+          "username": "a19860101",
+          "full_name": "Zac",
+          "id": "18207645",
+          "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+        },
+        "created_time": "1475381991",
+        "id": "17862392905035479"
+      },
+      "users_in_photo": [
+        
+      ],
+      "user": {
+        "username": "a19860101",
+        "full_name": "Zac",
+        "id": "18207645",
+        "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+      },
+      "id": "1351924590804363937_18207645",
+      "tags": [
+        
+      ],
+      "attribution": null,
+      "link": "https://www.instagram.com/p/BLDAECmAmqh/",
+      "created_time": "1475381991",
+      "likes": {
+        "count": 18
+      },
+      "location": {
+        "name": "Tamkang University",
+        "longitude": 121.449,
+        "id": 215649155,
+        "latitude": 25.175
+      }
+    },
+    {
+      "type": "image",
+      "images": {
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/c0.134.1080.1080/14547680_1123375231078033_2856573991131283456_n.jpg?ig_cache_key=MTM1MTM1NDk0ODA0MjA0ODMyMw%3D%3D.2.c"
+        },
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/c0.134.1080.1080/14547680_1123375231078033_2856573991131283456_n.jpg?ig_cache_key=MTM1MTM1NDk0ODA0MjA0ODMyMw%3D%3D.2.c"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/c0.134.1080.1080/14547680_1123375231078033_2856573991131283456_n.jpg?ig_cache_key=MTM1MTM1NDk0ODA0MjA0ODMyMw%3D%3D.2.c"
+        }
+      },
+      "filter": "X-Pro II",
+      "comments": {
+        "count": 0
+      },
+      "user_has_liked": false,
+      "caption": {
+        "text": "感謝大家餵食老師！",
+        "from": {
+          "username": "a19860101",
+          "full_name": "Zac",
+          "id": "18207645",
+          "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+        },
+        "created_time": "1475314085",
+        "id": "17854201636072093"
+      },
+      "users_in_photo": [
+        
+      ],
+      "user": {
+        "username": "a19860101",
+        "full_name": "Zac",
+        "id": "18207645",
+        "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+      },
+      "id": "1351354948042048323_18207645",
+      "tags": [
+        
+      ],
+      "attribution": null,
+      "link": "https://www.instagram.com/p/BLA-ipbg0ND/",
+      "created_time": "1475314085",
+      "likes": {
+        "count": 10
+      },
+      "location": null
+    },
+    {
+      "type": "image",
+      "images": {
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/14262660_1335491349809309_1473423682_n.jpg?ig_cache_key=MTMzMzEzMjg5NTE3MDI5MDQ0NA%3D%3D.2"
+        },
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/14262660_1335491349809309_1473423682_n.jpg?ig_cache_key=MTMzMzEzMjg5NTE3MDI5MDQ0NA%3D%3D.2"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/14262660_1335491349809309_1473423682_n.jpg?ig_cache_key=MTMzMzEzMjg5NTE3MDI5MDQ0NA%3D%3D.2"
+        }
+      },
+      "filter": "Amaro",
+      "comments": {
+        "count": 3
+      },
+      "user_has_liked": false,
+      "caption": {
+        "text": "好久不見！",
+        "from": {
+          "username": "a19860101",
+          "full_name": "Zac",
+          "id": "18207645",
+          "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+        },
+        "created_time": "1473141847",
+        "id": "17862367027042493"
+      },
+      "users_in_photo": [
+        
+      ],
+      "user": {
+        "username": "a19860101",
+        "full_name": "Zac",
+        "id": "18207645",
+        "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+      },
+      "id": "1333132895170290444_18207645",
+      "tags": [
+        
+      ],
+      "attribution": null,
+      "link": "https://www.instagram.com/p/BKAPU4PA2MM/",
+      "created_time": "1473141847",
+      "likes": {
+        "count": 15
+      },
+      "location": {
+        "name": "髮醫",
+        "longitude": 121.30304206743,
+        "id": 1019963664,
+        "latitude": 24.990628626124
+      }
+    },
+    {
+      "type": "image",
+      "images": {
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/14073156_660394637463121_228631141_n.jpg?ig_cache_key=MTMzMjQ3NDgzNzYyODY1NjY4Mg%3D%3D.2"
+        },
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/14073156_660394637463121_228631141_n.jpg?ig_cache_key=MTMzMjQ3NDgzNzYyODY1NjY4Mg%3D%3D.2"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/14073156_660394637463121_228631141_n.jpg?ig_cache_key=MTMzMjQ3NDgzNzYyODY1NjY4Mg%3D%3D.2"
+        }
+      },
+      "filter": "Aden",
+      "comments": {
+        "count": 0
+      },
+      "user_has_liked": false,
+      "caption": {
+        "text": "好久不見姪女們！",
+        "from": {
+          "username": "a19860101",
+          "full_name": "Zac",
+          "id": "18207645",
+          "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+        },
+        "created_time": "1473063400",
+        "id": "17851617166089707"
+      },
+      "users_in_photo": [
+        
+      ],
+      "user": {
+        "username": "a19860101",
+        "full_name": "Zac",
+        "id": "18207645",
+        "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+      },
+      "id": "1332474837628656682_18207645",
+      "tags": [
+        
+      ],
+      "attribution": null,
+      "link": "https://www.instagram.com/p/BJ95s4ZAJwq/",
+      "created_time": "1473063400",
+      "likes": {
+        "count": 12
+      },
+      "location": null
+    },
+    {
+      "type": "image",
+      "images": {
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/14156291_1101677303242541_2141262981_n.jpg?ig_cache_key=MTMzMTE5Mjk4MjQ3NjQ4NjIwNA%3D%3D.2"
+        },
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/14156291_1101677303242541_2141262981_n.jpg?ig_cache_key=MTMzMTE5Mjk4MjQ3NjQ4NjIwNA%3D%3D.2"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/14156291_1101677303242541_2141262981_n.jpg?ig_cache_key=MTMzMTE5Mjk4MjQ3NjQ4NjIwNA%3D%3D.2"
+        }
+      },
+      "filter": "Amaro",
+      "comments": {
+        "count": 0
+      },
+      "user_has_liked": false,
+      "caption": {
+        "text": "到底為什麼有這麼多狗屁倒灶的事情？",
+        "from": {
+          "username": "a19860101",
+          "full_name": "Zac",
+          "id": "18207645",
+          "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+        },
+        "created_time": "1472910591",
+        "id": "17861823520035267"
+      },
+      "users_in_photo": [
+        
+      ],
+      "user": {
+        "username": "a19860101",
+        "full_name": "Zac",
+        "id": "18207645",
+        "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+      },
+      "id": "1331192982476486204_18207645",
+      "tags": [
+        
+      ],
+      "attribution": null,
+      "link": "https://www.instagram.com/p/BJ5WPbwAPY8/",
+      "created_time": "1472910591",
+      "likes": {
+        "count": 8
+      },
+      "location": null
+    },
+    {
+      "type": "image",
+      "images": {
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/14145440_1759580160981042_829608106_n.jpg?ig_cache_key=MTMzMDIyNTA2MTgxODM2MjQwNQ%3D%3D.2"
+        },
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/14145440_1759580160981042_829608106_n.jpg?ig_cache_key=MTMzMDIyNTA2MTgxODM2MjQwNQ%3D%3D.2"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/14145440_1759580160981042_829608106_n.jpg?ig_cache_key=MTMzMDIyNTA2MTgxODM2MjQwNQ%3D%3D.2"
+        }
+      },
+      "filter": "Rise",
+      "comments": {
+        "count": 2
+      },
+      "user_has_liked": false,
+      "caption": {
+        "text": "也太可愛了吧！",
+        "from": {
+          "username": "a19860101",
+          "full_name": "Zac",
+          "id": "18207645",
+          "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+        },
+        "created_time": "1472795206",
+        "id": "17851960714107153"
+      },
+      "users_in_photo": [
+        
+      ],
+      "user": {
+        "username": "a19860101",
+        "full_name": "Zac",
+        "id": "18207645",
+        "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+      },
+      "id": "1330225061818362405_18207645",
+      "tags": [
+        
+      ],
+      "attribution": null,
+      "link": "https://www.instagram.com/p/BJ16KVZAWol/",
+      "created_time": "1472795206",
+      "likes": {
+        "count": 16
+      },
+      "location": null
+    },
+    {
+      "type": "image",
+      "images": {
+        "standard_resolution": {
+          "width": 640,
+          "height": 640,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s640x640/sh0.08/e35/14156228_1194101627313312_1225602371_n.jpg?ig_cache_key=MTMyNjg3MjgyNzMxOTU4ODEzNQ%3D%3D.2"
+        },
+        "thumbnail": {
+          "width": 150,
+          "height": 150,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s150x150/e35/14156228_1194101627313312_1225602371_n.jpg?ig_cache_key=MTMyNjg3MjgyNzMxOTU4ODEzNQ%3D%3D.2"
+        },
+        "low_resolution": {
+          "width": 320,
+          "height": 320,
+          "url": "https://scontent.cdninstagram.com/t51.2885-15/s320x320/e35/14156228_1194101627313312_1225602371_n.jpg?ig_cache_key=MTMyNjg3MjgyNzMxOTU4ODEzNQ%3D%3D.2"
+        }
+      },
+      "filter": "Crema",
+      "comments": {
+        "count": 0
+      },
+      "user_has_liked": false,
+      "caption": {
+        "text": "我老婆真的隨便煮都好吃......",
+        "from": {
+          "username": "a19860101",
+          "full_name": "Zac",
+          "id": "18207645",
+          "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+        },
+        "created_time": "1472395588",
+        "id": "17851170040094606"
+      },
+      "users_in_photo": [
+        
+      ],
+      "user": {
+        "username": "a19860101",
+        "full_name": "Zac",
+        "id": "18207645",
+        "profile_picture": "https://scontent.cdninstagram.com/t51.2885-19/11820561_802836796480363_365505661_a.jpg"
+      },
+      "id": "1326872827319588135_18207645",
+      "tags": [
+        
+      ],
+      "attribution": null,
+      "link": "https://www.instagram.com/p/BJp_85ugJUn/",
+      "created_time": "1472395588",
+      "likes": {
+        "count": 17
+      },
+      "location": null
+    }
+  ]
+}
+-->

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>                 <!--jquery.com  或 http://cdnjs.com/下載CDN語法-->
+       
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js">
+     </script>     <!--jQUERY語法的連結-->
+     <script>           <!--$(document)取所有的資料.ready去做準備(function(){$("h1").hide(1200)然後將h1以1200毫秒隱藏});-->
+            
+      /* $(document).ready(function(){                   
+         $("button").click(function(){
+             $("p").hide(1200);             
+            });
+         });     */   
+             
+         $(document).ready(function(){                   
+         $("button").click(function(){
+             $("p").toggle(1200);                       /*隱藏→開啟→隱藏*/
+            });
+         });           
+  
+                         
+     </script>
+</head>
+
+
+<body>
+   <button>HIDE</button>
+   <p>
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate natus similique sapiente, ut, voluptatibus dignissimos, voluptatem facere fuga minus modi blanditiis aliquid repudiandae totam quo minima deleniti architecto? Ea, sint.
+      
+   </p>
+   
+
+
+</body>
+</html>

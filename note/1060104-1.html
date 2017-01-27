@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>                    
+    <meta charset="UTF-8">                   <!--搜fancybox→ http://fancyapps.com/fancybox/燈箱效果-->
+    <title>Document</title>                  <!--download sourse貼上1130 →貼上jQuery、css主程式語法→js程式的語法要順序貼  -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script><!--jQUERY語法的連結 一定要先放最前面-->  
+    <script src="source/jquery.fancybox.pack.js"></script>  <!--fancybox語法的主程式js-->  
+    <script src="source/helpers/jquery.fancybox-thumbs.js"></script>  <!--fancybox語法的縮圖js語法的連結-->
+    <script src="source/helpers/jquery.fancybox-media.js"></script>   <!--fancybox語法的影片js語法的連結-->
+    <link rel="stylesheet" href="source/jquery.fancybox.css">  <!--fancybox css語法的連結-->
+    <link rel="stylesheet" href="source/helpers/jquery.fancybox-thumbs.css"><!--fancybox語法的縮圖css語法的連結-->
+   
+    
+    
+    
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;     <!--可視範圍的高度--><!--100vw可視範圍的寬度-->
+        }
+        .box {
+            margin: 15px;     /*間距*/
+        }
+        img {
+            width: 200px;    /*圖片大小*/
+        }
+        .box {
+            box-sizing: border-box;
+        }
+        
+        /* .box{
+            -webkit-box-shadow:;  /*firefox視窗才能看到的陰影語法*
+            -moz-box-shadow:;     /*某視窗才能看到的陰影語法*  
+            -ms-box-shadow:;      /*microsoft視窗才能看到的陰影語法*
+            -o-box-shadow:;       /*某視窗才能看到的陰影語法*  
+            box-shadow:;          /*全部視窗才能看到的陰影語法*
+        }*/
+        
+    </style>
+    
+    
+        
+        <script>
+        $(document).ready(function(){
+            $(".fancy-media").fancybox({    /*影片*/
+                padding:8,
+                helpers:{                   /*影片js*/    
+                    media:{}
+                }
+            });
+            $(".fancy").fancybox({
+                openEffect:"elastic",           /* <!--打開時淡入 最後要加逗號     ('elastic'彈入/出, 'fade'淡入/出 or 'none')-->*/
+                closeEffect:"elastic",           /* <!--關閉時淡出 最後要加逗號     ('elastic'彈入/出, 'fade'淡入/出 or 'none')-->*/
+                nextEffect:"fade",              /* <!--下一頁時淡出 最後要加逗號     ('elastic'彈入/出, 'fade'淡入/出 or 'none')-->*/ 
+                prevEffect:"",                  /* <!--上一頁時彈出 最後要加逗號     ('elastic'彈入/出, 'fade'淡入/出 or 'none')-->*/
+                openSpeed:300,                    /* <!--打開時200毫秒開啟 最後不加;或,(in ms, or "slow", "normal", "fast")--> */
+                closeSpeed:300,                 /* <!--關閉時200毫秒關閉 最後不加;或,(in ms, or "slow", "normal", "fast")--> */ 
+//                nextSpeed:3000,                /* <!--下一頁時200毫秒關閉 最後不加;或,(in ms, or "slow", "normal", "fast")--> */
+//                prevSpeed:3000,               /* <!--上一頁時200毫秒關閉 最後不加;或,(in ms, or "slow", "normal", "fast")--> */  
+                padding:8,
+                helpers:{                       /*fancyBox→ Extended functionality縮圖效果 抓helper css到1130*/
+                    thumbs:{                    /*縮圖長寬*/
+                        width:50,
+                        height:50               /*  <!--最後不加;或,--> */
+                    },
+                    title:{
+                        type:"inside"            /*用helper效果做縮圖文字效果//float,inside,outside,over */ 
+                    }
+                }
+            });
+        });
+    </script>        
+                
+                    
+
+    
+</head>
+<body>
+   <div class="container">
+     <div class="box"> 
+         <a href="http://www.instagram.com/p/BN9uZfkA92Y/" class="fancy=media">Instagram</a>
+     </div>
+     
+      <div class="box">
+         
+          <a href="https://www.youtube.com/watch?v=_B5PqpQuVtg" class="fancy-media">youtube</a>
+      </div>
+      
+      
+      <div class="box">
+          <a href="https://www.youtube.com/watch?v=_B5PqpQuVtg" class="fancy-media"><img src="img.youtube.com/vi/_B5PqpQuVtg/maxresdefault.jpg" alt-""></a>
+      </div>
+      <!--_B5PqpQuVtg為youtube id →img.youtube.com/vi/_B5PqpQuVtg/maxresdefault.jpg →影片最高效果最大-->
+      <!--_B5PqpQuVtg為youtube id →img.youtube.com/vi/_B5PqpQuVtg/0.jpg →影片正常效果適中-->
+      <!--_B5PqpQuVtg為youtube id →img.youtube.com/vi/_B5PqpQuVtg/1.jpg →影片正常效果小  1or2or3-->
+      
+      
+       <div class="box">
+           <a href="images/01.jpg" class="fancy" rel="aaa" title="樹">  <!--class=名稱 rel=設下一頁主題  title=名稱-->
+               <img src="images/01.jpg" alt="">
+           </a>
+       </div>
+        <div class="box">
+           <a href="images/02.jpg" class="fancy" rel="aaa" title="貓">
+               <img src="images/02.jpg" alt="">
+           </a>
+       </div>
+        <div class="box">
+           <a href="images/03.jpg" class="fancy" rel="aaa" title="狗">
+               <img src="images/03.jpg" alt="">
+           </a>
+       </div>
+   </div>
+    
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /*統一字體*/
+        @import url('https://fonts.googleapis.com/css?family=Roboto');     
+                     /* https://fonts.google.com/搜中文字體GOOGLE FONTS→字體選  @imput 找連結複製*/
+
+        @import url(http://fonts.googleapis.com/earlyaccess/cwtexyen.css);
+                     /*https://fonts.google.com/earlyaccess 搜英文字體EARLY ACCESS GOOGLE →字體選好後 @imput 找連結複製*/
+       
+        
+        /*CSS RESET*/                    /*要製做一個網頁，但要先將網頁設定預設值*/
+        
+        * {
+            box-sizing: border-box;
+            font-family: "Roboto","Noto Sans TC",sans-serif;    /*字體*/
+        }
+
+        body,h1,h2,h3,h4,,h5,h6,p{
+            margin:0;                    /*外距*/
+            padding:0;                   /*內距*/
+        }
+        img{
+            width: 100%;                 /*寬要佔網頁的100%*/
+            vertical-align: top;         /*解決圖片框框問題*/
+            border:0;                    /*邊框要設0，不然沒有辦法設網頁會位移*/
+        }
+        .clearfix:: after{               /* 浮動修復*/
+            content:"";                  /*虛擬元素*/
+            display:block; 
+            clear:both;
+        }
+        .full-width{                     /*全寬滿版*/
+            width: 100%;
+        }
+        .fixed-width{                    /*固定寬*/
+            width: 1200px;
+            margin:auto;
+        }
+       
+        .col-3 {                         /*3欄頁面設法*/   /*1200/3=400*/
+            float:left;
+            width:380px;    /*或寫calc(1200px/3); */  /*1200/3=400*/
+            margin-left:10px;                        /*380+10+10=400*/
+            margin-right:10px;
+        }  
+        .col-4{                         /*4欄頁面設法*/ /*1200/4=300*/
+            float:left;
+            width: 280px;               /*280+10+10=300*/
+            margin-left:10px;           /**/ 
+            margin-right:10px;          /**/ 
+        }
+        
+        nav{
+            position:fixed;              /*將最上面的選單固定在網頁最上面*/
+            background-color:#faf;       /*粉紅欄 有蓋過圖片*/
+        }      
+        
+        nav .logo{
+            float:left;                 /*logo浮動靠左*/
+            width: 100px;               /*logo 寬*/
+            height: 100px;              /*logo 高*/
+            background-color: #aaa;     /*logo背景色*/
+            
+        }
+        nav .menu{                      /*menu*/
+            float:right;                /*menu 浮動靠右*/
+        }
+        
+        nav .menu ul{                   /*menu*/ 
+            margin: 0;                  /*menu外距*/
+            padding: 0;                 /*menu內距*/ 
+        }
+        
+        nav .menu li{
+            float:left;                /*menu li選單的About Us浮動靠左*/
+            list-style-type:none;      /*不要項目*/
+        }
+        nav .menu a{
+            display:block;             /*行內轉區塊才能改東西*/
+            padding-left:15px;         /*外距右邊15px*/
+            padding-right:15px;        /*外距左邊15px*/
+            height: 100px;             /*高*/
+            line-height:100px;         /*垂直長度*/
+            color:#e009f2;             /*顏色*/   
+            text-decoration: none;     /*不要底線*/
+            font-size:14px;            /*字體大小*/ 
+        }
+        
+        header{    
+             background-image:url(http://lorempicsum.com/up/800/600/4);           
+                                /*http://lorempicsum.com/#futurama 很多圖片*//*改成800*600 */
+            background-size:cover;
+            /*height: 600px;*/      /*方法一: 600px放在 置中*/   
+            padding-top:250px;      /*方法二: padding-top + padding-bottom +text-align:center →置中*/ 
+            padding-bottom:250px;   /*放在上面250px 置中*/
+            text-align:center;      /*置中*/
+        
+            
+       /*方法三:設 ↓ +header::before 與header .content →來置中
+            text-align: center; 
+            display: inline-block;    /*設成有區塊與行內的*
+            vertical-align: middle;   /*置中*
+            font-size: 0;             /*字體大小
+        }
+        header::before {
+            content: "";
+            display: inline-block;    /*設成有區塊與行內的*
+            vertical-align: middle;   /*置中*
+            height: 100%;             /*全版 *
+        }
+        header .content {
+            font-size: 16px;         /*
+            display: inline-block;   /*設成有區塊與行內的*
+            vertical-align: middle;  /*
+        }    */
+        
+          
+        
+        
+        
+    </style>
+</head>
+<body>
+  <nav class="full-width clearfix">
+     <div class="fixed-width">
+      <div class="logo"></div>
+        <div class="menu">
+          <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Products</a></li>
+              <li><a href="#">Journal</a></li>
+              <li><a href="#">Contact Us</a></li>
+                          
+          </ul>
+        </div>
+      </div>
+  </nav>
+  
+  
+  <header class="full-width">
+      <div class="content">
+          <h1>Sunt In Culpa Officia Deserunt</h1>
+          <p>dolore magna aliqua enim ad minim veniam occaecat</p>
+          <a href="#">more</a>
+      </div>
+  </header>  
+  
+
+ 
+  
+</body>
+</html>

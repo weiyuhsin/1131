@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>            <!--/*滑動至某一區塊  方法二*/-->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> <!--jquery語法-->
+    
+    <script>
+            $(function(){
+                $("nav a").click(function(){
+                    var_link = $(this).data("link");
+                    console.log(_link);
+                    var _offset = $("#"+link).offset().top;
+                    console.log(_offset);
+                    $("html,body").animate({
+                        scrollTop:_offset
+                    });
+                });
+              
+            })
+    </script>
+    <style>
+        #about,#works,#service,#contact {
+            height:1000px;
+        }
+        #about{
+            background-color:aqua;
+            
+        }
+        #works{
+            background-color:coral;
+            
+        }
+        #service{
+            background-color:darkseagreen;
+            
+        }
+        #contact{
+            background-color:#edf704;
+            
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" data-link="about">MENU A</a>
+        <a href="#" data-link="works">MENU B</a>
+        <a href="#" data-link="service">MENU C</a>
+        <a href="#" data-link="contact">MENU C</a>
+        
+    </nav>
+    <div id="about"></div>
+    <div id="works"></div>
+    <div id="service"></div>
+    <div id="contact"></div>
+    
+</body>
+</html>

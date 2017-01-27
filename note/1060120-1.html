@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script><!--jquery語法-->
+</head>
+<body>
+    <script>
+    $(function(){
+        var myDate = new Date();            /*顯示年月日星期時間*/
+        console.log(myDate);
+        var _date = myDate.toDateString();  /*顯示年月日星期*/    
+        console.log(_date); 
+        var _time = myDate.toTimeString();  /*顯示時間*/
+        console.log(_time);
+        var year = myDate.getFullYear();    /*年*/    
+        var month = myDate.getMonth()+1;    /*月 因是陣列，所以從0開始   一月=0 二月=1 所以要加1才是正確月份*/
+        var __date = myDate.getDate();      /*日*/
+        var day = myDate.getDay();          /*星期 因是陣列，所以從0開始 星期日=0 星期一=1 所以星期日要改成???*/
+        var hours = myDate.getHours();      /*小時*/
+        var minutes = myDate.getMinutes();  /*分*/
+        var seconds = myDate.getSeconds();  /*妙*/
+        console.log(year);                  /*按F12檢查是否是自己要的*/
+        console.log(month);
+        console.log(__date);
+        console.log(day);
+        console.log(hours);
+        console.log(minutes);
+        console.log(seconds);
+    })
+    </script>
+</body>
+</html>

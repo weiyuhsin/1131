@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="source/jquery.fancybox.pack.js"></script>
+    <script src="source/helpers/jquery.fancybox-thumbs.js"></script>
+    <script src="source/helpers/jquery.fancybox-media.js"></script>
+    <link rel="stylesheet" href="source/jquery.fancybox.css">
+    <link rel="stylesheet" href="source/helpers/jquery.fancybox-thumbs.css">
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .box {
+            margin: 15px;
+        }
+        img {
+            width: 200px;
+        }
+        .box {
+            box-sizing: border-box;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $(".fancy-media").fancybox({
+                padding:8,
+                helpers:{
+                    media:{}
+                }
+            });
+            $(".fancy").fancybox({
+                openEffect:"elastic",
+                closeEffect:"elastic",
+                nextEffect:"fade",
+                prevEffect:"",
+                openSpeed:300,
+                closeSpeed:300,
+//                nextSpeed:3000,
+//                prevSpeed:3000,
+                padding:8,
+                helpers:{
+                    thumbs:{
+                        width:50,
+                        height:50
+                    },
+                    title:{
+                        type:"inside"//float,inside,outside,over
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div class="container">
+      <div class="box">
+          <a href="https://www.instagram.com/p/BN9uZfkA92Y/" class="fancy-media">Instagram</a>
+      </div>
+       <div class="box">
+           <a href="https://www.youtube.com/watch?v=qrjlg3Ve3uU"class="fancy-media">
+               <img src="http://img.youtube.com/vi/qrjlg3Ve3uU/maxresdefault.jpg" alt="">
+           </a>
+       </div>
+        <div class="box">
+            <a href="images/00.jpg" class="fancy"rel="aaa"title="狗">
+                <img src="images/00.jpg" alt="">
+            </a>
+        </div>
+        <div class="box">
+            <a href="images/01.jpg" class="fancy"rel="aaa"title="樹">
+                <img src="images/01.jpg" alt="">
+            </a>
+        </div>
+        <div class="box">
+            <a href="images/02.jpg" class="fancy"rel="aaa"title="貓">
+                <img src="images/02.jpg" alt="">
+            </a>
+        </div>
+
+    </div>
+</body>
+
+</html>

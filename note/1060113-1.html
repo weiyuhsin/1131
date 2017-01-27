@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>                    <!--漢堡選單-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> <!--jquery語法-->
+    <script>
+        $(function(){
+            $(".hamburger").click(function(){           /*將hamburger做動畫→當hamburger按下去時→會跑動畫*/
+                $(this).toggleClass("hamburger-x");     /*this=hamburger被按到時→會加開關減開關Class成hamburger-x */    
+        });
+    })
+    </script>
+    <style>                               
+        .hamburger{                         /*漢堡選單外框*/
+            width: 50px;
+            height: 50px;
+            background-color: #222;
+            position:relative;                /*相對定位*/
+            
+        }
+        .hamburger span{            /*主元素hamburger中的span要做設定*/
+            position:absolute;      /*將它絕對定位*/
+            width: 35px;            /*一個長35高3的漢堡之一*/
+            height: 5px;
+            background-color: #ff8000; 
+            top:0;                  /*上下左右=0會置中*/
+            left:0;
+            right:0;
+            bottom:0;
+            margin:auto;  
+            transition:all .3s;
+        }
+        .hamburger span::before{   /*做一個虛擬元素，將原span之前做一個向上偏移的span橫線*/
+            content:"";            /*虛擬要放空字串*/
+            display:block;        /*行內變區塊才能改東西*/
+            position:absolute;    /*絕對定位*/
+            width:35px;
+            height:5px;
+            background-color:#ff8000;
+            top:-10px;            /*主元素向上偏移10px  上→ top:-10px;或bottom:10px; 下→ top:10px; 或 bottom:-10px */
+            transition:all .3s;    /*延遲.3秒*/
+            
+        }
+        .hamburger span::after{
+            content:"";
+            display:block;            /*行內變區塊才能改東西*/
+            position:absolute;        /*絕對定位*/
+            width:35px;
+            height:5px;
+            background-color: #ff8000;
+            bottom:-10px;        /*主元素向下偏移10px  上→ top:-10px;或bottom:10px; 下→ top:10px; 或 bottom:-10px  */
+            transition:all .3s;    /*延遲.3秒*/
+            
+        }
+        .hamburger-x span{            /*另一個主元素hamburger-x 中的span要做設定*/
+            position:absolute;        /*將它絕對定位*/
+            width: 35px;              /*一個長35高3的漢堡之一*/
+            height: 5px;
+            background-color: transparent; /*透明的*/
+            top:0;            /*上下左右=0 →會置中*/
+            left:0;
+            right:0;
+            bottom:0;
+            margin:auto;      
+            transform:rotate(180deg);
+            transition:all .3s;    /*延遲.3秒*/
+        }
+        .hamburger-x span::before{   /*做一個虛擬元素，將原span之前做一個向上偏移的span橫線*/
+            content:"";
+            display:block;        /**/
+            position:absolute;
+            width:35px;
+            height:5px;
+            background-color:#ff8000;
+            top:0;
+            transform:rotate(135deg);
+            transition:all .3s;    /*延遲.3秒*/
+                            
+        }
+        .hamburger-x span::after{
+            content:"";
+            display:block;
+            position:absolute;
+            width:35px;
+            height:5px;
+            background-color: #ff8000;
+            bottom:-0;
+            transform:rotate(-135deg);
+            transition:all .3s;    /*延遲.3秒*/
+            
+        }
+        
+        
+        </style>
+</head>
+<body>
+   <div class="hamburger hamburger-x">       
+       <span></span>
+       
+   </div>
+    
+</body>
+</html>

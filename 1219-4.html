@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+    <meta  charset="UTF-8">
+    <title >Document</title>
+    
+    
+    <style >
+        
+    .container{             /*最外圍*/   
+        position:relative;  /*相對定位*/
+        width: 200px;
+        height: 200px;
+        perspective:1000px; /*最外圍透視點*/
+        margin-left:30%;    /*往右間隔30%*/
+        margin-top:15%;     /*往左間隔15%*/
+        
+        
+    }
+    .cube{                  /*方框*/
+        position:absolute;  /*絕對定位*/
+        width: 100%;
+        height: 100%;
+        transform-style:preserve-3d;  /*做3D*/
+        animation:gogogo 15s alternate infinite;
+
+        
+    }
+    .cube div{               /*方框內的div分上下左右前後*/  
+        position:absolute;  /*絕對定位*/
+        width: 100%;
+        height: 100%;
+        opacity: .9          /*透明度*/
+    }
+    
+    .top{background-color: red;}
+    .bottom{background-color: orange;}
+    .left{background-color: yellow;}
+    .right{background-color: green;}
+    .front{background-color:blue;}
+    .back{background-color: purple;}
+    
+  
+        
+     .front {
+            transform: translateZ(100px)  /*前面 Z軸往前位移100px   負數是往後位移*/
+        }
+        .right {
+            transform: rotateY(90deg)translateZ(100px);  /*右邊 先Y軸轉90度(右)  再往Z軸(前)位移100px */
+        }
+        .left {
+            transform: rotateY(-90deg)translateZ(100px);  /*左邊 先Y軸轉-90度(左) 再往Z軸(前)位移100px*/
+        }
+        .top {
+            transform: rotateX(90deg)translateZ(100px);   /*上面 先X軸轉90度(上)  再往Z軸(前)位移100px*/
+        }
+        .bottom {
+            transform: rotateX(-90deg)translateZ(100px); /*下面 先X軸轉-90度(下) 再往Z軸(前)位移100px*/
+        }
+        .back {
+            transform: rotateX(180deg)translateZ(100px) /*後面 先X軸轉180度(後) 再往Z軸(前)位移100px*/
+        }    
+        
+
+        
+     @keyframes gogogo {
+            0% {
+                transform: rotateX(90deg);         /*0秒時X轉90*/
+            }
+            10% {
+                transform: rotateY(90deg);
+            }
+            20% {
+                transform: rotateX(180deg);
+            }
+            30% {
+                transform: rotateY(90deg);
+            }
+            40% {
+                transform: rotateX(90deg);
+            }
+            50% {
+                transform: rotateY(90deg);
+            }
+            60% {
+                transform: rotateX(90deg);
+            }
+            70% {
+                transform: rotateY(270deg);
+            }
+            80% {
+                transform: rotateX(180deg);
+            }
+            90% {
+                transform: rotateY(90deg);
+            }
+            100% {
+                transform: rotateX(90deg);
+         }
+        }
+        
+    </style>
+    
+ </head>   
+<body >
+    <div  class="container">
+        <div  class="cube">
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+    </div>
+    
+</body>
+</html>

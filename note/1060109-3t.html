@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>
+        $(function(){
+            var about = $("#about").offset().top;
+            var works = $("#works").offset().top;
+            var service = $("#service").offset().top;
+            var contact = $("#contact").offset().top;
+            
+            $("nav a:nth-of-type(1)").click(function(){
+                $("html,body").animate({
+                    scrollTop:about
+                });
+            });
+            $("nav a:nth-of-type(2)").click(function(){
+                $("html,body").animate({
+                    scrollTop:works
+                });
+            });
+            $("nav a:nth-of-type(3)").click(function(){
+                $("html,body").animate({
+                    scrollTop:service
+                });
+            });
+            $("nav a:nth-of-type(4)").click(function(){
+                $("html,body").animate({
+                    scrollTop:contact
+                });
+            });
+        })
+    </script>
+    <style>
+        #about,
+        #works,
+        #service,
+        #contact {
+            height: 1000px;
+        }
+        
+        #about {
+            background-color: #ff0093;
+        }
+        
+        #works {
+            background-color: #00ffe2;
+        }
+        
+        #service {
+            background-color: #ffb100;
+        }
+        
+        #contact {
+            background-color: #76ff00;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="#">MENU A</a>
+        <a href="#">MENU B</a>
+        <a href="#">MENU C</a>
+        <a href="#">MENU D</a>
+    </nav>
+    <div id="about"></div>
+    <div id="works"></div>
+    <div id="service"></div>
+    <div id="contact"></div>
+</body>
+
+</html>

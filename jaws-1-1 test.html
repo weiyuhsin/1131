@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang=en>
+<head>
+        <meta charset=utf-8>
+        <meta http-equiv=X-UA-Compatible content="IE=edge">
+        <meta name=viewport content="width=device-width, initial-scale=1">
+        <meta name=description content="">
+        <meta name=author content="">
+        <link rel=icon href=/Content/AssetsBS3/img/favicon.ico>
+        <title>Jawscable 線組加工/線材加工/配線加工</title>
+        
+
+
+<link rel="stylesheet" href="jquery.bxslider.css"> <!--輪播css語法1 要加jQuery2.2.4語法 & 輪播js語法-->      
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"> </script>  <!--jQUERY語法的連結--> 
+<script src="jquery.bxslider.min.js"></script>            <!--輪播js語法2 要加jQuery2.2.4語法 & 輪播css語法-->  
+ 
+    
+
+   
+</head>  
+         
+  
+              
+              
+ <!------------------------------------------------------------------------------------------------------------------------- -->                 
+
+      <script>                              /*輪播語法1*/
+        $(function(){
+            $(".slider").bxSlider({
+                mode:"fade",
+                auto:true,
+                pause:6000,
+                speed:300,
+                captions:true,
+//                pager:false,
+                pagerType:"long"
+//                controls:false
+            });
+        })
+          
+        
+     
+          /*輪播語法2*/
+        $(document).ready(function(){
+        $('.slider2').bxSlider({
+            minSlides: 3,
+            maxSlides: 9,
+            slideWidth: 170,
+            slideMargin: 10,
+            
+            auto:true,
+            pause:6000,
+            speed:300,
+            
+         //    mode:"'horizontal",     /*'horizontal', 'vertical上下', 'fade橫'*/
+        //        auto:true,      /*自動輪播*/
+           //     pause:6000,     /*顯示停止時間*/
+        //        speed:300,      /*轉場時間*/
+        //        captions:true,  /*顯示標題*/
+         //       pager:false,    /*頁碼*/
+             //   controls:false  /*控制上一頁下一頁*/
+        });    
+        })
+        
+        
+    </script>
+    
+    
+   <!------------------------------------------------------------------------------------------------------------------------- -->    
+    
+    <style>
+        header {                    /*輪播語法*/
+            width: 100%;
+            margin: auto;
+        }
+        header ul {
+            margin: 0;
+            padding: 0;
+        }
+        .recommend{            /*推薦產品 字*/
+            color:#2c4bf4; 
+            
+        }
+        
+       
+    </style>
+  
+  <!------------------------------------------------------------------------------------------------------------------------- -->   
+
+      
+                   
+
+        
+    <header>
+        <ul class="slider">        <!--輪播-->
+            <li><img src="https://images.unsplash.com/photo-1447965397908-09312827f0bb?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1700&h=600&fit=crop&s=7978bee50833f2482a4390e575a541e7" title="HELLO"></li>
+            <li><img src="https://images.unsplash.com/photo-1445503061048-e03cd48b1f11?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1700&h=600&fit=crop&s=1e9d385a85f7f81ea2d174c9bf6c7fd4" alt=""></li>
+            <li><img src="https://images.unsplash.com/photo-1458519488348-81c0467ebb98?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1700&h=600&fit=crop&s=5355cf2f4685acffba57e7971e22f576" alt=""></li>
+            <li><img src="https://images.unsplash.com/photo-1459196088695-2eef93d1c69c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1700&h=600&fit=crop&s=a21ed52d37e321f289d2d95304125dbc" alt=""></li>
+        </ul>
+        
+        <div class="recommend" ><h3>推薦產品 PRODUCTS</h3></div>
+        
+        <ul class="slider2">   <!--輪播2 *8-->
+  <li><img src="images/01.jpg" width="200" height="200"/>1</li>
+  <li><img src="images/02.jpg" width="200" height="200"/>2</li>
+  <li><img src="images/03.jpg" width="200" height="200"/>3</li>
+  <li><img src="images/04.jpg" width="200" height="200"/>4</li>
+  <li><img src="images/05.jpg" width="200" height="200"/>5</li>
+  <li><img src="images/06.jpg" width="200" height="200"/>6</li>
+  <li><img src="images/07.jpg" width="200" height="200"/>7</li>
+  <li><img src="images/08.jpg" width="200" height="200"/>8</li>
+  <li><img src="images/09.jpg" width="200" height="200"/>9</li>
+  <li><img src="images/10.jpg" width="200" height="200"/>10</li>
+  <li><img src="images/11.jpg" width="200" height="200"/>11</li>
+  <li><img src="images/01.jpg" width="200" height="200"/>12</li>
+  <li><img src="images/02.jpg" width="200" height="200"/>13</li>
+  <li><img src="images/03.jpg" width="200" height="200"/>14</li>
+  <li><img src="images/04.jpg" width="200" height="200"/>15</li>
+  <li><img src="images/05.jpg" width="200" height="200"/>16</li>
+  <li><img src="images/06.jpg" width="200" height="200"/>17</li>
+  <li><img src="images/07.jpg" width="200" height="200"/>18</li>
+  <li><img src="images/08.jpg" width="200" height="200"/>19</li>
+  <li><img src="images/09.jpg" width="200" height="200"/>20</li>
+  <li><img src="images/10.jpg" width="200" height="200"/>21</li>
+  <li><img src="images/11.jpg" width="200" height="200"/>22</li>
+</ul>
+            
+            
+            
+  
+        
+        
+        
+        
+        
+        
+    </header>    
+                    
+
+        <script src=/Scripts/AssetsBS3/ie10-viewport-bug-workaround.js></script>
+        
+        
+        
+
+        
+
+                            
+                                          -->
+        
+               
+
+
+
+
+
+
+
+
+
+
+
+

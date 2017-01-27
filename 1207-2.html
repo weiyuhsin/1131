@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>                               /**/
+        .container {
+            font-size: 0;                /*區塊之間會有一個小間隙解決方法 先設 display:inline-block; */
+        }
+        .box {
+            display: inline-block;       /*設成有區塊與行內的*/
+            vertical-align: middle;      /*垂直對齊：置中*/
+            width: 300px;
+            height: 500px;
+            overflow: auto;              /*加上overflow讓浮動與固定分開不加高度*/
+            background-color: #aaa;
+            font-size: 0;
+        }
+        .box::before {               
+            content: "";                /*因為box內只有一個文章段落，沒有別的可以比較，所以要加一個虛擬元素在內*/
+            display: inline-block;      /*設成有區塊與行內的*/
+            vertical-align: middle;     /*垂直對齊：置中*/
+            height: 100%;
+        }
+        .box .content {
+            vertical-align: middle;     /*垂直對齊：置中*/
+            display: inline-block;      /*設成有區塊與行內的*/
+            font-size: 16px;            /*字體size*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="content">
+                <h1>qwerty</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure praesentium quod, quis, saepe corporis impedit magnam unde pariatur vel expedita necessitatibus similique repellendus? Nam omnis repudiandae officia commodi. Ducimus, quidem?
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="content">
+                <h1>qwerty</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque nulla, aut amet sit! Maxime fugit illo voluptatem voluptatum hic eveniet a, dolore quia! Similique a repudiandae natus, quos, pariatur aperiam.
+                </p>
+            </div>
+        </div>
+        <div class="box">
+            <div class="content">
+                <h1>qwerty</h1>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit fuga, expedita delectus doloremque reprehenderit assumenda iste rerum ea suscipit aliquam molestias minus nemo eum quisquam rem doloribus blanditiis nobis. Molestias?
+                </p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

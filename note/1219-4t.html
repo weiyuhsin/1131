@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            perspective: 1000px;
+            margin-left: 30%;
+            margin-top: 15%;
+        }
+        .cube {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            animation: gogogo 15s alternate infinite;
+        }
+        .cube div {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: .9;
+        }
+        .top {background-color: #ff0000;}
+        .bottom {background-color: #0783ff;}
+        .left {background-color: #00ff89;}
+        .right {background-color: #f5ff00;}
+        .front {background-color: #ff8900;}
+        .back {background-color: #8900ff;}
+        
+        .front {
+            transform: translateZ(100px)
+        }
+        .right {
+            transform: rotateY(90deg)translateZ(100px);
+        }
+        .left {
+            transform: rotateY(-90deg)translateZ(100px);
+        }
+        .top {
+            transform: rotateX(90deg)translateZ(100px);
+        }
+        .bottom {
+            transform: rotateX(-90deg)translateZ(100px);
+        }
+        .back {
+            transform: rotateX(180deg)translateZ(100px)
+        }
+        @keyframes gogogo {
+            0% {
+                transform: rotateX(90deg);
+            }
+            10% {
+                transform: rotateY(90deg);
+            }
+            20% {
+                transform: rotateX(180deg);
+            }
+            30% {
+                transform: rotateY(90deg);
+            }
+            40% {
+                transform: rotateX(90deg);
+            }
+            50% {
+                transform: rotateY(90deg);
+            }
+            60% {
+                transform: rotateX(90deg);
+            }
+            70% {
+                transform: rotateY(270deg);
+            }
+            80% {
+                transform: rotateX(180deg);
+            }
+            90% {
+                transform: rotateY(90deg);
+            }
+            100% {
+                transform: rotateX(90deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cube">
+            <div class="top"></div>
+            <div class="bottom"></div>
+            <div class="left"></div>
+            <div class="right"></div>
+            <div class="front"></div>
+            <div class="back"></div>
+        </div>
+    </div>
+</body>
+</html>

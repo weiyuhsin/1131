@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>                        <!--選擇台北市之後會自動帶出行政區--><!--一個迴圈一個迴圈跑--> 
+    <script>
+        var district = new Array();    <!--new→類別的意思--> 
+        district [0]=["請選擇"];
+        district [1]=["大同區","大安區","信義區","松山區","南港區","內湖區","萬華區","士林區","北投區"];  <!--如果選了台北市1下一個選項會出現"大同區"....等-->    
+        district [2]=["淡水區","新莊區","三重區","中和區","永和區","蘆洲區"];  <!--如果選了新北市1下一個選項會出現"淡水區"....等-->  
+        district [3]=["桃園區","觀音區","龜山區","中壢區","大園區","楊梅區"];  <!--如果選了桃園市1下一個選項會出現"桃園區"....等-->  
+        
+        function update(index){                                     <!--設一個函式可以去抓出(index任意名稱)裡的變數-->
+            for(var i = 0; i<district[index].length;i++){           <!--設一個迴圈  變數i=0→如i<區域 會出現的變數[index→使用者給的名稱索引值決定city值]
+                                                                    <!--length→陣列的長度-->
+                myForm.district.options[i] = new Option (district[index][i],district[index][i]);
+            }                                           
+                                                        <!--在myForm的district內的options們= new(類別) option →(抓選擇後的文字,選擇後的值)-->
+                                                       <!--index→使用者給的名稱陣列索引值-->
+                                                           
+                myForm.district.length = district[index].length;   <!--避免陣列多蓋到少的部份出現區亂跑至別的市裡→ 加了一個 要與陣列一樣長的-->
+        }
+    </script>
+
+
+
+</head>
+<body>
+    <form action=""id="myForm">                      <!---->  <!--設縣市-->  
+        <select name="city" id="city" onchange = "update(this.selectedIndex)">  
+            <option value="請選擇">請選擇</option>             
+            <option value="台北市">台北市1</option>     <!--第一個陣列→台北市-->    <!--台北市→值  台北市1→文字--> 
+            <option value="新北市">新北市1</option>     <!--第二個陣列→新北市-->    
+            <option value="桃園市">桃園市1</option>     <!--第三個陣列→桃園市-->    
+            
+        </select>
+            <select name="district" id="district">   <!--設區域-->  
+                <option value=""></option>            
+            </select>
+    </form>
+</body>
+</html>

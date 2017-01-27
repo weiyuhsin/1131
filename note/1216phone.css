@@ -1,0 +1,279 @@
+/*手機用的版型*/               /*下載beautify → Ctrl+Shift+L 更新 */
+
+        @media screen and (max-width:480px){ 
+            .fixed-width{    
+                 width: 100%;           /*全滿*/
+                 /* margin:auto;*/      /*手機不用*/
+            }
+        
+
+       
+        .col-3 {                        /*3欄頁面設法*/   
+            /*float:left;*/             /*手機不用*/
+            width:100%;                 /*手機版改成100%*/ 
+            /*margin-left:10px; */      /*不用*/                   
+            /*margin-right:10px;*/      /*不用*/
+        }   
+        .col-4{                         /*4欄頁面設法*/ /*1200/4=300*/
+            /*float:left;*/             /*手機不用*/
+             width:100%;                /*手機版改成100%*/ /*280+10+10=300*/
+            /*margin-left:10px; */      /*不用*/                    
+            /*margin-right:10px;*/      /*不用*/
+        }
+        
+        nav{
+        /*position:fixed;*/             /*手機不用*//*將最上面的選單固定在網頁最上面*/
+        /*background-color:#faf; */     /*手機不用*//*粉紅欄 有蓋過圖片*/
+        }      
+        
+        nav .logo{
+            /*float:left;*/             /*手機不用*/    /*logo浮動靠左*/
+            width: 50px;               /*手機改成50px*//*logo 寬*/
+            height: 50px;              /*手機改成50px*//*logo 高*/
+            background-color: #aaa;     /*logo背景色*/
+            
+        }
+        nav .menu{                      /*menu*/
+            /*float:left;*/             /*手機不用*//*menu 浮動靠右*/
+        }
+        
+        nav .menu ul{                   /*menu*/ 
+            margin: 0;                  /*menu外距*/
+            padding: 0;                 /*menu內距*/ 
+        }
+        
+        nav .menu li{
+            /*float:left;*/             /*手機不用*//*menu li選單的About Us浮動靠左*/
+            list-style-type:none;      /*不要項目*/
+            border-bottom: 1px solid #aaa;  /*手機每個menu加一個底線*/
+        }
+        nav .menu a{
+            display:block;             /*行內轉區塊才能改東西*/
+            padding-left:15px;         /*外距右邊15px*/
+            padding-right:15px;        /*外距左邊15px*/
+            height: 50px;              /*手機改成50px*//*高*/
+            line-height:50px;          /*手機改成50px*//*垂直長度*/
+            color:#e009f2;             /*顏色*/   
+            text-decoration: none;     /*不要底線*/
+            font-size:14px;            /*字體大小*/
+            /*text-align:center;*/         /*手機加menu字在中間*/
+            background-color: #333;    /*手機加背景色*/
+        }
+        
+        header{    
+             background-image:
+                 url(http://lorempicsum.com/up/800/600/4);           
+                                /*http://lorempicsum.com/#futurama 很多圖片*//*改成800*600 */
+            background-size:cover;
+            height: 600px;      /*方法一: 600px放在 置中*/   
+            /*padding-top:250px;*/      /*方法二: padding-top + padding-bottom +text-align:center →置中*/ 
+            /*padding-bottom:250px;*/   /*放在上面250px 置中*/
+            /*text-align:center;*/      /*置中*/
+
+        }
+            
+       /*方法三:設 ↓ +header::before 與header .content →來置中*/
+            text-align: center; 
+            display: inline-block;    /*設成有區塊與行內的*/
+            vertical-align: middle;   /*置中*/
+            font-size: 0;             /*字體大小*/
+        }
+        header::before {
+            content: "";
+            display: inline-block;    /*設成有區塊與行內的*/
+            vertical-align: middle;   /*置中*/
+            height: 100%;             /*全版 */
+        }
+        header .content {
+            font-size: 18px;         /**/
+            display: inline-block;   /*設成有區塊與行內的*/
+            vertical-align: middle;  /**/
+            color:#fff; 
+        }
+        header .content h1{
+            letter-spacing:5px;
+            font-size:28px; /*手機版的標題要改小一點*/
+        }
+        header .content p {
+        letter-spacing: 2px;
+        margin-top: 10px;
+        margin-bottom: 60px;
+        color: #fff;
+        }
+        header .content a {
+        display: inline-block;
+        color: #fff;
+        padding: 10px 25px;
+        text-decoration: none;
+        border: 1px solid;
+        }
+        
+        #about{
+            padding-top:100px;           /*背景框間格-上*/
+            padding-bottom:100px;       /*背景框間格-底*/ 
+            background-color: #e3e3e3;     /*背景色:灰色*/
+            }
+        
+        #about h3{
+           margin-top:30px;          /**/
+           margin-bottom:30px;
+           }   
+        
+        #about .col-3{               
+            text-align:center;          /*字體置中*/
+            padding:20px;               /*字體上下行距*/
+            }
+        
+       
+        
+        #about p{
+            font-size:14px;            /*p欄內容字體大小*/
+        }
+        
+        #about .col-3:nth-of-type(1) .icon{     /*col-3 內的第一個icon改成紅色*/
+            color:red;
+        }
+        
+        #about .col-3:nth-of-type(2) .icon{     /*col-3 內的第二個icon改成紫色*/
+            color:purple;
+        }
+        
+        #about .col-3:nth-of-type(3) .icon{     /*col-3 內的第三個icon改成綠色*/
+            color:green;
+        }
+        
+        #ad{
+            background-image: url(images/12.jpg);   /*抓一個背景圖*/
+            background-repeat: no-repeat;           /*圖片不要重複*/      
+            background-position: center;            /*圖片置中*/
+            padding-top:100px;                      /*圖片上方間距*/
+            padding-bottom:100px;                   /*圖片下方間距*/
+            text-align:center;                      /*圖片字間距*/
+            color:#fff;                             /*圖片字顏色*/
+            background-size:cover;                  /*圖片左右全滿*/
+        }
+        
+        #ad p{
+            margin-top:15px;                       /*圖片內文字上間距*/
+            margin-bottom:15px;                    /*圖片內文字下間距*/
+        }
+        
+        #profile{
+            padding-top:100px;
+            padding-bottom:100px;
+        }
+        
+        #profile div:nth-of-type(1){            /*profile div內的第一個字改成置中*/
+            text-align: center;                 /*文字置中*/
+        }
+        #profile .detail {
+            display: inline-block;              /*設成有區塊與行內的*/
+            vertical-align: middle;             /*垂直對齊-置中*/
+            font-size: 0;                       /**/
+            width: 100%;                        /*框內滿版*/
+        }
+        #profile .detail::before {
+            content: "";
+            display: inline-block;              /*設成有區塊與行內的*/
+            vertical-align: middle;             /*垂直對齊-置中*/ 
+            height: 100%;
+        }
+        #profile .thumb {                       /*ICON-GG*/
+            display: inline-block;              /*設成有區塊與行內的*/
+            vertical-align: middle;             /*ICON-GG 垂直對齊-置中*/
+            font-size: 16px;                    /*ICON-GG 大小16px*/
+            width: 30%;        /*手機版改30%*/   /*ICON-GG 在左邊框中位於80px的位置*/  
+        }
+        #profile .position {                    /*JOE DOE & CEO*/
+            display: inline-block;              /*設成有區塊與行內的*/
+            vertical-align: middle;             /*JOE DOE & CEO垂直對齊-置中*/ 
+            font-size: 16px;                    /*JOE DOE & CEO字體大小*/
+            width: 50%;        /*手機版改50%*/    /*JOE DOE & CEO在右邊框中位於300px的位置*/
+            text-align:left;                    /*CEO靠左*/
+        }
+        
+        #profile div:nth-of-type(2) .col-3>p{   /*profile 中的第二個div中的.col-3中的第一個p(只能選第一個p)*/
+            padding:20px 20px 40px 15px;         /*上右下左間距*/  
+            text-align:left;                    /*內文字體靠左*/
+        }
+        
+        
+        
+        
+        #blog{
+            background-color: #ddd;
+            padding-top:150px;
+            padding-bottom:150px;
+        }
+
+        #blog .gallery{
+            position:relative;                 /*relative→相對定位*/    
+        }
+        
+        #blog .gallery .date{                  /*四格內的日期*/
+            position:absolute;                 /*絕對定位*/
+            /*width: 40px;*/                   /*寬*/
+            /*height: 40px;*/                  /*高*/
+            padding:8px;                       /*日期框內距*/
+            background-color: rgba(0,0,0,.5);  /*顏色半透明*/
+            color: #fff;                       
+            top:0;
+            left:40px;                         /*日期框放左邊數來40px*/
+            text-align:center;                
+            
+        }
+        
+        #blog .gallery+p {                    /*gallery+p→加號=找gallery同輩份的p*/
+           /*margin-top: 20px;*/              /*手機版不要*/ /*與上圖片間格20px*/
+           /*color: #666;*/                   /**/
+           font-size:16px; /*手機版加上font-size:16px字體*/ 
+           padding-top:20px;/*手機版加上padding-top:20px行距間格*/
+           margin-bottom:40px; /*手機版將margin-top改成margin-bottom:40px*/ 
+        }
+        
+        
+        .title {                             /*橘字title*/                    
+            text-align: center;              /*橘字title置中*/  
+            padding-top: 10px;               /*橘字title與上面間格10px*/  
+            padding-bottom: 50px;            /*橘字title與下面間格50px*/  
+        }
+        .title h2 {
+            color: coral;
+        }
+        .title p {
+            /*color: #999;*/
+            /*font-size: 14px;*/
+            line-height: 36px;
+        }
+        
+        
+        
+        
+        footer .logo {                     /*最底層logo*/
+            width: 100px;                  /*最底層logo寬度*/
+            height: 70px;                  /*最底層logo高度*/
+            background-color: #ccc;        /*最底層logo顏色*/
+            /*float: left;  */  /*手機不要*/        /*最底層logo浮動靠左*/
+            margin:auto;        /*手機要加*/
+            
+        }
+        footer .copyright {     
+            line-height: 70px;             /*最底層LCC間格高度*/
+             /*float: left; */ /*手機不要*/ /*最底層LCC浮動靠左*/
+            font-size: 14px;               /*最底層LCC字體大小*/
+            /*margin-left: 30px;*/ /*手機不要*//*最底層LCC左邊外距30px開始*/
+        }
+        footer .menu { 
+             /*float: left;*/  /*手機不要*/      /*最底層menu (about)浮動靠右 */
+             text-align:center;
+        }
+        footer .menu a {                   /*最底層menu (about)內文 */
+            line-height: 40px;  /*手機改成40px*/           /*最底層menu (about)內文間格高度 */
+            text-decoration: none;         /*最底層menu (about)內文不要底線 */
+            color: #333;                   /*最底層menu (about)內文顏色 */
+            margin-left: 10px;  /*手機改成10px*/    /*最底層menu (about)內文間格左邊數20px再下一段文字 */
+
+
+}
+}
+            

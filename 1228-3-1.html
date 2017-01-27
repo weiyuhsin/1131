@@ -1,0 +1,1245 @@
+JavaScript       http://taiwantc.com/js/js_tut_a4.htm
+
+
+基本結構 (The Structure of JavaScript)
+第一個例子：Hello, World (The First Example: Hello, World)
+物件 (Object)
+    物件 (Object)
+    物件的表示方式 (Literal of Object)
+    方法與屬性 (Method and Property)
+變數 (Variable)
+    變數 (Variable)
+    資料型態 (Data Type)
+    陣列 (Array)
+運算子 (Operator)
+    算術運算子 (Arithmetic Operators)
+    字串運算子 (String Operators)
+    邏輯運元 (Logical Operators)
+    位元運算子 (Bitwise Operators)
+    指定運算子 (Assignment Operators)
+    比較運算子 (Comparison Operators)
+    特別運算子 (Special Operators)
+函數 (Function)
+    函數 (Function)
+    輸入參數 (Arguments)
+    傳回資料 (Return Value)
+    變數的範圍 (The Scope of a Variable)
+事件 (Event)
+    事件
+    把函數指定到事件
+    終止事件
+流程控制 (Flow Control)
+    流程控制
+    if
+    if ... else
+    for
+    while
+    break
+    continue
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+物件
+
+大家在第一篇中的 Hello, World 例子中初次接觸到 document 物件， 但物件是什麼呢？
+
+JavaScript 是物件導向程式語言， 簡單來說即是瀏覽器內的任何東西都視作物件， 而每個物件又可能包含 (contain) 其它物件。 大家可以用十秒時間想一想你的瀏覽器內有些什麼東西， 如果想到的話可以再想想這些東西又包含了什麼其它的東西。
+
+為了讓大家清楚 JavaScript 的物件架構， 在這一節內我會針對以下圖片來說明物件：
+
+js_tutorial_fig1.gif (7505 bytes)
+
+圖一： JavaScript 物件層次圖 (JavaScript Object Hierarchy)
+來源： Netscape JavaScript Reference
+
+圖一是 Netscape 網站內一幅 JavaScript 的物件層次圖， 每個長方形代表一個物件， 長方形內的文字表示該物件的名稱 (Name)， 連繫長方形的線表示了物件與物件之間的層次關係。
+
+最高層次的物件有兩個： window  和  navigator 。 我們首先看看  window ，它包含了 document 物件， 即是說 window 是 document 的包含者 (Container)， 再看看 document ， 它包含了 Form 物件， 即是說 document 是 Form 的包含者。
+
+物件的表示方式
+
+現在知道哪個物件包含哪個物件， 那麼如何表示它們呢？
+
+想表示某個物件， 主要步驟有三個：
+
+第一步： 找出該物件的名稱， 名稱是很重要的。
+要找出一個物件的名稱， 主要有兩個步驟：
+
+找出該物件的 HTML 標記裏 name 屬性的值， 而這個值就是該物件的名稱了。 例如有一個表單， 它的 HTML 碼如下：
+<form name="my_form">
+   <input type="text" name="my_name" value="Your name here">
+</form>
+這個表單物件的名稱就是 my_form ， 而表單內的文字輸入物件的名稱就是 my_name 了。
+
+如果那個物件是唯一的 (Unique)， 而且它根本沒有 HTML 標記， 那就用該物件在圖一的名稱。 例如 document ， 因為一個瀏覽器視窗或窗柜只能有一頁， 所以 document 是唯一的， 我們就用 document 作為 document 物件的名稱。 例如 navigator (瀏覽器物件)， 一個瀏覽器視窗只能屬於該個瀏覽器， 因此我們就用 navigator 作為 netvigator 物件的名稱。
+第二步： 找出該物件的所有包含者名稱
+只要參考圖一， 便很易找出某個物件的包含者名稱。 在某些情況下， 你無須找出某些包含者的名稱， 例如在某一頁內的 JavaScript 想使用該頁的物件， 你就不須要找出那一頁所在的視窗或窗柜物件的名稱， 但如果你想在某頁使用另一個視窗或窗柜物件， 那找必須找出那個物件的名稱了。
+
+第三步： 在物件和它的所有必須的包含者之間用一點 (.) 連貫起來
+這步更加容易， 例如你想表示文字輸入物件， 名稱是 my_name ， 它是在一個表單內， 名稱是 my_form ， 我假設使用這個物件的 JavaScript 與這個物件的 HTML 碼是在同一頁， 因此我不須要找出視窗的名字。 表示方式如下：
+
+document.my_form.myname
+大家可能會問， 既然它們是在同一頁， 那麼 document 也不須要寫吧， 只是寫 my_form.myname 不就行了嗎？ 理倫上好像是對的， 我在 IE 和 Opera 測試過這種寫法， 它們也支援， 但不知何解 Netscape 會產生錯誤， 所以這裏建議大家不要漏去 document ， 如果你怕打太多字也不用擔心， 之後的篇章會教大家如何運用變數， 令自己不用打這麼多字。
+
+方法與屬性
+
+相信大家已經有了物件的概念了， 但有了一個物件， 可以做些什麼呢？ 答： 就是運用它的方法和屬性了：
+
+方法 (Method)：
+用來做一些與該物件有關的動作， 例如 document.write() ，write 是 document 的方法， 所以這一句會在 document 寫入一些東西。
+
+表示方式：
+
+Object_name.method()
+
+方法必須有左括號和右括號 ()， 而括號內是用來輸入參數的。 當方法沒有參數時， 也應在尾部加入括號， 以表示它是一個方法， 而括號內不用寫任何東西。
+
+其實方法就好像一個函數 (Function)， 不同之處在於方法是連繫著物件的。 函數會在之後的篇章詳述。
+
+屬性 (Property)：
+用來取得該物件的屬性或資訊， 也可以設定某些屬性的內容。 例如 document.bgColor ，bgColor 是 document 的屬性， 所以這一句的內容就是該個 document 的背景顏色， 你也可以設定它的內容來改變背景顏色，例如 document.bgColor="silver" ，這句會把該頁的背景顏色轉為銀色。
+
+表示方式：
+
+Object_name.property
+
+其實屬性就好像一個變數 (Variable)， 不同之處在於屬性是連繫著物件的。 變數會在之後的篇章詳述。
+
+現在大家應該對方法和屬性有初步的概念了， 讓我介紹一下常用 document 的方法和屬性吧：
+
+Document 物件
+方法	屬性
+write()	bgColor
+writeln()	fgColor
+　	title
+　	lastModified
+　	URL
+writeln()  和  write()   的功能一樣， 唯一不同的地方就是  write() 會在句尾加入斷行符號 (Carrier Return)， 目的是使寫出來的東西在普通文字編輯器中 (如 Notepad) 易於閱讀， 也方便列印。 但在螢幕上的效果基本上是一樣的， 因為 HTML 格式內的斷行符號一般會被忽略。
+例子： document 的屬性：
+
+<html>
+<head><title> The Second Example: Method and Property</title>
+
+<script>
+<!--
+document.write("Document URL : " + document.URL + "<br>");
+document.write("Date of  last modified :" + document.lastModified + "<br>");
+document.write("Document Title: " + document.title + "<br>");
+document.write("The background color is " + document.bgColor
++ " and the text color is " + document.fgColor);
+document.fgColor = "yellow";
+document.bgColor = "black";
+//-->
+</script>
+
+</head>
+<body>
+<h2> The Second Example: Method and Property </h2>
+The text and background color have been changed
+because I modified the content of document.fgColor
+and document.bgColor .
+</body>
+</html>
+看結果
+The URL of this document is : http://taiwantc.com/js/js_tut_a2.htm
+This document is last modified on 01/11/2010 13:43:11
+This document is entitled The Second Example: Method and Property
+The background color is and the text color is
+The Second Example: Method and Property
+
+The text and background color have been changed because I modified the content of document.fgColor and document.bgColor .
+
+
+
+
+程式說明：
+
+"The URL of this document is : " + document.URL + "<br>"
+這是 write 的一個參數， 而這個參數是一個字串， 它有三個部份， 分別是 "The URL of this document is : " ,  document.URL  和   "<br>"  ， 它們之間都有個加號 (+)， 是用來將那三個部份組合成一個更長的字串， 然後這個字串就作為 write 的參數了。
+
+document.URL   不用雙引號括著，因為我們要顯示  document.URL   的內容， 而不是一個  document.URL  字串。
+
+document.write("The background color is " + document.bgColor
+                       + " and the text color is " + document.fgColor);
+當你發覺一句字串太長時， 可以寫在下一行， 而分割的位置可以在加號的左右， 分割其它位置可能會造成錯誤。
+
+document.fgColor = "gold"  和  document.bgColor = "black"
+這兩句會將背景顏色轉成黑色， 將文字顏色轉成金色。 想改變物件屬性的內容， 只須把它當作變數， 再用等號 (=) 指定它的內容便可。
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+基本結構 (Structure)
+
+第一個例子: Hello, World
+
+讓我們一同看看以下的 Hello, World 例子， 了解 JavaScript 的基本結構：
+
+<html>
+<head>
+<title> The First Example: Hello, World </title>
+</head>
+<body>
+<h2> This line is HTML </h2>
+
+<script language="JavaScript">
+<!--
+document.write("Hello, World.This sentence is written using JavaScript.");
+// Text on the right of 2 slashes is comment
+/* This is comment
+that occur more than 1 line
+*/
+//-->
+</script>
+<noscript>
+Sorry, but your browser doesn't run JavaScript.
+</noscript>
+
+<h2> This line is HTML </h2>
+</body>
+</html>
+看結果
+This line is HTML
+
+Hello, World.This sentence is written using JavaScript.
+This line is HTML
+
+
+
+
+例子說明：
+
+因為 JavaScript 是寫在 HTML 檔的， 所以 Netscape 定義了一個 <script> 標記 。
+瀏覽器會將 <script> 與 </script> 中間的東西視作要執行的 JavaScript， 而不是HTML 。
+通常適合撰寫 JavaScript 的位置有三個：
+第一， 寫在 <head> 範圍， 好處是可以保證在載入 <body> 內容之前已經完全載入 <head> 的 JavaScript， 另一個好處是當你用某些 WYSIWYG 的網頁編輯器修改 <body> 內容時不會影響到寫在 <head> 的 JavaScript。
+
+第二， 寫在 <body> 範圍， 當你要用 JavaScript 寫東西到 <body> 時就會用到。
+
+第三， 寫在 </html>之後， 好處是不會影響 <html> 範圍的內容， 適合一般免費網頁供應商在網頁加入廣告窗 (pop-up window) 。
+
+<script> 有兩個屬性 (Attribute)：
+第一個屬性： language
+以上的 Hello, World 例子中用了 language="JavaScript"，其實 language 屬性可以有以下的值：
+
+language 的值	解釋	不支援的瀏覽器
+JavaScript	是用 JavaScript 寫的	不支援 JavaScript 的瀏覽器
+JavaScript1.1	JavaScript 版本 1.1	NN 3 之前 , IE 4 之前  (如 NN 2, IE 3)
+JavaScript1.2	JavaScript 版本 1.2	NN 4 之前 , IE 4 之前  (如 NN 3, IE 3)
+JavaScript1.3	JavaScript 版本 1.3
+專為 NN 4.5 而設	NN 4.5 之前
+LiveScript	LiveScript 是 JavaScript 的舊名，
+將來不知會否被支援	　
+VBscript	是用 Visual Basic Script 寫的，
+只有 Internet Explorer 支援	所有版本的 Netscape Navigator
+註： NN = Netscape Navigator . IE = Internet Explorer
+
+不支援的瀏覽器會忽略該版本的 JavaScript，如果不註明該 JavaScript 是哪一個版本， 而當瀏覽器讀到它不支援的 JavaScript 時，便會產生錯誤。 有時為了方便， 你也可以不寫 language 屬性， 瀏覽器也會當它是 JavaScript 。
+
+第二個屬性：src
+你可以將 JavaScript 放在另一個檔案，然後將 src 設定為該檔的 URL。例如：
+
+<script language="JavaScript" 
+src="http://www.somehost.com/directory/library.js">
+</script>
+好處：第一，所有 HTML 檔只須加入這一句就可以享用 library.js 內的 JavaScript ，第二，當瀏覽器關閉或不支援 JavaScript 功能時，瀏覽器就不用下載 JavaScript 的檔案，節省下載時間， 第三就是方便在某一頁寫入資料。
+<!-- 和 //-->
+<!-- 和 --> 其實是 HTML 的註解標記 (comment tag)， 而  // 則是 JavaScript 的註解標記， 為什麼要在 JavaScript 的範圍內寫 HTML 的註解標記呢？ 因為有些很舊的瀏覽器在未有 JavaScript 時出產， 這些瀏覽器當然不知道有 JavaScript 這東西， 它們會誤以為寫在 HTML 檔內 JavaScript 是 HTML 碼， 所以我們會好像 以上例子中加入 HTML 的註解標記， 令那些舊的瀏覽器忽略 JavaScript。 同理， 那個  // 是用來令 JavaScript 編譯器忽略 --> 標記的。
+
+JavaScript 的註解標記有兩款：第一是 // ，第二是 /*   */。 第一款用來表示在　//　右邊的東西都是註解； 而第二款是用來表示所有在 /* 及 */ 範圍內的東西都是註解， 如果你想打很多行註解，用這款比較方便。
+
+document.write("Hello, World");
+這一句用到 第二篇： 物件的方法與屬性 中所教的東西， 不過現在簡略說明一下， 讓大家有個初步的概念。
+
+句中的 document (頁／文件) 是指當時瀏覽器視窗或窗柜顯示的一頁內容，但未必是一個實在的檔案內容， 因為該頁的全部內容可能是用 JavaScript 動態地寫出來的， 所以說 document 是顯示的內容， 而非檔案內容。
+
+document 是一個物件， write 是 document 物件的一個方法， 它們中間有一點 (.)， 是用來連貫它們的。
+
+"Hello, World" 是 write 的參數 (Argument / Parameter)， Hello, World 字串被雙引號括著， 即是說 Hello, World 是一個字串。句尾的分號 (;) 是用來表示該行的結尾。
+
+總括來說， 這一行的作用就是叫瀏覽器在顯示中的一頁 (document) 寫 (write) 一句 Hello, World 的字串。 當然你也可以用 document.write 寫 HTML 標記， 這就可以動態地造出 HTML 網頁了。 以下句子會寫出斜體的字串 Hello 字串：
+
+document.write("<i>Hello</i>")
+<noscript>  和  </noscript>
+在某些情況下瀏覽器不能夠執行 JavaScript ， 原因主要有兩個： 第一是舊的瀏覽器不知道有 JavaScript ， 第二就是使用者關閉了 JavaScript 功能。 這時瀏覽器就會顯 <noscript> 範圍的內容， 讓網頁管理員通知瀏覽者該網頁有些內容不能如常運作。 你可以嘗試關閉 JavaScript 功能， 然後開啟 Hello, World 例子， 就會見到一句 Sorry, but your browser doesn't run JavaScript.。
+
+這兩個標記一定要寫在  <body>  範圍。	
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+
+變數 (Variable)
+
+變數
+資料型態
+陣列
+變數
+
+變數是用來儲存或讀取一些資料， 以方便進行運算。
+
+寫法：定義一個變數
+
+只定義一個變數的名稱， 但不即時指定它的資料：
+var variable_name ;
+定義一個變數名稱， 同時指定它的資料：
+var variable_name = data ;
+
+
+var 是用來定義變數的， variable_name 是變數的名稱， data 是任何型態的資料。
+例子：定義一個字串型態的變數
+
+var myname = "Tom" ;
+例子說明
+
+例子中定義了一個變數， 變數名稱是 myname 。 因為該資料是用引號括著， 所以資料型態是字串 (String)， 資料就是一句 Tom 字串， 而 myname 就是一個字串型態的變數了。
+例子：定義一個整數型態的變數
+
+var myage = 16 ;
+例子說明
+
+例子中定義了一個變數， 變數名稱是 myage 。 我用 myage 來儲存整數型態， 而不是字串型態的資料， 因此不用引號括著。 該資料型態是整數 (Integer)， 資料就是一個 16 整數， 而 myage 就是一個整數型態的變數了。
+變數名稱（或函數名稱）的命名規則：
+
+變數名稱只可以由英文字、數目字及底線 (_)組成
+變數名稱的第一個字元不可以是數目字。
+不可以是關鍵字。 例如你不可以用 function 作為某個變數的名稱， 因為它是一個關鍵字。
+例子：
+
+合法的名稱： my_name , myName , g2 , _2
+不合法的名稱有： 01 , 1choice , var , function , Array
+
+例子：定義變數
+
+<script>
+var student_name = "Tom";
+var student_age = 16;
+
+document.write("<br>Student Name : " + student_name);
+document.write("  Age : " + student_age);
+</script>
+看結果  Student Name: Tom ; Age : 16
+資料的型態 (Data Type)
+
+常見的資料型態有以下幾種：
+
+資料型態	例子	說明
+字串
+(String)	var name = "Tom";
+var model = "1001";	字串通常是用雙引號 (") 或單引號(')括著， 例子中表示了一個 Tom 字串和一個 1001 字串。
+數目
+(Number)	var age = 16;
+var pi = 3.141592653589793;
+var expo = 54e7;
+var octal_num = 010;
+var hex_num = 0x10;	數目可以是實數和整數， 整數包括10 進制、8 進制和 16 進制。 數目前面是 0 代表 8 進制， 數目前面是 0x 代表 16 進制
+布林
+(Boolean)	var is_enabled = true;
+var ie3 = false;	布林資料只有兩個值， 就是 true 或者 false 任何一個， 適合用作一些只有兩個可能的運算。
+空白
+(Null)	var no_content;	資料沒有內容， 例如你只定義它變數的名稱， 但沒有指定內容， 那麼它就等於 null 了。
+物件
+(Object)	var dw = document.write;
+var myname = document.myform.myname;	通常是為了方便而定義物件變數， 例如可以用 dw 代替 documen.write， 那就不用打很多字了
+陣列
+(Array)	var even_num = new Array(2,4,6,8,10);
+var fruit = new Array("apple","orange");	陣列是用來儲存一組相同型態的資料， 在本篇稍後詳述。
+你可以隨時指定變數的內容， 亦即是指定它的資料， 但應留意該資料的型態。
+
+大部份程式語言例如 Pascal、C++、 Java 等， 變數的型態是不可以隨時改變的， 例如你定義了一個字串型態的變數， 你只可以用它來存取字串型態的資料， 而不可存取其它型態的資料。
+
+但 JavaScript 就不同了， JavaScript 是一種寬鬆型態語言 (Loosely Typed Language)， 即是說變數的型態是可以隨時改變的。
+
+好處：
+不須定義太多變數； 不須牢記那一個變數是那一種型態； 不須寫太多東西來轉換資料型態， 因為 JavaScript 會自動判斷你想用的資料型態。
+
+壞處：
+雖然 JavaScript 會自動判斷你想用的資料型態， 但有時未必是你心目中想用的那一種型態， 例如你想做整數型態的運算， 它郤做了字串型態的運算。
+
+Netscape 為了方便 JavaScript 與 Java 溝通， 估計將來 JavaScript 的資料型態會盡量與 Java 相容， 因此我建議大家盡量留意一個變數的型態。
+
+陣列 (Array)
+
+陣列是用來儲存多個資料， 而且這些變數是同一型態的 （但 JavaScript 允許一個陣列儲存不同型態的資料）。 陣列內的資料就稱為該陣列的元素 (elements)， 陣列內的資料數目就稱為該陣列的長度 (length)。
+
+當你想存取很多資料， 就可以用陣列， 好處就是不用為每個資料都定義一個變數名稱， 還可以方便存取大量資料。
+
+寫法：定義一個陣列
+
+只定義一個陣列的名稱， 但不指定它的內容：
+var array_name = new Array() ;
+定義一個陣列的名稱和長度， 但不指定它的內容：
+var array_name = new Array(length) ;
+
+定義一個陣列的名稱、長度和內容：
+var array_name = new Array(data1 , data2 , data3 , ... , dataN) ;
+
+array_name 是陣列的名稱。
+new 是用來將記憶體分配給一個新的物件， 它是是一個關鍵字。
+Array 是用來定義陣列的。
+length 是陣列的資料數目， 它的值可以是由 1 開始的正整數， 例如你想定義一個儲存星期的英文字陣列， length 的值就可以是 7。
+data1 , data2 , data3 , ... , dataN  是 N 個資料， 那麼這個陣列的長度就是 N   了， 例子：
+var week_array = new Array("Monday", "Tuesday", "Wednesday",
+                                             "Thursday", "Friday", "Saturday", "Sunday");
+例子中定義了一個陣列來儲存星期的英文字， 這個陣列有 7 個資料， 因此陣列的長度就是 7 了。 因為句子太長， 所以寫成兩行， 而分隔位置可以在逗號的左右。
+
+定義了一個陣列後， 就可以存取陣列內的資料。 要存取這些資料， 就要學習它們的表示方式。
+
+表示方式：陣列內的資料
+
+array_name[index]
+index 是陣列內某個資料的位置， 它是由 0 開始的， 而不是由 1 開始的， 大家須要留意這點， 因為這個電腦概念與人類實際生活不同， 所以初學者很易會弄錯的。 而 index 的最大值就是 length - 1 ， 而不是 length 。
+[  和  ]   是左中括號和右中括號， 用來括著 index 。
+我們也可以取得一個陣列的長度， 就是用一個陣列的 length 屬性， 而且它是整數型態的。
+
+表示方式：陣列的長度
+
+array_name.length
+我們就用上面定義了的 week_array 做例子， 下面列出了 week_array 內所有資料的表示方式和它們的內容：
+
+表示方式	內容
+week_array[0]	"Monday"
+week_array[1]	"Tuesday"
+week_array[2]	"Wednesday"
+week_array[3]	"Thursday"
+week_array[4]	"Friday"
+week_array[5]	"Saturday"
+week_array[6]	"Sunday"
+week_array.length	7
+例子： 應用陣列
+
+<script>
+var student_name = new Array("Tom", "John", "Sam");
+var num_of_student = student_name.length;
+var student_age = new Array(num_of_student);
+student_age[0] = 16;
+student_age[1] = 18;
+student_age[2] = 20;
+
+document.write("There are " + num_of_student + " students.");
+document.write("<br>First student : " + student_name[0]);
+document.write(" ; Age : " + student_age[0]);
+document.write("<br>Second student : " + student_name[1]);
+document.write(" ; Age : " + student_age[1]);
+document.write("<br>Third student : " + student_name[2]);
+document.write(" ; Age : " + student_age[2]);
+</script>
+
+看結果
+There are 3 students.
+First student : Tom ; Age : 16
+Second student : John ; Age : 18
+Third student : Sam ; Age : 20
+
+
+
+例子說明：
+
+var student_name = new Array("Tom", "John", "Sam");
+定義一個陣列， 名稱是 student_name ， 同時指定它的內容， 分別是 "Tom", "John", "Sam" 三個字串型態的資料。 緊記第一個資料的位置是 0， 而這裏有 3 個資料， 所以最後一個資料的位置就是 2 了。
+
+var num_of_student = student_name.length;
+定義一個變數， 名稱是 num_of_student ， 然後將指定它的內容， 內容是 student_name.length ， 因為 student_name 陣列內有 3 個資料， 所以 student_name.length 的值就是 3 了， 而且它是整數型態， 因此 num_of_student 是整數型態的變數。
+
+var student_age = new Array(num_of_student);
+定義一個陣列， 名稱是 student_age ， 同時指定它的長度， 長度為 num_of_student 的內容， 亦即是 3 了， 所以 student_age 就是一個有 3 個資料的陣列。
+
+student_age[0] = 16;
+student_age[1] = 18;
+student_age[2] = 20;
+將 student_age 陣列中的第一個資料的內容指定為 16 ， 第二個資料指定為 18 ， 第三個資料指定為 20 。
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+
+運算子
+
+運算子有以下幾種類：
+
+算術運算子 (Arithmetic Operators)
+字串運算子 (String Operators)
+邏輯運元 (Logical Operators)
+位元運算子 (Bitwise Operators)
+指定運算子 (Assignment Operators)
+比較運算子 (Comparison Operators)
+特別運算子 (Special Operators)
+以下分別介紹各運算子
+
+算術運算子 (Arithmetic Operators)
+
+用來做一些與數目有關的工作。 例如加、減、乘和除法。
+
+運算子	    例子	                說明
++	    var1 = var2 + var3	    將 var2 和 var3 的內容相加， 然後放到 var1
+++	    var1++	                即是 var1 = var1 + 1
+-	    var1 = var2 - var3	    將 var2 減去 var3 的結果放到 var1
+--	    var1--	                即是 var1 = var1 - 1
+*	    var1 = var2 * var3	    將 var2 和 var3 的內容相乘， 然後放到 var1
+/	    var1 = var2 / var3	    將 var2 除以 var3 的結果放到 var1
+%	    var1 = var2 % var3	    將 var2 除以 var3 的餘數放到 var1
+例子： 算術運算子
+
+<script>
+var a = 1;
+var b = 2;
+var c = a + b;
+document.write("<br> a + b = " + c);
+document.write("<br> Before Increament, c = " + c );
+c++;
+document.write("<br> After Increament, c = " + c );
+var r = 5 % 2;
+document.write("<br>The remainder of 5 divided by 2 = " + r );
+</script>
+看結果
+
+a + b = 3
+Before Increament, c = 3
+After Increament, c = 4
+The remainder of 5 divided by 2 = 1
+
+
+
+
+字串運算子 (String Operators)
+
+用來做一些與字串有關的工作。 例如將兩個字串連接， 得出一個更長的字串。
+
+運算子	例子	說明
++	a = "abc" + "1234"	將 "abc" 和 "1234" 兩個字串連接， 再放到 a ， 因此執行完這句後， a 的內容是 "abc1234"
++=	a += "1234"	即是 a = a + "1234"
+因為字串和數目型態都可以用 + 和 += ， 所以如果不留意變數的型態就很容出錯。
+
+例子：
+
+<script>
+var a = "Java";
+var b = "Script";
+var c = "was born in";
+var year1 = 19;
+var year2 = 95;
+document.write(a + b + " " + c + " " + year1 + year2);
+var year3 = year1 + year2;
+document.write("<br>" + a + b + " " + c + " " + year3);
+</script>
+看結果
+JavaScript was born in 1995
+JavaScript was born in 114
+
+
+
+
+
+
+
+例子說明：
+
+document.write(a + b + " " + c + " " 
++ year1 + year2);
+因為這條運算式有字串型態的資料， 所以 JavaScript 就把它當作字串運算， 雖然 year1 和 year2 分別是 19 和 95 數目， 但也被當作是 "19" 和 "95" ， 而相加結果就是 "1995" 了。
+
+var year3 = year1 + year2;
+因為這條運算式沒有字串型態的資料， 所以 JavaScript 就把它當作算術運算， year3 = year1 + year2 = 19 + 95 = 114
+
+邏輯運元 (Logical Operators)
+
+通常是做一些有關布林型態的運算。 傳回的值可以是 true 或 false ， 如果有算式未被定義， 就會傳回 null 。
+
+運算子	例子	說明
+&&	expr1 && expr2
+expr1 and expr2	如果 expr1 和 expr2 都是 true ， 就會傳回 true ， 否則傳回 false
+||	expr1 || expr2
+expr1 or expr2	如果 expr1 或 expr2 是 true ， 就會傳回 true ， 否則傳回 false
+!	!expr1
+not expr1	如果 expr1 是 true ， 就傳回 false， 否則傳回 false
+例子：辨斷能否參加高考 (Alevel exam)， 假設參加高考的要求是語言科目合格， 或者年滿 21 歲。
+
+<script>
+var chinese_pass = true;
+var english_pass = false;
+var over21 = true;
+
+// pass in language subject(Chinese AND English)
+var lang_pass = chinese_pass && english_pass
+
+/* requirement to sit in alevel:
+pass in langauge subject OR over 21 years old
+*/
+var alevel = lang_pass || over21
+
+document.write("Allow to sit in alevel? " + alevel);
+</script>
+看結果
+
+Allow to sit in alevel? true
+　
+
+例子說明：
+
+例子中所有變數都是布林型態， 參加者年滿 21 歲 ， 經運算後 alevel 就是 true 。
+
+位元運算子 (Bitwise Operators)
+
+用來做二進制的位元運算。 因為位元運算可以說是低階 (Low-level)工作， 所以運算得較快， 而且有些位元運算子可以做算術運算， 例如乘以 2 的倍數或除以 2 的倍數。
+
+下表用了兩個整數 a 和 b 用例子， 假設 a = 12 , b = 10， 它們的二進制表示方式分別是 a = 00001100b , b = 00001010b ， 數字後面的 b 字代表該數字是二進制。
+
+運算子	例子	二進制運算	說明
+&	a & b	a    = 00001100b = 12
+b    = 00001010b = 10
+a & b = 00001000b = 8	AND
+如果兩個位元都是 1 ， 結果就是 1 ， 否則是 0
+|	a | b	a    = 00001100b = 12
+b    = 00001010b = 10
+a | b = 00001110b = 14	OR
+如果任何一個位元是 1 ， 結果就是 1 ， 否則是 0
+^	a ^ b	a    = 00001100b = 12
+b    = 00001010b = 10
+a ^ b = 00000110b = 6	XOR
+如果位元不相同， 結果是 1 ， 否則是 0
+~	~a	a = 00001100b = 12
+~a = 11110011b = -13	NOT
+將所有位元的 0 變成 1， 1 變成 0。
+註： a 是用了 Two's Complement 表示方式
+<<	a << 2	a      = 00001100b = 12
+a << 2 = 00110000b = 48	左移 (Left Shift)
+將 a 的所有位元向左移兩個位， 右邊的位元補入 0。
+>>	c >> 2	c
+= 負 (2 的 30 次方)
+= -1073741824
+
+c >> 2
+= 負 2 的 28 次方
+= - 268435456	有極右移 (Sign-propagating right shift)
+將 c 的所有位元向右移兩個位， 最左邊的位元補入極性位元 (Sign Bit) ， 即是保持它的極性
+>>>	c >>> 2	c
+= 負 (2 的 30 次方)
+= -1073741824
+c >>> 2
+= 805306368
+= 2 的 29 次方 + 2 的 28 次方	補零右移 (Zero-Fill Right Shift)
+將 c 的所有位元向右移兩個位， 左邊的位元補入 0
+例子：用 << 做乘以 2 的倍數運算， 用 >> 做除以 2 的倍數運算。
+
+　
+
+<script>
+var a = 3;
+a = a << 3;  //multiply a by 8
+document.write("3 * 8 = " + a);
+// now, a = 24
+a = a >> 2;  //divide a by 4
+document.write("<br>24 / 4 = " + a);
+</script>
+看結果
+3 * 8 = 24
+24 / 4 = 6
+
+
+
+例子說明：
+
+<< 可以做乘以 2 的倍數運算， 以下例如可將 a 乘以 2 的 n 次方：
+
+a = a << n
+>> 可以做除以 2 的倍數運算， 以下例如可將 a 除以 2 的 n 次方：
+
+a = a >> n
+
+
+指定運算子 (Assignment Operators)
+
+將運算後的結果放到某個變數， 最常用的就是等號 (=)， 還有， 指定運算子可以令算式簡單一點。
+
+運算子	例子	意思
+=	var1 = var2	var1 的內容等於 var2 的內容
++=	var1 += var2	var1 = var1 + var2
+-=	var1 -= var2	var1 = var1 - var2
+*=	var1 *= var2	var1 = var1 * var2
+/=	var1 /= var2	var1 = var1 / var2
+%=	var1 %= var2	var1 = var1 % var2
+&=	var1 &= var2	var1 = var1 & var2
+^=	var1 ^= var2	var1 = var1 ^ var2
+|=	var1 |= var2	var1 = var1 | var2
+<<=	var1 <<= var2	var1 = var1 << var2
+>>=	var1 >>= var2	var1 = var1 >> var2
+>>>=	var1 >>>= var2	var1 = var1 >>> var2
+例子：用 ^ (XOR) 運算子交換兩個整數型態變數的內容
+
+<script>
+var a = 135;
+var b = 246;
+document.write("<br>Before interchange, ");
+document.write("a = " + a + ", b = " +b);
+a ^= b ; b ^= a ; a ^= b ;
+document.write("<br>After interchange, ");
+document.write("a = " + a + ", b = " +b);
+</script>
+看結果
+
+
+Before interchange, a = 135, b = 246
+After interchange, a = 246, b = 135
+
+
+
+
+
+
+比較運算子 (Comparison Operators)
+
+用來比較多兩個算式的關係， 例如一個算式是否等於另一個算式。 比較後傳回的結果是 true 或 false 其中一個。
+
+運算子	例子	說明
+==	expr1 == expr2	如果 expr1 等於 expr2 ， 就傳回 true
+!=	expr1 != expr2	如果 expr1 不等於 expr2 ， 就傳回 true
+>	expr1 > expr2	如果 expr1 大於 expr2 ， 就傳回 true
+>=	expr1 >= expr2	如果 expr1 大於或等於 expr2 ， 就傳回 true
+<	expr1 < expr2	如果 expr1 小於 expr2 ， 就傳回 true
+<=	expr1 <= expr2	如果 expr1 小於或等於 expr2 ， 就傳回 true
+例子：應用比較運算元
+
+<script>
+var a = 3;
+var b = 4;
+document.write("a = " + a + " , b = " + b);
+var result;
+result = a == b;
+document.write("<br>a equals b ? " + result);
+result = a != b;
+document.write("<br>a does not equal b ? " + result);
+result = a > b;
+document.write("<br>a is greater than b ? " + result);
+result = a >= b;
+document.write("<br>a is greater than or equal to b ? " + result);
+result = a < b;
+document.write("<br>a is smaller than b ? " + result);
+result = a <= b;
+document.write("<br>a is smaller than or equal to b ? " + result);
+</script>
+看結果
+a = 3 , b = 4
+a equals b ? false
+a does not equal b ? true
+a is greater than b ? false
+a is greater than or equal to b ? false
+a is smaller than b ? true
+a is smaller than or equal to b ? true
+
+
+
+
+特別運算子 (Special Operators)
+
+用來做特別或較複雜的運算。
+
+運算子	例子	說明
+? :	condition ? expr1 : expr2	如果 condition 是 true， 就傳回 expr1 的結果， 否則傳回 expr2 的結果。
+例子：應用特別運算元
+
+<script>
+var sex1 = "m";
+var sex2 = "f";
+var sex_full1;
+sex_full1 = (sex1 == "m") ? "Male" : "Female";
+var sex_full2;
+sex_full2 = (sex2 == "m") ? "Male" : "Female";
+document.write("m = " + sex_full1);
+document.write("<br>f = " + sex_full2);
+</script>
+看結果
+m = Male
+f = Female
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+
+函數
+
+函數其實是一組程序， 你可以自行定義它來做指定的工作。 在定義了函數之後， 當你要執行該函數的程序， 只須呼叫它便可。
+
+使用函數的好處是可以將一個大的程式分成多個小部份， 方便管理及偵錯， 還可以讓程式的每個部份都可以享用函數， 以減少重覆的程序。
+
+語法： 定義函數
+
+function function_name() {
+   // 在大括號的範圍內寫入程序
+}
+function 是一個關鍵字， 用來定義一個函數， 而函數的名稱就寫在 function 之後。
+function_name 是該函數的名稱， 用來表示該函數。
+() 是左括號和右括號， 括號內是用來輸入參數的， 如果沒有參數， 括號內就不用寫任何東西。 本篇稍後會講述參數。
+{  和  }   是左大括號和右大括號， 函數的程序就寫在大括號範圍內。
+語法：呼叫函數
+
+function_name();
+例子： 函數
+
+<html>
+<head><title>Define a function</title>
+
+<script language="JavaScript">
+<!--
+function welcome() {
+  document.write("<b>Welcome to JavaScript Channel.");
+  document.write("Please feel free to ask any question in the message board.</b>");
+}
+//-->
+</script>
+
+</head>
+<body>
+Hello.
+
+<script>
+<!--
+welcome();
+//-->
+</script>
+
+I will try my best to help you.
+</body>
+</html>
+看結果
+例子說明：
+
+這個例子有兩個 <script> ， 一個在 <head> 範圍， 另一個在 <body> 範圍。
+
+在 <head> 範圍內的 <script> 定義了一個 welcome 函數， 而在 <body> 範圍內的 <script> 就呼叫 welcome 函數。
+
+輸入參數
+
+有時我們希望函數在不同的情況下有不同的結果， 因此會用參數。 將參數傳入函數， 成為函數內的變數， 就可以根據這些變數的內容來做不同的工作。
+
+定義一般函數的寫法：
+
+function function_name(arg1, arg2, ..., argN) {
+   // arg1, arg2 至到 argN 都成為本函數的變數了
+}
+你可以傳入任何數目的參數， 參數與參數之間須用逗號分隔 (,)。
+以是例子使用了參數：
+
+<html>
+<head><title>function with argument</title>
+
+<script language="JavaScript">
+<!--
+function student(name, age, is_graduated) {
+  document.write("Student Name : " + name + " ; ");
+  document.write("Age : " + age + " ; ");
+  document.write("Is graduated? " + is_graduated + "<br>");
+}
+//-->
+</script>
+
+</head>
+<body>
+<p>Student Data:</p>
+
+<script>
+<!--
+student("Tom", 18, true);
+student("John", 16, false);
+//-->
+</script>
+
+<p>End of student data.</p>
+</body>
+</html>
+看結果
+例子說明：
+
+student("Tom", 18, true);
+呼叫 student 函數， 同時將 "Tom", 18 和 true 分別傳入 student 函數內的 name , age 和 is_graduated 三個變數。
+
+傳回資料
+
+函數也可以傳回 (return) 資料， 通常這些資料是該函數的運算結果。
+
+傳回資料的寫法
+
+function function_name() {
+   // 用 return 關鍵字傳回資料
+   return data
+}
+data 可以是任何型態的資料。
+以下例子內的函數會傳回資料：
+
+<html>
+<head><title>function with arguments</title>
+
+<script language="JavaScript">
+<!--
+function my_name() {
+  var name = "Tom"
+  return name
+}
+function my_age() {
+  return 16
+}
+
+var myname = my_name()
+document.write("My name is " + myname )
+document.write(" and I am " + my_age() + " years old.");
+
+//-->
+</script>
+
+</head>
+<body>
+</body>
+</html>
+看結果
+例子說明：
+
+my_name() 和 my_age() 分別傳回 "Toy" 和 16 。
+變數的範圍
+
+如果你在函數內定義一個變數， 那就只有該函數可以存取這個變數。 如果你定義一個變數的地方是在 <script> 範圍內， 但不是在任何函數內， 那麼該個變數就可以被整頁來儲取， 包括不在 <script> 以內的範圍。例子：
+
+<html>
+<head><title>The Scope of a Variable</title>
+
+<script language="JavaScript">
+<!--
+var myname = "Tom";
+document.write("The variable 'myname' is defined in the first script tag.");
+document.write("<br>myname in first script tab = " + myname );
+
+function function1() {
+  document.write("<br>myname in function1 = " + myname );
+}
+
+function1();
+
+//-->
+</script>
+
+<script language="JavaScript">
+<!--
+document.write("<br>myname in second script tab = " + myname );
+
+function function2() {
+  var f2 = "variable in function2";
+  document.write("<br>f2 in function2 = " + f2);
+  document.write("<br>myname in the second tab = " + myname );
+}
+
+function2();
+
+//-->
+</script>
+
+</head>
+<body>
+<script>
+document.write("<br>myname in body section = " + myname );
+</script>
+</body>
+</html>
+<script>
+document.write("<br>myname ouside html section = " + myname );
+document.write("<br>f2 = ");
+document.write(f2);
+</script>
+看結果
+例子說明：
+
+整頁只定義了兩個變數， 就是 f2 和 myname 。 myname 是在 <script> 以內定義的， 因此整頁範圍內也可以用 myname 這個變數。 但 f2 是 function2 以內定義的， 因此 f2 只能在 function2 以內存取。
+document.write(f2);
+因為 f2 不能在 function2 以外存取， 所以這一句會產生錯誤： "f2 未被定義" (f2 is not defined)。 不過你可以在 function2 以外定義多一個 f2 變數， 那麼， 雖然一頁內有兩個 f2 變數， 但這個新的 f2 是不會和 function2 以內的 f2 混淆的。
+
+　
+-------------------------------------------------------------------------------------------------------------------------------------------
+ 事件
+
+事件是由系統轉化使用者的動作或系統訊息而得來的。 使用者的動作例子包括： 按下滑鼠鍵、確定送出表單等。 而系統的動作包括： 當一頁完全載入， 或瀏覽器要離開某頁等。 系統會將每個動作轉成一個事件， 然後送到程式， 我們便可以跟據不同的事件來設計不同的工作。 這種工作模式就叫做事件處理 (Event Handling)， 而負責處理事件的名稱就叫做事件處理者 (Event Handler)。
+
+事件處理的好處就是不用在主程式內檢查某事件有否發生， 我們只須把要做的工作連繫到事件， 當某事件真的發生了， 系統就自動把這個訊息送到程式， 那就會自動執行要做的工作了。
+
+JavaScript 的事件處理者通常是連繫著物件的， 因此不同的物件就支援不同的事件處理者。 以下是 JavaScript 常用的事件處理者：
+
+事件處理者	事件發生於
+onBlur	使用者離開某一欄
+onChange	使用者改變某一欄的內容
+onClick	使用者按下某個按鈕
+onFocus	使用者的輸入焦點進入某一欄
+onLoad	某一頁完全載入
+onMouseOver	滑鼠游標在某個物件之上
+onMouseOut	滑鼠游標離開某個物件
+onSelect	使用者選擇某一欄的內容
+onSubmit	使用者確定送出某表單
+onUnload	正在顯示的一頁被改變
+把函數指定到事件
+
+我們通常把那些在某事件發生後要做的工作寫成一個函數， 不過如果你的工作很簡單， 可以不用寫在函數內。
+
+語法：把事件處理者寫成一個物件的 HTML 標記屬性， 而屬性內容就是要執行的 JavaScript 敘述
+
+<tag event_handler="statements">
+例子：使用事件處理者執行函數
+
+<script>
+function bt_details(this_bt) {
+  var name = this_bt.name
+  var value = this_bt.value
+  var type = this_bt.type
+  document.write("My name is <b>" + name + "</b>");
+  document.write("<br>My value is <b>" + value + "</b>");
+  document.write("<br>My type is <b>" + type + "</b>");
+}
+</script>
+<form>
+<input type="button" name="hello" 
+value="Please Click me to see my name and value"
+onClick="bt_details(this)">
+</form>
+看結果
+例子說明：
+
+onClick="bt_details(this)"
+首先為大家介紹一個關鍵字 this ， this 其實是一個物件， 它是指當時正在使用中的物件。 例子中的 this 是在 input 的 HTML 標記範圍內， 因此 this 就是指那個 input 物件了， 那個 input 物件有 type、name 和 value 三個屬性， 因此 this 也有這三個屬性了。 用 this 的好處就是不用知道該物件的名稱也可以使用該物件。
+
+onClick 是一個事件處理者， 當使用者按下按鈕時， 就會自動執行 onClick 屬性內容的 JavaScript 敘述。
+
+bt_details(this) 是一個函數， 輸入的參數就是一個物件 this ， 亦即是該個 input 物件。
+
+function bt_details(this_bt)
+參數 this 會輸入到 this_bt 變數， 成為一個物件型態的變數， 而這個變數就儲存著該個 input 物件了， 因此 this_bt 也有 type、name 和 value 三個屬性。
+
+type="button"
+JavaScript 定義了一個新的 <input> 類別 (Type)， 名叫 button ， 是一個普通的按鈕。
+
+終止事件
+
+你可以中途停止一個函數或事件。
+
+語法：終止函數
+
+return false;
+或者
+
+return true;
+
+一般情況下都會用 return false; 來終止程序， 但在處理連結物件或送出表單時， true 和 false 就有分別了， 這點在本篇稍後會詳述。
+
+例子：終止函數
+
+<script>
+function terminate() {
+  document.write("Before <b>return false;</b>");
+  return false;
+  document.write("After <b>return false;</b>");
+}
+</script>
+<form>
+<input type="button" value="hello" onClick="terminate()">
+</form>
+看結果
+例子說明：
+
+第二句的 document.write 不會被執行， 因為上一句 return false 己經中終止了 terminate 函數。
+例子： return true 的用法
+
+<a href="index.html" 
+onMouseOver="window.status = 'Mouse pointer is over a link' ; return true"
+onMouseOut="window.status = 'Mouse pointer is moved out' ; return true">
+Please move your mouse pointer over me and notice the status bar.
+</a>
+看結果
+例子說明：
+
+onMouseOver 和 onMouseOut
+當滑鼠游標在某個連結之上時， 通常瀏覽器的狀態列 (Status Bar) 就會顯示該連結的位置， 當游標離開時， 狀態列就會顯示預設的文字。 這兩個事件處者是用來當滑鼠移到或離開連結時， 改變狀態列的文字。
+
+window.status
+window 是視窗物件， 表示正在使用的視窗， 而 status 就是該視窗的屬性， 它儲存著視窗的狀態列文字。
+
+return true
+return true 是用來表示該連結已經被跟進 (follow)， 那麼瀏覽器就不會把連結位置顯示在狀態列， 否則， 我們想顯示的文字就會被連結位置蓋過了。
+
+留意例子中在一句內同時用了雙引號和單引號， 目的是希望 HTML 的屬性內容不會和 window.status 的內容混淆。
+至於如何終止一個事件， 就要在中階教學的表單物件部份詳述。
+
+   
+    
+-------------------------------------------------------------------------------------------------------------------------------------------
+流程控制
+
+一個程式未必一定要由上到下執行的， 我們可以跟據一些條件來控制一個程式執行那一個部份， 亦即是控制它的流程。
+
+流程控制有以下幾種敘述：
+
+if
+if ... else
+for
+while
+break
+continue
+if
+
+語法：
+
+if (condition) {
+   statements
+}
+如果只有一句敘述， 就可以不用打大括號：
+if (condition)  statement ;
+
+當 condition 是 true 時， 就執行 statements ， 否則， 跳過 if 的範圍(即是大括號範圍)。
+例子： if
+
+<script>
+var num_student = 2;
+if (num_student > 1) {
+  document.write("There are ");
+  document.write(num_student);
+  document.write(" students.");
+}
+if (num_student == 1) {
+  document.write("There is one student.");
+}
+</script>
+看結果
+if ... else
+
+語法：
+
+if (condition) {
+   statements1
+}
+else {
+   statements2
+}
+如果 if 和 else 都只有一句敘述， 就可以不用打大括號：
+if (condition)  statement1 ;
+else statement2 ;
+
+當 condition 是 true 時， 就執行 statements1 ， 然後跳過 else 範圍， 否則， 就執行 statements2。
+例子： if ... else
+
+<script>
+var num_student = 1;
+if (num_student == 0) {
+  document.write("There are no student");
+}
+else {
+  document.write("There is at least one student.");
+}
+</script>
+看結果
+for
+
+重覆執行某範圍內的敘述， 通常用於要指定執行次數的程序。
+
+語法：
+
+for (init_expr ; condition ; increment_expr) {
+   statements
+}
+流程：
+
+執行 init_expr
+如果 condition 是 true， 就到第 3 步， 否則， 跳過 for 範圍
+執行 statements
+執行 increment_expr， 返回第 2 步
+例子： 用 for 敘述顯示 1 至 10 的平方數
+
+<script>
+var i;
+var sqr;
+for (i=1; i<=10; i++) {
+  sqr = i*i
+  document.write("<br>" + i + " square = " + sqr)
+}
+</script>
+看結果
+例子說明：
+
+for 迴圈內的敘述重覆執行了 10 次， 而每一次 i 的數值在執行完敘述之後都會加一。 直至 i 等於 11 ， 因為 (11 <= 10) 是 false ， 所以跳過 for 範圍。
+while
+
+重覆執行某範圍內的敘述， 直至條件不合。
+
+語法：
+
+while (condition) {
+   statements
+}
+流程：
+
+如果 condition 是 true， 就到第 2 步， 否則， 跳過 while 範圍
+執行 statements ， 返回第 1 步
+例子： 用 while 敘述顯示 1 至 10 的立方數
+
+<script>
+var i = 1;
+var sqr;
+while (i <= 10) {
+  var sqr = i*i*i;
+  document.write("<br>" + i + " cube = " + sqr)
+  i++;
+}
+</script>
+看結果
+break
+
+終止一個 while 或者 for 迴圈， 跳出該個迴圈的範圍。
+
+語法：
+
+break;
+例子： 用 break 跳出 while 迴圈
+
+<script>
+var i = 1;
+var sqr;
+while (i < 20) {
+  var sqr = i*i*i;
+  document.write("<br>" + i + " cube = " + sqr)
+  i++;
+  if (i > 10) {
+    break;
+  }
+}
+</script>
+看結果
+continue
+
+中止 while 或者 for 迴圈某一次的程序， 然後檢查該迴圈的 condition， 決定是否繼續執行下一次。
+
+語法：
+
+continue;
+當 condition 是 true 時， statements1 就會被執行， 否則， 在大括號內的範圍會被跳過， 然後繼續執行下一句。
+
+例子： 用 continue 忽略某一次的 while 迴圈
+
+<script>
+var i = 0;
+var sqr;
+while (i<10) {
+  i++;
+  if (i == 5) {
+    continue;
+  }
+  sqr = i*i*i
+  document.write("<br>" + i + " cube = " + sqr)
+}
+</script>
+看結果
+例子說明：
+
+當 i 等於 5 並執行到 if 範圍那句 continue; 時， 就會即時返回 while (i < 10) 這句， 即是檢查 condition 是否 true。 因此沒有執行 if 範圍下面的敘述。
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------

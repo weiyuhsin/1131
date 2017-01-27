@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script><!--jquery語法-->
+    <script>
+        $(function(){
+            $.ajax({
+                url:"http://api.openweathermap.org/data/2.5/weather?q=Taipei,tw&appid=b1ecbccd638b763d489602917ba47cc3&units=metric",
+                dataType:"json",
+                success:function(e){
+//                    console.log(e.coord.lon);    /*e→程式function內隨便取的名字e*/
+//                    console.log("SUCCESS");      /*按f12驗證*/  /*正確會出現SUCCESS*/                      
+//                    console.log(e.name);         /*按f12驗證→*/ /*抓e裡面的name*/  
+//                    console.log(e.main.temp);    /*按f12驗證→*/ /*抓e裡面的main裡面的temp(溫度)*/ //
+                    console.log(e.weather[0].description);  
+                                            /*按f12驗證→*/ /*抓e裡面的weather裡面的description(因weather裡是[]組成→所以要加[第n個{}內]裡面的description)*/   
+                    $(".city").text(e.name);        /*city div跑出e裡面的name的文字(城市名)*/
+                    $(".temp").text(e.main.temp);   /*temp div跑出e裡面的main裡面的temp的文字(溫度)*/
+                    $(".description").text(e.weather[0].description);  /*description div跑出e裡面的weather裡面的description*/
+                },
+                error:function(){
+                    console.log("AJAX ERROR!!!!!");
+                    alert("ERROOOOOOOR!!!!!");
+                },
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="city"></div>            <!--抓出城市名-->
+        <div class="temp"></div>            <!--抓出溫度-->
+        <div class="description"></div>     <!--抓出description-->
+    </div>
+</body>
+</html>
+    
+    
+    
+
+
+<!--天氣串聯至網頁
+
+老師天氣作品→ http://lcclcclcc.lionfree.net/weather/
+
+
+搜openweathermap →https://openweathermap.org/
+→有很多的串聯(天氣或fb直接註冊) weiyuhsin tinxwex1xx w755→登入→API Keys →我的key 631a0dd6689323dff82c5644b721c085	
+
+→選API找要的格式→EX: 16 day / daily forecast 按API doc
+→(找一個適合的By city name或By city ID或By geographic coordinats)→選By city name→點連結 api.openweathermap.org/data/2.5/forecast/daily?q=London&mode=xml&units=metric&cnt=7
+
+→出現錯誤訊息{"cod":401, "message": "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info."}
+→將網址http://api.openweathermap.org/data/2.5/forecast/daily?q=London&mode=xml&units=metric&cnt=7&appid=b1b15e88fa797225412429c1c50c122a1
+→改成  http://api.openweathermap.org/data/2.5/forecast/daily?q=London&mode=xml&units=metric&cnt=7&appid=631a0dd6689323dff82c5644b721c085  (appid改成我的id)
+→會出現程式語法對  temp: 18.93= 溫度(網址後面要加&units=metric →變成攝氏)
+如果是JSON語法較亂→GOOGLE應用程式下載JSONVIEW擴充功能→
+
+
+→選API找要的格式→EX:Current weather data按API doc
+(找一個適合的By city name或By city ID或By geographic coordinats)→選By city name→點連結api.openweathermap.org/data/2.5/weather?q=London,uk
+→→出現錯誤訊息{cod: 401,message: "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info."}
+→將網址http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=b1b15e88fa797225412429c1c50c122a1
+→改成  http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=631a0dd6689323dff82c5644b721c085&units=metric
+→會出現程式語法  temp: 18.93= 溫度(網址後面要加&units=metric →變成攝氏)
+如果是JSON語法較亂→GOOGLE應用程式下載JSONVIEW擴充功能→
+
+(http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=631a0dd6689323dff82c5644b721c085&units=metric)  London,uk改成Taipei,tw  最後面加&units=metric→可以改成攝式)
+
+
+
+
+{
+coord: {
+    lon: 121.53,    經度
+    lat: 25.05      緯度
+},
+weather: [
+    {
+    id: 803,        代號
+    main: "Clouds",        雲
+    description: "broken clouds",   備註 
+    icon: "04n"    圖片編號
+    }
+],
+base: "stations",
+main: {
+    temp: 18.93,       溫度 (網址後面要加&units=metric 凱氏→變成攝氏)
+    pressure: 1021,    百帕
+    humidity: 77,      濕度
+    temp_min: 18,
+    temp_max: 20
+    },
+visibility: 10000,
+wind: {
+    speed: 3.1,
+    deg: 280
+    },
+clouds: {
+    all: 75
+},
+dt: 1484737200,
+sys: {
+    type: 1,
+    id: 7479,             
+    message: 0.0097,
+    country: "TW",        國家名
+    sunrise: 1484692831,
+    sunset: 1484731710
+},
+id: 1668341,        城市id
+name: "Taipei",      城市名
+cod: 200
+}
+
+-->
+

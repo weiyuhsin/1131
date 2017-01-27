@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box1{
+            width:600px;
+            height:600px;     
+            background-image: linear-gradient(45deg,red,green) 
+                              /*紅到綠斜45度*/  
+        }
+        .box2{
+            width:600px;
+            height:600px;
+            background-image: linear-gradient(45deg,red 0%,green 30%, blue)
+                              /*紅0~30到綠30到藍最後漸層 斜45度*/
+        }
+        .box3{
+            width:600px;
+            height:600px;
+            background-image: linear-gradient(45deg,red 30%,green 60%, blue 60%)
+                              /*紅到綠30~60，60之後都是藍斜45度*/ 
+        }
+        .box4{
+            width:600px;
+            height:600px;
+            background-image: linear-gradient(2deg,red 30%,green 30.1%,green 60%, blue 60.2%)            /*紅綠藍三色*/ 
+        }        
+        .box5{
+            width:600px;
+            height:600px;
+            background-image: linear-gradient(2deg,transparent 30%,green 30.1%,green 60%, transparent 60.1%)
+        }                    /*紅綠藍三色→但我只要綠色那段*/   
+        .box6{
+            width:600px;
+            height:600px;
+            background-image: linear-gradient(2deg,cyan 25%,magenta 25.1%,magenta 50%,yellow 50.1%, yellow 75% , red 75.1%)
+        }                     /*四色 水藍紫黃紅*/  
+        .box7{
+            width:600px;
+            height:600px;
+            background-image: linear-gradient(2deg,cyan 25%,magenta 25.1%,magenta 50%,transparent 50.1%, transparent 75% , red 75.1%)
+        }                     /*四色 水藍紫黃紅→但不要黃色*/  
+        .box8{
+            width:600px;
+            height:600px;
+            background-image: linear-gradient(0deg,rgba(0,0,0,.25)50%, rgba(0,0,0,.5)50%);
+        }                     /*半透明的黑+半透明的黑*/          
+        .box9{
+            width:600px;
+            height:600px;
+            background-image: linear-gradient(0deg,rgba(0,0,0,.25)50%, rgba(0,0,0,.5)50%),linear-gradient(0deg,rgba(0,0,0,.25)50%, rgba(0,0,0,.5)50%);
+        }                     /*半透明的黑+半透明的黑重疊(加深)*/           
+        .box10{
+            width:600px;
+            height:600px;
+            background-image: linear-gradient(0deg,rgba(0,0,0,.25)50%, rgba(0,0,0,.5)50%),linear-gradient(90deg,rgba(0,0,0,.25)50%, rgba(0,0,0,.5)50%);
+        }                     /*半透明的黑+半透明的黑轉90度*/           
+        .box11{
+            width:600px;
+            height:600px;
+            background-image: linear-gradient(0deg,rgba(0,0,0,.25)50%, rgba(0,0,0,.5)50%),linear-gradient(90deg,rgba(0,0,0,.25)50%, rgba(0,0,0,.5)50%);
+            background-size:60px 60px;
+        }                     /*半透明的黑+半透明的黑轉90度重疊(加深)*/                       
+        .box12{
+            width:600px;
+            height:600px;
+            background-image: linear-gradient(0deg,rgba(255,0,0,.25)50%, rgba(0,0,0,.5)50%),linear-gradient(90deg,rgba(0,0,0,.25)50%, rgba(0,0,0,.5)50%);
+            background-size:60px 60px;
+        }                     /*紅加黑60px的小格子*/   
+        .box13{
+            width:600px;
+            height:600px;
+            background-image: linear-gradient(0deg,rgba(255,0,0,.25)50%, rgba(255,0,0,.5)50%),linear-gradient(90deg,rgba(255,0,0,.25)50%, rgba(255,0,0,.5)50%);
+            background-size:30px 30px;
+        }                     /*全部是30px 的小格子*/   
+        
+        .box14{
+            width:600px;
+            height:600px;
+            background-image: linear-gradient(45deg,rgba(0,0,0,.5) 25%,rgba(0,0,0,.25) 25.1%,rgba(0,0,0,.25) 50%,rgba(0,0,0,.5) 50.1%,rgba(0,0,0,.5) 75%,rgba(0,0,0,.25) 75.1%),linear-gradient(-45deg,rgba(0,0,0,.5) 25%,rgba(0,0,0,.25) 25.1%,rgba(0,0,0,.25) 50%,rgba(0,0,0,.5) 50.1%,rgba(0,0,0,.5) 75%,rgba(0,0,0,.25) 75.1%);
+            background-size: 30px;
+        }                     /*全部是30px正負斜45度 的小格子*/        
+        
+        .box15{
+            width:600px;
+            height:600px;
+            background-image: linear-gradient(45deg,rgba(137, 255, 0, 0.5)25%,rgba(87, 162, 0, 0.5) 25.1%,rgba(87, 162, 0, 0.5) 50%,rgba(137, 255, 0, 0.5) 50.1%,rgba(137, 255, 0, 0.5)75%,rgba(87, 162, 0, 0.5) 75.1%),linear-gradient(-45deg,rgba(137, 255, 0, 0.5)25%,rgba(87, 162, 0, 0.5) 25.1%,rgba(87, 162, 0, 0.5) 50%,rgba(137, 255, 0, 0.5) 50.1%,rgba(137, 255, 0, 0.5)75%,rgba(87, 162, 0, 0.5) 75.1%);
+            background-size: 100px 100px;
+        }                     /*全部是100px正負斜45度 的小格子*/          
+        
+        .box16{
+            width:600px;
+            height:600px;
+            background-image: linear-gradient(20deg,rgba(137, 255, 0, 0.5)25%,rgba(87, 162, 0, 0.5) 25.1%,rgba(87, 162, 0, 0.5) 50%,rgba(137, 255, 0, 0.5) 50.1%,rgba(137, 255, 0, 0.5)75%,rgba(87, 162, 0, 0.5) 75.1%),linear-gradient(-20deg,rgba(137, 255, 0, 0.5)25%,rgba(87, 162, 0, 0.5) 25.1%,rgba(87, 162, 0, 0.5) 50%,rgba(137, 255, 0, 0.5) 50.1%,rgba(137, 255, 0, 0.5)75%,rgba(87, 162, 0, 0.5) 75.1%);
+            background-size: 100px 100px;
+        }                     /*全部是100px正負斜20度 的小格子*/ 
+            
+        .box17{
+            width:600px;
+            height:600px;
+            background-image: linear-gradient(45deg,rgba(137, 255, 0, 0.5)25%, rgba(87, 162, 0, 0.5) 25.1%,rgba(87, 162, 0, 0.5) 50%,rgba(137, 255, 0, 0.5) 50.1%,rgba(137, 255, 0, 0.5)75%,rgba(87, 162, 0, 0.5) 75.1%);
+            background-size: 40px 40px;
+    
+        }                     /*綠+透明綠斜20度 */ 
+        .box18{
+            width:600px;
+            height:600px;
+            background-image: linear-gradient(45deg,rgba(137, 255, 0, 0.5)25%, rgba(87, 162, 0, 0.5) 25.1%,rgba(87, 162, 0, 0.5) 50%,rgba(137, 255, 0, 0.5) 50.1%,rgba(137, 255, 0, 0.5)75%,rgba(87, 162, 0, 0.5) 75.1%);
+            background-size: 40px 40px;
+        }                     /*綠+透明綠斜20度 */ 
+         
+             
+    </style>
+</head>
+<body>
+    <div class="box1">1</div>
+    <p></p>
+    <div class="box2">2</div>
+    <p></p>
+    <div class="box3">3</div>
+    <p></p>
+    <div class="box4">4</div>
+    <p></p>
+    <div class="box5">5</div>
+    <p></p>
+    <div class="box6">6</div>
+    <p></p>
+    <div class="box7">7</div>
+    <p></p>
+    <div class="box8">8</div>
+    <p></p>
+    <div class="box9">9</div>
+    <p></p>
+    <div class="box10">10</div>
+    <p></p>
+    <div class="box11">11</div>
+    <p></p>
+    <div class="box12">12</div>
+    <p></p>   
+    <div class="box13">13</div>
+    <p></p>
+    <div class="box14">14</div>
+    <p></p>
+    <div class="box15">15</div>
+    <p></p>
+    <div class="box16">16</div>
+    <p></p>
+    <div class="box17">17</div>
+
+    <div class="box18">18</div>
+    <p></p>
+    <div class="box19">19</div>
+    <p></p>
+    <div class="box20">20</div>
+    <p></p>
+    <div class="box21">21</div>
+    <p></p>
+    <div class="box22">22</div>
+    <p></p>
+    <div class="box23">23</div>
+    <p></p>
+    <p></p>
+    <p></p>
+    <p></p>
+</body>
+</html>

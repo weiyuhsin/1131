@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        @import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Noto Sans TC";
+        }
+        img {
+            vertical-align: top;
+        }
+        .container {
+            margin: auto;
+        }
+        .container .pic a {
+            display: block;
+            width: 100%;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+    </style>
+    <link rel="stylesheet" href="source/jquery.fancybox.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="source/jquery.fancybox.pack.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.1.1/masonry.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+    <script src="jquery.adaptive-backgrounds.js"></script>
+    <script>
+        $(function(){
+            var url = "https://api.instagram.com/v1/users/self/media/recent/?access_token=18207645.522924d.a0308dd87201401ba3d9f828def12ea2";
+            $(".pic a").fancybox();
+            $.ajax({
+                url:url,
+                dataType:"jsonp",
+                success:function(e){
+                    $(e.data).each(function(){
+                        var c = "<div class='pic'>"
+                        c += "<a href='"+this.images.standard_resolution.url+"' class='fancy' title='"+this.caption.text+"'>"
+                        c += "<img src='"+this.images.low_resolution.url+"'data-adaptive-background>"
+                        c += "</a>"
+                        //c += "<div class='title'>"+this.caption.text+"</div>"
+                        c +="</div>"
+                        
+                        $(".container").append(c);
+//                        $(".container").imagesLoaded(function(){
+//                            $(".container").masonry({
+//                                isFitWidth:true           /*一定要放在ajax裡面的最後面才能跑出效果*/            
+//                            });
+//                        })
+                        $.adaptiveBackground.run();
+                    });
+                },
+                error:function(){
+                    alert("error");
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="container"></div>
+</body>
+</html>

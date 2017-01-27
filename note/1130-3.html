@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        h1{border:#000 5px solid;   /*border邊框: 顏色 寬度 樣式(可不依順序)*/
+           padding:30px;            /*padding內距:xxpx*/ 
+           margin:60px;}            /*margin外距:xxpx*/  
+        
+        h2{border-left:#000 5px solid;   /*border邊框-left (只顯示左邊):樣式 顏色 寬度(可不依順序)*/
+           padding:30px;            /*padding內距:xxpx*/ 
+           margin:60px;}            /*margin外距:xxpx*/  
+    
+        h3{border-left:#000 5px solid;   /*border邊框-left (顯示左邊):樣式 顏色 寬度(可不依順序)*/
+           border-bottom:#000 5px solid; /*border邊框-bottom(顯示下邊):樣式 顏色 寬度(可不依順序)*/
+           padding:30px;            /*padding內距:xxpx*/ 
+           margin:60px;}            /*margin外距:xxpx*/ 
+        
+        h4{border-left:#000 5px solid;   
+           border-bottom:#000 5px solid; 
+           padding:30px 100px;      /*padding內距:上下px 左右px*/
+                                    /*padding內距:上px 左右px 下px*/
+                                    /*padding內距:上px 右px 下px 左px*/
+                                    /*padding內距-top:上px 右px 下px 左px*/
+            
+           margin:60px;}            /*margin外距:xxpx*/
+                                    /*margin外距:上下px 左右px*/
+                                    /*margin外距:上px 左右px 下px*/
+                                    /*margin外距:上px 右px 下px 左px*/
+        
+        h5{border-left:#000 5px solid;   /*-left只顯示左邊*/  
+           border-bottom:#000 5px solid; 
+           padding-top:30px 100px;               
+           margin:60px;}            
+        
+        
+        .box1{                 /*div (區塊)不會往右走補滿 寬高會依照指定走*/
+           width:100px;
+           height:100px; 
+           background-color:aqua;                    
+           margin:60px;}     
+        
+        .span{                        
+           width:100px;       /*span (行內) 會往右走補滿 寬高會失效*/
+           height:100px;      /*span (行內) 會往右走補滿 寬高會失效*/
+           border:1px solid #000; 
+           padding:50px;          
+           margin:60px;}         
+        
+        
+         /* 區塊(block)   →不會往右走補滿 寬高會依照指定走
+             
+            h1~h6  
+            p   
+            ul 
+            ol 
+            li    
+            div
+
+           行內(inline)   →沒有寬沒有高沒有外距→會往右走補滿 寬高會失效
+
+           a img 
+           b i strong em 
+           big small  
+           span        */
+        
+        
+        
+        
+    </style>
+</head>
+<body>
+   <h1>adssd1 </h1>
+   <h2>adssd2 </h2>
+   <h3>adssd3 </h3> 
+   <h4>adssd4 </h4>
+   <h5>adssd5 </h5> 
+   <div class="box1">box1</div>
+   <div class="box1">box1</div>  
+   <div class="box1">box1</div>  
+   <span>inline2</span>      
+   <span>inline2</span>     
+   <span>inline2</span>    
+</body>
+</html>

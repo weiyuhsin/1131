@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto');
+        @import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css);
+        /*        CSS RESET*/
+        
+        * {
+            box-sizing: border-box;
+            font-family: "Roboto", "Noto Sans TC", sans-serif;
+        }
+        
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+        p {
+            margin: 0;
+            padding: 0;
+        }
+        
+        img {
+            width: 100%;
+            vertical-align: top;
+            border: 0;
+        }
+        /*浮動修復*/
+        
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        /*滿版*/
+        
+        .full-width {
+            width: 100%;
+        }
+        /*固定寬度*/
+        
+        .fixed-width {
+            width: 1200px;
+            margin: auto;
+        }
+        /*3欄*/
+        
+        .col-3 {
+            float: left;
+            width: 380px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        /*4欄*/
+        
+        .col-4 {
+            float: left;
+            width: 280px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        
+        nav {
+            position: fixed;
+        }
+        
+        nav .logo {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: #aaa;
+        }
+        
+        nav .menu {
+            float: right;
+        }
+        
+        nav .menu ul {
+            margin: 0;
+            padding: 0;
+        }
+        
+        nav .menu li {
+            float: left;
+            list-style-type: none;
+        }
+        
+        nav .menu a {
+            display: block;
+            padding-left: 15px;
+            padding-right: 15px;
+            height: 100px;
+            line-height: 100px;
+            color: #fff;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        
+        header {
+            background-image: url(http://lorempicsum.com/rio/800/600/3);
+            background-size: cover;
+            height: 600px;
+            /*            padding-top: 250px;*/
+            /*            padding-bottom: 250px;*/
+            text-align: center;
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 0;
+        }
+        
+        header::before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+        
+        header .content {
+            font-size: 16px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        #about {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+        #about .col-3 {
+            text-align: center;
+            padding: 20px;
+        }
+        #about h3 {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        #about p {
+            font-size: 14px;
+        }
+        #about .col-3:nth-of-type(1) .icon {
+            color: #e5004f;
+        }
+        #about .col-3:nth-of-type(2) .icon {
+            color: #00baff;
+        }
+        #about .col-3:nth-of-type(3) .icon {
+            color: #94cb00;
+        }
+        #ad {
+            background-image: url(images/001.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            padding-top: 100px;
+            padding-bottom: 100px;
+            text-align: center;
+            color: #fff;
+        }
+        #ad p {
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+        #profile {
+            padding-top: 100px;
+            padding-bottom: 100px;
+        }
+        #profile div:nth-of-type(1){
+            text-align: center;
+        }
+        #profile .detail {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 0;
+            width: 100%;
+        }
+        #profile .detail::before {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+        }
+        #profile .thumb {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 16px;
+            width: 80px;
+        }
+        #profile .position {
+            display: inline-block;
+            vertical-align: middle;
+            font-size: 16px;
+            width: 300px;
+            text-align: left;
+        }
+
+        #profile div:nth-of-type(2) .col-3>p {
+            padding: 20px 20px 40px 15px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="full-width clearfix">
+        <div class="fixed-width">
+            <div class="logo"></div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">Journal</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header class="full-width">
+        <div class="content">
+            <h1>QWERTY</h1>
+            <p>asdf asdlkjeipwgqj lsdkj asdjgp</p>
+            <a href="#">MORE</a>
+        </div>
+    </header>
+   <div id="about" class="full-width clearfix">
+       <div class="fixed-width">
+           <div class="col-3">
+               <div class="icon"><span class="fa fa-coffee fa-4x"></span></div>
+               <h3>QWERTY</h3>
+               <p>
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, vel alias accusantium esse magni eveniet ut.
+               </p>
+           </div>
+           <div class="col-3">
+               <div class="icon"><span class="fa fa-plane fa-4x"></span></div>
+               <h3>QWERTY</h3>
+               <p>
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, vel alias accusantium esse magni eveniet ut.
+               </p>
+           </div>
+           <div class="col-3">
+               <div class="icon"><span class="fa fa-tree fa-4x"></span></div>
+               <h3>QWERTY</h3>
+               <p>
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae, vel alias accusantium esse magni eveniet ut.
+               </p>
+           </div>
+       </div>
+   </div>
+   <div id="ad" class="full-width">
+       <div class="content">
+           <h2>asdfasd</h2>
+           <p>qwet qwewqpieo qwetqwtwe</p>
+           <div><span class="fa fa-play-circle fa-4x"></span></div>
+       </div>
+   </div>
+   <div id="profile" class="full-width clearfix">
+       <div class="fixed-width">
+           <h2>Profile</h2>
+           <p>lorem ipsum qwe poj </p>
+       </div>
+       <div class="fixed-width">
+           <div class="col-3">
+               <p>
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat sequi nemo, odit voluptas nulla minus veritatis ducimus voluptatem saepe possimus dicta iste atque itaque, maxime laborum amet maiores rem reprehenderit.
+               </p>
+               <div class="detail">
+                   <div class="thumb"><span class="fa fa-gg fa-3x"></span></div>
+                   <div class="position">
+                       <h3>CEO</h3>
+                       <p>John Doe</p>
+                   </div>
+               </div>
+           </div>
+           <div class="col-3">
+               <p>
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat sequi nemo, odit voluptas nulla minus veritatis ducimus voluptatem saepe possimus dicta iste atque itaque, maxime laborum amet maiores rem reprehenderit.
+               </p>
+               <div class="detail">
+                   <div class="thumb"><span class="fa fa-gg fa-3x"></span></div>
+                   <div class="position">
+                       <h3>CEO</h3>
+                       <p>John Doe</p>
+                   </div>
+               </div>
+           </div>
+           <div class="col-3">
+               <p>
+                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat sequi nemo, odit voluptas nulla minus veritatis ducimus voluptatem saepe possimus dicta iste atque itaque, maxime laborum amet maiores rem reprehenderit.
+               </p>
+               <div class="detail">
+                   <div class="thumb"><span class="fa fa-gg fa-3x"></span></div>
+                   <div class="position">
+                       <h3>CEO</h3>
+                       <p>John Doe</p>
+                   </div>
+               </div>
+           </div>
+       </div>
+   </div>
+</body>
+
+</html>

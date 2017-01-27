@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        img {
+            vertical-align: top;
+        }
+        .container {
+            margin: auto;
+        }
+        .container .pic {
+            width: 320px;
+            margin: 15px;
+            padding: 15px;
+        }
+    </style>
+    <link rel="stylesheet" href="source/jquery.fancybox.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="source/jquery.fancybox.pack.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.1.1/masonry.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/4.1.1/imagesloaded.pkgd.min.js"></script>
+    <script>
+        $(function(){
+            var url = "https://api.instagram.com/v1/users/self/media/recent/?access_token=18207645.522924d.a0308dd87201401ba3d9f828def12ea2";
+            $(".pic a").fancybox();
+            $.ajax({
+                url:url,
+                dataType:"jsonp",
+                success:function(e){
+                    $(e.data).each(function(){
+                        var c = "<div class='pic'>"
+                        c += "<a href='"+this.images.standard_resolution.url+"' class='fancy'>"
+                        c += "<img src='"+this.images.low_resolution.url+"'>"
+                        c += "</a>"
+                        c += "<div class='title'>"+this.caption.text+"</div>"
+                        c +="</div>"
+                        
+                        $(".container").append(c);
+                        $(".container").imagesLoaded(function(){
+                            $(".container").masonry({
+                                isFitWidth:true
+                            });
+                        })
+                    });
+                },
+                error:function(){
+                    alert("error");
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="container"></div>
+</body>
+</html>

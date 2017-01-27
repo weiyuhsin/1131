@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{                                 /*動畫→跑位 or 旋轉*/
+            position:absolute;
+            width: 150px;
+            height: 150px;
+            background-color: #0af;
+            animation: go 1s infinite alternate linear;               
+                                     /*animation: go 1s .3s 2;  動畫方塊 遲頓.3s 1秒跑2次*/
+                                     /*animation: go 1s infinite; 動畫方塊1秒跑無限次 */
+                                     /*animation: go 1s infinite alternate;*/
+                                     /*animation: go 1s infinite alternate linear; 重複 正→反  不要停*/
+                                     /*animation: go 1s infinite alternate ease 重複 正→反 加速;*/
+                                     /*animation: go 1s infinite alternate ease-in 重複 正→反 進場慢;*/
+                                     /*animation: go 1s infinite alternate ease-out 重複 正→反 出場慢;*/
+                                     /*animation: go 1s infinite alternate ease-in-out 重複 正→反 進出場慢;*/
+        }
+            
+            @keyframes go {
+                /*from{top:0;}  to{top:500px;}*/ /*方法一：動畫方塊從0px到500px*/
+                
+                /*0%{top:0;left:0;}                 /*方法二：0%~100%該如何走top & left都要下(跑四個角)* 
+                25%{top:0;left:400px;}                  /*左上→右上→右下→左下→左上*
+                50%{top:400px; left:400px;}
+                75%{top:400px;left:0;}
+                100%{top:0;left:0;}*/
+                
+                from{ transform:rotate(0deg);
+                }
+                to{transform: rotate(360deg);
+                 }
+                    
+                }
+            
+                                   
+            
+                                             /*{transform: scale(2,1) 變形:比例(寬,高)*/
+                                             /*{transform: rotate(45deg)) 變形:順時轉45度*/
+                                             /*{transform: translate(100px,200px) 變形:位移(右,下)*/
+                                             /*{transform: skewx(10deg) 變形:頃斜10度*/   
+            
+                                            /*{transform: rotate(45deg)scale(2,1);*//*變成先先變比例再轉45度(先後再前)斜長方形*/   
+                                            /*{transform:scale(2,1) rotate(45deg);*/  /*變成先轉45度再變比例(先後再前)菱形*/    
+                                             
+                                            /*{transform:  rotateX(45deg); *//*X軸旋轉(往上轉)*/  
+                                            /*{transform:  rotateY(45deg); *//*Y軸旋轉(往右轉)*/
+                                            /*{transform:  rotateZ(45deg); *//*Z軸旋轉(順時針轉)*/
+                                            /*{transform:  perspective(800)rotateX(45deg); X正數轉上 X負數轉下*/
+                                            /*{transform:  perspective(800)rotateY(45deg); Y正數轉右 Y負數轉左*/
+                                            /*{transform:  perspective(800)rotateZ(45deg); Z正數轉前 Z負數轉後*/
+            
+                                 
+        
+  
+        
+    </style>
+</head>
+
+
+<body>
+    <div class="box">1</div>
+    
+    
+</body>
+</html>

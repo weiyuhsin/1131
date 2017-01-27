@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>       /*垂直置中 方法5*/
+        
+        body,html{           /*一定要將body 與(逗號) html設成100%全版*/
+            height: 100%;
+            text-align: center;
+        }
+        body::before {
+            content:"";
+            display:inline-block;   /*有區塊與行內的*/
+            vertical-align: middle; /*置中*/
+            height:100%             /*全版*/      
+            
+        }
+        .box{
+            display: inline-block;
+            vertical-align: middle;
+            text-align:left;   
+            width: 600px;
+            height: 300px;
+            background-color: #fa0;
+            
+        }
+        img{
+            display:inline-block;   /*有區塊與行內的*/
+            vertical-align: middle; /*置中*/
+            width: 300px;
+        }
+        .box .p{
+            display:inline-block;   /*有區塊與行內的*/
+            vertical-align: middle; /*置中*/
+            width: 290px;
+        }
+    </style>
+    
+</head>
+<body>
+     <div class="box">
+        <img src="http://lorempicsum.com/up/300/300/4" alt="圖片 " title="天外奇績">
+        <div class="p">
+            <h1>asdfasf</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis necessitatibus iure dolores quaerat nobis totam debitis dolorum optio minus laborum eveniet reprehenderit, eius fugit esse sunt nesciunt beatae, sint quas.
+            </p> 
+        </div>
+    </div>
+
+    
+</body>
+</html>

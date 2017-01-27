@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+     <style>
+         .box{                /*絕對定位  子元素*/
+             width: 100px;
+             height: 100px;
+             background-color: #f24;
+             position:absolute 
+                 /* absolute→絕對定位 要給上左 或下右座標  static→靜態定位 relative→相對定位  fixed→固定定位  inherit→  sticky→*/
+             left:500 px;       /*left:100px +top:10px 或  right:100px+botten:100px */
+             top:10px;
+             }
+         
+          .banner{            /*相對定位 父元素*/
+              width: 600px;
+              height: 400px;
+              background-color: #ddd;
+              position: relative;  /*relative→相對定位*/    
+                     /*如果要在某大框內的絕對定位(不要依視窗範圍定位)→就要用相對定位後，再放絕對定位的位置*/
+              }
+         
+    </style>
+</head>
+<body>
+   <ul>
+       <li>static靜態定位</li>
+       <li>relative相對定位</li>
+        <li>absolute絕對定位</li>
+        <li>fixed固定定位</li>
+        
+        <div class="banner">
+            <div class="box"></div>
+        </div>
+      </ul>
+    
+</body>
+</html>

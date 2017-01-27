@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>                 <!--jquery.com  或 http://cdnjs.com/下載CDN語法-->
+       
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js">  <!--jQUERY語法的連結-->
+     </script>     
+     <script>   
+         $(document).ready(function(){                   
+            $("h1").click(function(){
+                $("p").slidetoggle(1200);
+            });
+         });           
+  
+                         
+     </script>
+     <style>
+         .container{
+             width: 1000px;
+             margin:auto;
+         }
+    </style>
+</head>
+
+
+<body>
+<div clas="container">
+ 
+  <h1>asdfsdfsd</h1>
+    <p>
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate natus similique sapiente, ut, voluptatibus dignissimos, voluptatem facere fuga minus modi blanditiis aliquid repudiandae totam quo minima deleniti architecto? Ea, sint.
+   </p>
+   
+    <h1>asdfsdfsd</h1>
+    <p>
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate natus similique sapiente, ut, voluptatibus dignissimos, voluptatem facere fuga minus modi blanditiis aliquid repudiandae totam quo minima deleniti architecto? Ea, sint.
+   </p>
+   
+     <h1>asdfsdfsd</h1>
+    <p>
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate natus similique sapiente, ut, voluptatibus dignissimos, voluptatem facere fuga minus modi blanditiis aliquid repudiandae totam quo minima deleniti architecto? Ea, sint.
+   </p>
+   
+   </div>
+
+</body>
+</html>

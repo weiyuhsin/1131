@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box1{                                 /*動畫→先變形*/  /*transform 相容性好IE尚可*/
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            background-color: #0af;
+            transform : perspective(800px) rotateX(45deg);
+                                   
+        }
+                                       /*transform: scale(2,1) 變形:比例(寬,高)*/
+                                       /*transform: rotate(45deg)) 變形:順時轉45度*/
+                                       /*transform: translate(100px,200px) 變形:位移(右,下)*/
+                                       /*transform: skewx(10deg) 變形:頃斜10度*/   
+            
+                                       /*transform: rotate(45deg)scale(2,1);*//*變成先先變比例再轉45度(先後再前)斜長方形*/   
+                                       /*transform:scale(2,1) rotate(45deg);*/  /*變成先轉45度再變比例(先後再前)菱形*/    
+                                             
+                                      /*transform:  rotateX(45deg); *//*X軸旋轉(往上轉)*/  
+                                      /*transform:  rotateY(45deg); *//*Y軸旋轉(往右轉)*/
+                                      /*transform:  rotateZ(45deg); *//*Z軸旋轉(順時針轉)*/
+                                    /*transform:  perspective(800px)rotateX(45deg); X正數轉上 X負數轉下*/
+                                    /*transform:  perspective(800px)rotateY(45deg); Y正數轉右 Y負數轉左*/
+                                    /*transform:  perspective(800px)rotateZ(45deg); Z正數轉前 Z負數轉後*/
+            
+            
+                             
+        
+        
+  
+        
+    </style>
+</head>
+
+
+<body>
+    <div class="box1">1</div>
+    
+    
+</body>
+</html>

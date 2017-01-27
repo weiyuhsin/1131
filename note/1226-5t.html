@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        input {
+            padding: 10px 15px;
+            border: 1px solid #aaa;
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="myform">
+        <input type="text" id="test" onchange="go()" >
+        <select name="" id="test2">
+            <option value="aaa">aaa</option>
+            <option value="台北市">BBB</option>
+            <option value="ccc">ccc</option>
+            <option value="ddd">ddd</option>
+        </select>
+        <input type="submit" value="送出">
+    </form>
+    <div id="output"></div>
+    <script>
+        var t = myform.test2.options[1].value;
+        console.log(t);
+        var t2 = myform.test2.options[1].textContent;
+        console.log(t2);
+        
+        function go(){
+            var test = document.getElementById("test").value;
+            console.log(test);
+            document.getElementById("output").textContent = test;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box{                   
+            width: 100px;
+            height: 100px;
+            background-color: #ff9429;
+            transition: background-color .3s, width .6s;    /*方法1誰要做→背景色 變色秒數，變寬度秒數*/
+            /*transition:all .6s; */ /*方法2 所有的東西.6s後再用*/
+            /*transition: background-color .3s, width .6s .7s; */   /*方法3誰要做→背景色 變色秒數，變寬度秒數 .7s→先變色→再跑寬度時間*/
+            
+        }
+        .box:hover{         /*::→虛擬元素  :→虛擬類別*//*使用後會變成hover的內容*/ /*變色+變寬*/
+            background-color: #00b1ff;
+            width: 200px;
+        }
+    </style>
+    
+    
+</head>
+<body>
+    <div class="box"></div>
+    
+</body>
+</html>

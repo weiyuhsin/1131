@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>                 <!--jquery.com  或 http://cdnjs.com/下載CDN語法-->
+       
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js">  <!--jQUERY語法的連結-->
+     </script>     
+     <script>   
+      /*   $(document).ready(function(){
+            $("p").hide();                               /*p先將資料隱藏*
+                $("h1").click(function(){                /*click (按) h1會動作*/ /*hover(滑動)h1會動作*
+                    $(this).next().slideToggle();       /*$(this).next().slidetoggle(); 的this就是h1的下一個去執行隱藏→開啟動作*
+            });             
+         });           */
+           
+         $(document).ready(function(){
+             $("p").hide();                                   /*p先將資料隱藏*/
+                $("h1").hover(function(){                      /*click (按) h1會動作*/ /*hover(滑動)h1會動作*/
+                    $(this).next().stop().slideToggle();       
+                                                                /*$(this).next().stop().slidetoggle(); 的this就是h1的下一個去執行隱藏→開啟動作後結束停止(不然會一直滑動)*/
+             });
+         }); 
+                         
+     </script>
+     <style>
+         .container{
+             width: 600px;
+             margin:auto;
+         }
+         
+         h1{
+             cursor:pointer;
+             margin:0;
+         }
+         
+         /*p{
+             display:none;   /*先將p資料隱藏*
+         }      */
+         
+    </style>
+</head>
+
+
+<body>
+<div clas="container">
+ 
+  <h1>asdfsdfsd</h1>
+    <p>
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate natus similique sapiente, ut, voluptatibus dignissimos, voluptatem facere fuga minus modi blanditiis aliquid repudiandae totam quo minima deleniti architecto? Ea, sint.
+   </p>
+   
+    <h1>asdfsdfsd</h1>
+    <p>
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate natus similique sapiente, ut, voluptatibus dignissimos, voluptatem facere fuga minus modi blanditiis aliquid repudiandae totam quo minima deleniti architecto? Ea, sint.
+   </p>
+   
+     <h1>asdfsdfsd</h1>
+    <p>
+       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate natus similique sapiente, ut, voluptatibus dignissimos, voluptatem facere fuga minus modi blanditiis aliquid repudiandae totam quo minima deleniti architecto? Ea, sint.
+   </p>
+   
+   </div>
+
+</body>
+</html>

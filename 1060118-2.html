@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Document</title>
+    
+    <style>
+        img{
+            width:120px;
+        }
+    </style>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script><!--jquery語法-->    
+    <!-- 最新編譯和最佳化的 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+    <!-- 選擇性佈景主題 -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+    <!-- 最新編譯和最佳化的 JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    
+    
+    <script>
+        $(function(){
+            $.ajax({
+                url:"http://api.openweathermap.org/data/2.5/forecast/daily?q=Taipei,tw&units=metric&cnt=14&appid=631a0dd6689323dff82c5644b721c085&lang=zh_TW",  /*Taipei,tw 改成台灣天氣*//*&units=metric 改成攝式*/ /*cnt=14 天數*/ /*&lang=zh_TW改成中文*/ 
+                
+                dataType:"json",
+                success:function(e){                            /*e→程式function內隨便取的名字e*/
+                    $(".container").append(e.city.name);         /*在container塞東西(e裡面的city裡面的name)*/
+                    $(e.list).each(function(){                  /*e裡面的list有很多→所以用each去抓變數→c*/    
+                        var myDate = new Date(this.dt*1000);    /*日期：1484712000 要乘以1000就是等今天*/
+                        console.log(myDate);
+                        var year = myDate.getFullYear();        /*年*/ 
+                        var month = myDate.getMonth()+1;        /*月 因是陣列，所以從0開始   一月=0 二月=1 所以要加1才是正確月份*/
+                        var __date = myDate.getDate();          /*日*/
+                        var day = myDate.getDay();              /*星期 因是陣列，所以從0開始 星期日=0 星期一=1 所以星期日要改*/
+//                        if(day==0){
+//                            day="日"
+//                        }
+                        var DAY = ["日","一","二","三","四","五","六"];   /*設一個大寫DAY來做變數，當day=0→跑出日 day=1跑出一*/
+                        var c = "<div class='date'>日期："+year+"年"+month+"月"+__date+"日 星期"+DAY[day]+"</div>"   /*當c日期→抓list 的dt  →日期：1484712000*/
+                        c += "<div class='temp'>今日溫度："+parseInt(this.temp.day)+"</div>"    /*當c溫度→抓list 的temp的day  → 今日溫度：19 parseInt=取到整位數*/
+                        c += "<div class='weather'>今日天氣："+this.weather[0].description+"</div>" /*當c天氣→抓list 的weather中第0個陣列的description  → 今日天氣：light rain*/
+                        c += "<div class='icon'>"+this.weather[0].icon+"</div><hr>"      /*當c天氣→抓list 的weather中第0個陣列的icon  → 10n*/
+                        c += "<div class='icon'><img src='http://openweathermap.org/img/w/"+this.weather[0].icon+".png'></div><hr>"      /*當c天氣→抓list 的weather中第0個陣列的icon  → 10n*/
+                        c += "<div class='icon'><img src='images/"+this.weather[0].icon+".png'></div><hr>"      /*當c天氣→抓list 的weather中第0個陣列的icon  → 10n*/
+                        
+                        $(".container").append(c); 
+                        
+                    });
+                },
+                error:function(){
+                    console.log("ERROR");
+                }
+                   
+            })
+        })
+
+                
+                
+
+    </script>
+</head>
+<body>
+    <div class="container">
+
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+<!--天氣串聯至網頁
+
+老師天氣作品→ http://lcclcclcc.lionfree.net/weather/
+
+
+
+
+搜openweathermap →https://openweathermap.org/
+→有很多的串聯(天氣或fb直接註冊) weiyuhsin tinxwex1xx w755→登入→API Keys →我的key 631a0dd6689323dff82c5644b721c085	
+
+→選API找要的格式→EX: 16 day / daily forecast 按API doc
+→(找一個適合的By city name或By city ID或By geographic coordinats)→選By city name→點連結 api.openweathermap.org/data/2.5/forecast/daily?q=London&mode=xml&units=metric&cnt=7
+
+→出現錯誤訊息{"cod":401, "message": "Invalid API key. Please see http://openweathermap.org/faq#error401 for more info."}
+→將網址http://api.openweathermap.org/data/2.5/forecast/daily?q=London&mode=xml&units=metric&cnt=7&appid=b1b15e88fa797225412429c1c50c122a1
+→改成  http://api.openweathermap.org/data/2.5/forecast/daily?q=London&mode=xml&units=metric&cnt=7&appid=631a0dd6689323dff82c5644b721c085  (appid改成我的id) 
+→改成台北 http://api.openweathermap.org/data/2.5/forecast/daily?q=taipei,tw=xml&units=metric&cnt=14&appid=631a0dd6689323dff82c5644b721c085
+
+
+→會出現程式語法對  temp: 18.93= 溫度(網址後面要加&units=metric →變成攝氏)
+
+
+如果是JSON語法較亂→GOOGLE應用程式下載JSONVIEW擴充功能→
+
+
+(http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=631a0dd6689323dff82c5644b721c085&units=metric)  London,uk改成Taipei,tw  最後面加&units=metric→可以改成攝式)
+
+(http://api.openweathermap.org/data/2.5/forecast/daily?q=Taipei,tw&units=metric&cnt=14&appid=631a0dd6689323dff82c5644b721c085&lang=zh_TW  最後面加&lang=zh_TW  →可以改成中文 小雨)
+
+
+https://openweathermap.org/weather-conditions   →icon位置   複製http://openweathermap.org/img/w/10d.png  → 10d改成變數。
+
+
+
+http://api.openweathermap.org/data/2.5/forecast/daily?q=taipei,tw=xml&units=metric&cnt=14&appid=631a0dd6689323dff82c5644b721c085
+
+
+{
+city: {
+    id: 1675720,
+    name: "Xianeibu",
+    coord: {
+        lon: 121.542473,
+        lat: 25.017719
+    },
+    country: "TW",
+    population: 0
+},
+cod: "200",
+message: 0.0288,
+cnt: 14,
+list: [
+    {
+    dt: 1484712000,
+    temp: {
+        day: 19,
+        min: 18.35,
+        max: 19,
+        night: 18.35,
+        eve: 19,
+        morn: 19
+    },
+    pressure: 1026.36,
+    humidity: 100,
+    weather: [
+        {
+        id: 500,
+        main: "Rain",
+        description: "light rain",
+        icon: "10n"
+        }
+    ],
+    speed: 3.77,
+    deg: 339,
+    clouds: 88
+    },
+    {
+    dt: 1484798400,
+    temp: {
+        day: 17.17,
+        min: 16.71,
+        max: 17.43,
+        night: 16.78,
+        eve: 16.71,
+        morn: 17.43
+    },
+    pressure: 1027.13,
+    humidity: 100,
+    weather: [
+    {
+        id: 500,
+        main: "Rain",
+        description: "light rain",
+        icon: "10d"
+    }
+    ],
+    speed: 4.86,
+    deg: 339,
+    clouds: 76,
+    rain: 1.8
+    },
+    {
+    dt: 1484884800,
+    temp: {
+        day: 14.34,
+        min: 12.96,
+        max: 14.72,
+        night: 13.16,
+        eve: 13.06,
+        morn: 14.72
+    },
+    pressure: 1031.78,
+    humidity: 100,
+    weather: [
+    {
+        id: 500,
+        main: "Rain",
+        description: "light rain",
+        icon: "10d"
+    }
+    ],
+    speed: 8.65,
+    deg: 19,
+    clouds: 92,
+    rain: 2.94
+    },
+    {
+    dt: 1484971200,
+temp: {
+day: 16.06,
+min: 14.82,
+max: 16.06,
+night: 15.98,
+eve: 16.01,
+morn: 14.82
+},
+pressure: 1019.73,
+humidity: 0,
+weather: [
+{
+id: 501,
+main: "Rain",
+description: "moderate rain",
+icon: "10d"
+}
+],
+speed: 5.03,
+deg: 23,
+clouds: 92,
+rain: 8.36
+},
+{
+dt: 1485057600,
+temp: {
+day: 14.27,
+min: 12.34,
+max: 14.59,
+night: 12.34,
+eve: 13.29,
+morn: 14.59
+},
+pressure: 1021.86,
+humidity: 0,
+weather: [
+{
+id: 501,
+main: "Rain",
+description: "moderate rain",
+icon: "10d"
+}
+],
+speed: 8.8,
+deg: 4,
+clouds: 69,
+rain: 3.11
+},
+{
+dt: 1485144000,
+temp: {
+day: 12.47,
+min: 11.66,
+max: 12.47,
+night: 12.35,
+eve: 11.9,
+morn: 11.66
+},
+pressure: 1023.34,
+humidity: 0,
+weather: [
+{
+id: 501,
+main: "Rain",
+description: "moderate rain",
+icon: "10d"
+}
+],
+speed: 9.37,
+deg: 5,
+clouds: 35,
+rain: 3.83
+},
+{
+dt: 1485230400,
+temp: {
+day: 15.71,
+min: 13.55,
+max: 16.2,
+night: 16.2,
+eve: 15.73,
+morn: 13.55
+},
+pressure: 1020.87,
+humidity: 0,
+weather: [
+{
+id: 501,
+main: "Rain",
+description: "moderate rain",
+icon: "10d"
+}
+],
+speed: 6.03,
+deg: 79,
+clouds: 32,
+rain: 6.24
+},
+{
+dt: 1485316800,
+temp: {
+day: 18.5,
+min: 16.86,
+max: 18.5,
+night: 16.9,
+eve: 16.86,
+morn: 17.12
+},
+pressure: 1016.97,
+humidity: 0,
+weather: [
+{
+id: 500,
+main: "Rain",
+description: "light rain",
+icon: "10d"
+}
+],
+speed: 4.31,
+deg: 320,
+clouds: 5,
+rain: 1.26
+},
+{
+dt: 1485403200,
+temp: {
+day: 18.34,
+min: 16.86,
+max: 18.34,
+night: 16.86,
+eve: 16.94,
+morn: 18.03
+},
+pressure: 1014.07,
+humidity: 0,
+weather: [
+{
+id: 502,
+main: "Rain",
+description: "heavy intensity rain",
+icon: "10d"
+}
+],
+speed: 5.24,
+deg: 42,
+clouds: 98,
+rain: 16.05
+},
+{
+dt: 1485489600,
+temp: {
+day: 16.37,
+min: 15.27,
+max: 16.72,
+night: 15.27,
+eve: 15.51,
+morn: 16.72
+},
+pressure: 1017.79,
+humidity: 0,
+weather: [
+{
+id: 501,
+main: "Rain",
+description: "moderate rain",
+icon: "10d"
+}
+],
+speed: 8.73,
+deg: 17,
+clouds: 79,
+rain: 4.88
+},
+{
+dt: 1485576000,
+temp: {
+day: 16.59,
+min: 15.68,
+max: 16.77,
+night: 16.77,
+eve: 16.77,
+morn: 15.68
+},
+pressure: 1014.67,
+humidity: 0,
+weather: [
+{
+id: 501,
+main: "Rain",
+description: "moderate rain",
+icon: "10d"
+}
+],
+speed: 4.41,
+deg: 26,
+clouds: 85,
+rain: 7.15
+},
+{
+dt: 1485662400,
+temp: {
+day: 18.43,
+min: 17.2,
+max: 18.43,
+night: 17.95,
+eve: 18.17,
+morn: 17.2
+},
+pressure: 1013.97,
+humidity: 0,
+weather: [
+{
+id: 502,
+main: "Rain",
+description: "heavy intensity rain",
+icon: "10d"
+}
+],
+speed: 7.18,
+deg: 36,
+clouds: 44,
+rain: 19.25
+},
+{
+dt: 1485748800,
+temp: {
+day: 19.46,
+min: 17.6,
+max: 19.46,
+night: 17.6,
+eve: 18.01,
+morn: 18.22
+},
+pressure: 1009.66,
+humidity: 0,
+weather: [
+{
+id: 502,
+main: "Rain",
+description: "heavy intensity rain",
+icon: "10d"
+}
+],
+speed: 4.56,
+deg: 10,
+clouds: 53,
+rain: 19.35
+},
+{
+dt: 1485835200,
+temp: {
+day: 16.12,
+min: 15.62,
+max: 16.66,
+night: 15.62,
+eve: 16.09,
+morn: 16.66
+},
+pressure: 1009.29,
+humidity: 0,
+weather: [
+{
+id: 501,
+main: "Rain",
+description: "moderate rain",
+icon: "10d"
+}
+],
+speed: 9.73,
+deg: 358,
+clouds: 100,
+rain: 11.53
+}
+]
+}
+
+
+
+
+-->

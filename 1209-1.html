@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>                        /*如果要設定標題從100px的地方開始，但外框box就會跟著一起下來*/  
+        .box{
+            width: 600px;
+            height: 200px;
+            background-color: #ccc;
+            /*border:1px solid;*/ /*方法一:設border:1px solid;就可以解決外框一起下來問題*/
+            overflow:hidden;  /*方法二:設overflow:auto;或overflow:hidden;就可以解決外框一起下來問題*/
+        }
+        .box h1{
+            margin-top:100px;     /*如果要設定標題從100px的地方開始，但外框box就會跟著一起下來*/    
+            
+            }    
+        
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>標題一</h1>
+    </div>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> <!--jquery語法-->
+   
+    <style>
+        body{                     /*手機版桌面版放大縮小*/   
+            margin:0;
+            padding:0;
+        } 
+        .clearfix::after{        /*去除浮動問題*/
+                                  /*設立一個虛擬元素<style>clearfix::after語法之後如需要直接在所有的語法名稱後面ex: div class="XXXX加上clearfix" 就會套用clearfix語法解決浮動與固定問題*/*/
+            content:"";            /*虛擬要放空字串*/
+            display:block;        
+            clear:both;        /*加clear:both解決浮動與固定位置*/
+        }
+        
+    @media screen and (min-width:600px){   /*桌機介面上大於600時*/
+        nav{
+            background-color:#aaa;
+        }    
+        .menu{
+            float:right;    /*浮動右*/
+        }
+        .menu ul{        
+            margin:0;        /*行內*/
+            padding:0;        /*行外*/
+        }
+        .menu li{
+            list-style:none; /*不要項目*/   
+            float:left;       /*浮動左*/ 
+        }
+        .menu a {
+            display:block;        /*行內改區塊*/
+            padding:15px 20px;    /**/
+            text-decoration:none;/*字底線：不要*/
+            color:#222;    /*字色*/
+            font-family:helvetica;  /*字體*/
+        }
+        .hamburger{        /*如在桌機介面上 hamburger要消失*/
+            display:none;
+        }
+        }
+        
+        
+                
+   @media screen and (max-width:599px){  /*平版手機介面上小於599時*/
+        nav{
+            background-color:#aaa;
+        }    
+
+        .menu{
+            display:none;   /*變成手機版時menu字要消失只留漢保選單*/
+  /*          float:right;    /*浮動右*//*手機不要浮動*/
+        }
+        .menu ul{        
+            margin:0;        /*行內*/
+            padding:0;        /*行外*/
+        }
+        .menu li{
+            list-style:none; /*不要項目*/   
+  /*          float:left;       /*浮動左*/ /*手機不要浮動*/
+        }
+        .menu a {
+            display:block;        /*行內改區塊*/
+            padding:15px 20px;    /**/
+            text-decoration:none;/*字底線：不要*/
+            color:#222;    /*字色*/
+            font-family:helvetica;  /*字體*/
+        }
+        }
+        
+        
+        
+        
+        
+        
+        
+
+                                   
+        .hamburger{                         /*漢堡選單外框*/
+            width: 50px;
+            height: 50px;
+            background-color: #222;
+            position:relative;                /*相對定位*/
+            cursor: pointer;                /*多一個手指圖案做點選*/
+            
+        }
+        .hamburger span{            /*主元素hamburger中的span要做設定*/
+            position:absolute;      /*將它絕對定位*/
+            width: 35px;            /*一個長35高3的漢堡之一*/
+            height: 5px;
+            background-color: #ff8000; 
+            top:0;                  /*上下左右=0會置中*/
+            left:0;
+            right:0;
+            bottom:0;
+            margin:auto;  
+            transition:all .3s;
+        }
+        .hamburger span::before{   /*做一個虛擬元素，將原span之前做一個向上偏移的span橫線*/
+            content:"";            /*虛擬要放空字串*/
+            display:block;        /*行內變區塊才能改東西*/
+            position:absolute;    /*絕對定位*/
+            width:35px;
+            height:5px;
+            background-color:#ff8000;
+            top:-10px;            /*主元素向上偏移10px  上→ top:-10px;或bottom:10px; 下→ top:10px; 或 bottom:-10px */
+            transition:all .3s;    /*延遲.3秒*/
+            
+        }
+        .hamburger span::after{
+            content:"";
+            display:block;            /*行內變區塊才能改東西*/
+            position:absolute;        /*絕對定位*/
+            width:35px;
+            height:5px;
+            background-color: #ff8000;
+            bottom:-10px;        /*主元素向下偏移10px  上→ top:-10px;或bottom:10px; 下→ top:10px; 或 bottom:-10px  */
+            transition:all .3s;    /*延遲.3秒*/
+            
+        }
+        .hamburger-x span{            /*另一個主元素hamburger-x 中的span要做設定*/
+            position:absolute;        /*將它絕對定位*/
+            width: 35px;              /*一個長35高3的漢堡之一*/
+            height: 5px;
+            background-color: transparent; /*透明的*/
+            top:0;            /*上下左右=0 →會置中*/
+            left:0;
+            right:0;
+            bottom:0;
+            margin:auto;      
+            transform:rotate(180deg);
+            transition:all .3s;    /*延遲.3秒*/
+        }
+        .hamburger-x span::before{   /*做一個虛擬元素，將原span之前做一個向上偏移的span橫線*/
+            content:"";
+            display:block;        /**/
+            position:absolute;
+            width:35px;
+            height:5px;
+            background-color:#ff8000;
+            top:0;
+            transform:rotate(135deg);
+            transition:all .3s;    /*延遲.3秒*/
+                            
+        }
+        .hamburger-x span::after{
+            content:"";
+            display:block;
+            position:absolute;
+            width:35px;
+            height:5px;
+            background-color: #ff8000;
+            bottom:-0;
+            transform:rotate(-135deg);
+            transition:all .3s;    /*延遲.3秒*/
+        }
+
+        
+    </style>
+    
+    
+    
+     <script>
+        $(function(){
+            $(".hamburger").click(function (){           /*將hamburger做動畫→當hamburger按下去時→會跑動畫*/
+                $(this).toggleClass("hamburger-x");     /*this=hamburger被按到時→會加開關減開關Class成hamburger-x */  
+                $(this).next().slideToggle();           /*this=hamburger按到會跑下一個menu→使menu 滑动效果出來*/
+        });
+           
+          $(window).resize(function(){          /*假如畫面大小重新變化的話*/
+                var w = $(window).width();      /*設定一個變數是畫面window的寬度*/    
+//                console.log(w);               /*F12針測是否有誤*/
+                if(w>600){                      /*如果W>600的話*/
+                    $(".menu").show();          /*MENU要跑出來*/
+                }else{                          /*不然*/
+                    $(".menu").hide();          /*MENU要藏起來*/
+                    $(".hamburger").removeClass("hamburger-x");/*且要將hamburger-x移除 恢復成三層漢堡*/
+                }
+
+            })
+    })
+    </script>
+    
+    
+</head>
+<body>
+   <nav class="clearfix">
+      <div class="hamburger"><span></span></div>
+       <div class="menu">
+           <ul>
+               <li><a href="#">ABOUT</a></li>
+               <li><a href="#">SERVICE</a></li>
+               <li><a href="#">PRODUCTS</a></li>
+               <li><a href="#">MORE</a></li>
+               <li><a href="#">OEM</a></li>
+               <li><a href="#">CONTACT</a></li>
+           </ul>
+       </div>
+   </nav>
+    
+</body>
+</html>

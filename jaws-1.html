@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>       
+    <style>                          /*logo+menu選單*/
+        nav {
+            width: 960px;      /*有個大框包含logo與menu */    
+        }
+        .logo {                /*左邊有紅色logo*/
+            float: left;               /*浮動左*/
+            width: 100px;              /*寬*/
+            height: 50px;              /*高*/    
+            background-color: #e24;    /*背景色*/
+        }
+        .menu {             /*右邊有menu選單*/
+            float: right;   /*浮動右*/  
+        }
+        .menu ul {        /*menu選單內有方框0內外距→避免與logo有上下位差*/
+            margin: 0;    /*外距*/
+            padding: 0;   /*內距*/
+        }
+        .menu li {        /*menu選單內有個清單不要項目*/
+            float: left;             /*浮動左*/
+            list-style-type: none;   /*不要項目*/
+        }
+        .menu a {
+            display: block;        /*行內轉區塊才能改東西*/
+            padding-left: 30px;    /*外距右邊30px*/ 
+            padding-right: 30px;   /*內距右邊30px*/ 
+            line-height: 50px;     /*垂直長度*/
+            color: #333;           /*顏色*/
+            text-decoration: none; /*不要底線*/
+            font-family: tahoma;   /*字體*/ 
+            transition:  all .5s;  /*變色時間.5s*/
+        }
+        .menu a:hover {          /*::→虛擬元素  :→虛擬類別*//*使用後會變成hover的內容*/ /*變色+變寬*/
+            color: #e24;              /*字變的色*/
+            background-color: #333;   /*背景變的色*/
+        }
+        
+        
+        
+        /*快速打法：ul>li*5>a[href="#"]{menu}   →ul 下有五個li 裡面皆有a href="#" 錨點  文字內容都是menu */
+        
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo"><img src="http://lorempicsum.com/up/100/80/4" alt="圖片 " title="天外奇績"></div>
+        <p></p>
+       
+        <div class="menu">
+            <ul>
+                <li><a href="#">about us</a></li>
+                <li><a href="#">products</a></li>
+                <li><a href="#">service</a></li>
+                <li><a href="#">menu</a></li>
+                <li><a href="#">contect us</a></li>
+            </ul>
+        </div>
+    </nav>
+</body>
+</html>

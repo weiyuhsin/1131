@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">                           
+    <title>Document</title>                         <!---一個欄位輸入資料後可以按送出就會出現在另一個地方-->   <!----> 
+    <style>                                         /* 在網頁F12中可以看的到，用來除錯用的*/
+        input {
+            padding:10px 15px;
+            border:1px solid #e33333; /*邊框寬度 樣式 顏色*/
+        }
+    </style>
+
+</head>
+<body>
+  
+    <form action="" id = "myform">                                    <!--設id一個欄位可以輸入並有送出鈕-->
+               
+        <input type="text" id="test" onchange="go()" >              <!---->  <!--onhange="" onblur="" onfocus=""  onclick=""-->
+            <select name="" id="test2">                            <!----> 
+                <option value="台北市">台北市2</option>              <!--輸出值台北市2--> 
+                <option value="新北市">新北市2</option>
+                <option value="桃園市">桃園市2</option>
+                <option value="新竹市">新竹市2</option>
+            </select>
+        <input type="submit" value="送出">                <!--送出鈕-->
+              
+    </form>
+    
+    <div id="output"></div>
+        
+    <script>                                                            <!--go的函式→如上面完成後就會--><!---->
+            
+        var t = myform.test2.options[1].value;                          <!--一個變數→位置myform.test2.options[1]出現輸入的值-->
+        console.log(t);                                                 <!--測試F12-->    
+        var t2 = myform.test2.options[1].textContent;                   <!--一個變數→位置myform.test2.options[1出現輸入的文字內容-->
+        console.log(t2);                                                <!--測試F12-->
+        
+        function go(){                                                 <!--一個function功能→執行-->
+            var test = document.getElementById("test").value;          <!--會輸出一個值--> 
+            console.log(test);                                         <!--測試F12-->
+            document.getElementById("output").textContent = test;      <!--在網頁打完資料之後按tab就會在另一個地方出現輸入的文字內容-->
+        }        
+            
+    </script>
+</body>
+</html>
